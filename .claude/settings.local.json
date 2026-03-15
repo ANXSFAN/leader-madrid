@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(node:*)",
+      "Bash(ls:*)",
+      "Bash(/c/Python314/python:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git stash:*)",
+      "Bash(npx prisma:*)"
+    ]
+  }
+}

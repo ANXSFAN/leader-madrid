@@ -1,0 +1,14 @@
+{
+  "name": "ZELURA Lighting Systems",
+  "short_name": "ZELURA",
+  "icons": [
+    {
+      "src": "/logo-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#004e92",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

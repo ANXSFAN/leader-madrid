@@ -1,0 +1,1008 @@
+﻿
+🔍 i18n scan — 253 files in src, emails
+
+node : ⚠️  src/app/[locale]/(admin)/admin/attributes/new/page.tsx
+At line:1 char:161
++ ... ents\trae_projects\my-led-erp; node scripts/i18n-scan.js 2>&1 | Out-F ...
++                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (⚠️  src/app/[lo...es/new/page.tsx:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   L9  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Create Attribute</h2>
+⚠️  src/app/[locale]/(admin)/admin/attributes/page.tsx
+   L27  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Attributes</h2>
+   L47  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Scope</TableHead>
+   L48  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Options</TableHead>
+   L49  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+⚠️  src/app/[locale]/(admin)/admin/attributes/[id]/page.tsx
+   L30  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Edit Attribute</h2>
+⚠️  src/app/[locale]/(admin)/admin/categories/page.tsx
+   L39  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Categories</h1>
+   L51  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Image</TableHead>
+   L55  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Parent</TableHead>
+   L56  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[100px] text-right">Actions</TableHead>
+⚠️  src/app/[locale]/(admin)/admin/cms/settings/page.tsx
+   L10  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Global Settings</h2>
+⚠️  src/app/[locale]/(admin)/admin/cms/settings/settings-form.tsx
+   L98  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>General Information</CardTitle>
+   L109  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Site Name</FormLabel>
+   L123  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Contact Email</FormLabel>
+   L136  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Phone Number</FormLabel>
+   L163  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Address</FormLabel>
+   L176  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Social Media Links</CardTitle>
+⚠️  src/app/[locale]/(admin)/admin/cms/site-info/site-info-form.tsx
+   L121  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>General Information</CardTitle>
+   L132  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Site Name</FormLabel>
+   L146  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Contact Email</FormLabel>
+   L159  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Phone Number</FormLabel>
+   L172  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>WhatsApp</FormLabel>
+   L186  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Address</FormLabel>
+⚠️  src/app/[locale]/(admin)/admin/customers/page.tsx
+   L93  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Customers</h2>
+   L102  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="all">All Customers</TabsTrigger>
+   L119  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Bulk Update Level</CardTitle>
+   L127  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <label className="text-sm font-medium">Level Code</label>
+   L135  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <label className="text-sm font-medium">Customer Emails</label>
+   L147  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Button type="submit">Apply Level</Button>
+   L154  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>All Customers</CardTitle>
+   L164  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Email</TableHead>
+   L165  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Company</TableHead>
+   L166  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Level</TableHead>
+   L168  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Price List</TableHead>
+   L169  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+   L238  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Pending Approvals</CardTitle>
+   L247  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Company</TableHead>
+   L248  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Tax ID</TableHead>
+   L249  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Contact</TableHead>
+   L250  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Industry</TableHead>
+   L252  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+   L286  [toLocaleDate-no-locale]  toLocaleDateString() called without locale argument
+          {new Date(user.createdAt).toLocaleDateString()}
+⚠️  src/app/[locale]/(admin)/admin/customers/[id]/page.tsx
+   L25  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Edit Customer</h1>
+⚠️  src/app/[locale]/(admin)/admin/inventory/page.tsx
+   L54  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Fecha</TableHead>
+   L55  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Producto</TableHead>
+   L58  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Cantidad</TableHead>
+❌ src/app/[locale]/(admin)/admin/invoices/page.tsx
+   L75  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <TableCell>€{Number(inv.totalAmount).toFixed(2)}</TableCell>
+   L76  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <TableCell>€{Number(inv.paidAmount).toFixed(2)}</TableCell>
+⚠️  src/app/[locale]/(admin)/admin/invoices/page.tsx
+   L22  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Sales Invoices</h2>
+   L35  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Sales Order</TableHead>
+   L36  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Customer</TableHead>
+   L37  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L38  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Total</TableHead>
+   L40  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Due Date</TableHead>
+   L41  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Actions</TableHead>
+❌ src/app/[locale]/(admin)/admin/invoices/[id]/page.tsx
+   L184  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <span>€{Number(invoice.totalAmount).toFixed(2)}</span>
+   L188  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <span>€{Number(invoice.paidAmount).toFixed(2)}</span>
+⚠️  src/app/[locale]/(admin)/admin/invoices/[id]/page.tsx
+   L81  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Invoice Details</CardTitle>
+   L123  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Items</CardTitle>
+   L179  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Summary</CardTitle>
+   L206  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Payments</CardTitle>
+⚠️  src/app/[locale]/(admin)/admin/orders/page.tsx
+   L38  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Pedidos</h1>
+   L43  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Historial de Pedidos</CardTitle>
+   L49  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>ID Pedido</TableHead>
+   L50  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Cliente</TableHead>
+   L51  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Fecha</TableHead>
+   L52  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Estado</TableHead>
+   L53  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Total</TableHead>
+   L54  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Items</TableHead>
+   L55  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Acciones</TableHead>
+❌ src/app/[locale]/(admin)/admin/page.tsx
+   L132  [es-ES]  Hardcoded locale "es-ES"
+          const label = d.toLocaleString("es-ES", { month: "short" });
+   L146  [es-ES]  Hardcoded locale "es-ES"
+          const label = new Date(year, month, 1).toLocaleString("es-ES", {
+   L173  [es-ES]  Hardcoded locale "es-ES"
+          currentMonth: now.toLocaleString("es-ES", { month: "long" }),
+⚠️  src/app/[locale]/(admin)/admin/page.tsx
+   L180  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-muted-foreground">Sin datos anteriores</p>
+   L260  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-muted-foreground">Requieren atención</p>
+   L297  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-muted-foreground">Histórico acumulado</p>
+   L357  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Pedidos Recientes</CardTitle>
+⚠️  src/app/[locale]/(admin)/admin/price-lists/new/page.tsx
+   L7  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">New Price List</h1>
+⚠️  src/app/[locale]/(admin)/admin/price-lists/page.tsx
+   L23  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Price Lists</h1>
+   L41  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Currency</TableHead>
+   L42  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Level</TableHead>
+   L43  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Discount</TableHead>
+   L44  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L45  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Rules</TableHead>
+   L46  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Users</TableHead>
+   L47  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Last Updated</TableHead>
+   L48  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+   L69  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Badge variant="default">Default</Badge>
+   L71  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Badge variant="outline">Custom</Badge>
+⚠️  src/app/[locale]/(admin)/admin/price-lists/[id]/page.tsx
+   L24  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Edit Price List</h1>
+⚠️  src/app/[locale]/(admin)/admin/products/[id]/page.tsx
+   L34  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          return <div>Product not found</div>;
+⚠️  src/app/[locale]/(admin)/admin/purchase-orders/page.tsx
+   L22  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Purchase Orders</h2>
+   L34  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>PO Number</TableHead>
+   L35  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Supplier</TableHead>
+   L36  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L37  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Total Amount</TableHead>
+   L38  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Created At</TableHead>
+   L39  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Actions</TableHead>
+❌ src/app/[locale]/(admin)/admin/reports/charts-client.tsx
+   L36  [es-ES]  Hardcoded locale "es-ES"
+          tickFormatter={(v) => `€${v.toLocaleString("es-ES")}`}
+   L36  [toFixed-euro]  Hardcoded "€" with dynamic value
+          tickFormatter={(v) => `€${v.toLocaleString("es-ES")}`}
+   L40  [es-ES]  Hardcoded locale "es-ES"
+          new Intl.NumberFormat("es-ES", {
+❌ src/app/[locale]/(admin)/admin/reports/customer-report.tsx
+   L58  [es-ES]  Hardcoded locale "es-ES"
+          const label = from.toLocaleString("es-ES", { month: "short", year: "2-digit" });
+⚠️  src/app/[locale]/(admin)/admin/reports/customer-report.tsx
+   L67  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-xs text-muted-foreground uppercase">Total clientes</CardTitle>
+   L108  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Nuevos clientes por mes</CardTitle>
+   L143  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-2 font-medium">Cliente</th>
+   L144  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right py-2 font-medium">Pedidos</th>
+   L145  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right py-2 font-medium">Total</th>
+⚠️  src/app/[locale]/(admin)/admin/reports/inventory-report.tsx
+   L161  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Productos agotados</CardTitle>
+   L172  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-2 font-medium">Producto</th>
+   L173  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right py-2 font-medium">Stock</th>
+⚠️  src/app/[locale]/(admin)/admin/reports/page.tsx
+   L27  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="sales">Ventas</TabsTrigger>
+   L28  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="inventory">Inventario</TabsTrigger>
+   L29  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="customers">Clientes</TabsTrigger>
+❌ src/app/[locale]/(admin)/admin/reports/sales-report.tsx
+   L27  [es-ES]  Hardcoded locale "es-ES"
+          const label = d.toLocaleString("es-ES", { month: "short", year: "2-digit" });
+   L45  [es-ES]  Hardcoded locale "es-ES"
+          const label = new Date(year, month - 1, 1).toLocaleString("es-ES", {
+   L95  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <p className="text-2xl font-bold">€{totalRevenue.toFixed(2)}</p>
+   L104  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <p className="text-2xl font-bold">€{Number(monthStats._sum.total ?? 0).toFixed(2)}</p>
+   L113  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <p className="text-2xl font-bold">€{avgOrderVal.toFixed(2)}</p>
+   L121  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <p className="text-2xl font-bold">€{totalVAT.toFixed(2)}</p>
+⚠️  src/app/[locale]/(admin)/admin/reports/sales-report.tsx
+   L92  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-xs text-muted-foreground uppercase">Ingresos totales</CardTitle>
+   L101  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-xs text-muted-foreground uppercase">Este mes</CardTitle>
+   L110  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-xs text-muted-foreground uppercase">Valor medio pedido</CardTitle>
+   L118  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-xs text-muted-foreground uppercase">IVA recaudado</CardTitle>
+   L146  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right py-2 font-medium">Unidades</th>
+   L147  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right py-2 font-medium">Ingresos</th>
+❌ src/app/[locale]/(admin)/admin/returns/page.tsx
+   L120  [es-ES]  Hardcoded locale "es-ES"
+          {new Date(ret.createdAt).toLocaleDateString("es-ES")}
+⚠️  src/app/[locale]/(admin)/admin/returns/page.tsx
+   L61  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-muted-foreground">Total</p>
+   L65  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-muted-foreground">Activas</p>
+   L73  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Todas las solicitudes</CardTitle>
+   L86  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-3 pr-4 font-medium">Pedido</th>
+   L87  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-3 pr-4 font-medium">Cliente</th>
+   L88  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-3 pr-4 font-medium">Motivo</th>
+   L89  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-3 pr-4 font-medium">Estado</th>
+   L90  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left py-3 pr-4 font-medium">Fecha</th>
+❌ src/app/[locale]/(admin)/admin/returns/[id]/page.tsx
+   L51  [es-ES]  Hardcoded locale "es-ES"
+          {new Date(ret.createdAt).toLocaleDateString("es-ES", {
+⚠️  src/app/[locale]/(admin)/admin/returns/[id]/page.tsx
+   L64  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Información del cliente</CardTitle>
+   L77  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Pedido original</CardTitle>
+   L96  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Motivo de la devolución</CardTitle>
+   L105  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs font-semibold text-amber-700 mb-1">Notas internas</p>
+   L114  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Artículos a devolver</CardTitle>
+   L121  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-center py-2 font-medium">Cantidad</th>
+   L122  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-center py-2 font-medium">Condición</th>
+   L123  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right py-2 font-medium">Restock</th>
+   L171  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-base">Acciones</CardTitle>
+⚠️  src/app/[locale]/(admin)/admin/returns/[id]/return-actions.tsx
+   L112  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label>Notas internas</Label>
+❌ src/app/[locale]/(admin)/admin/rfq/page.tsx
+   L99  [es-ES]  Hardcoded locale "es-ES"
+          {new Date(rfq.createdAt).toLocaleDateString("es-ES")}
+⚠️  src/app/[locale]/(admin)/admin/rfq/page.tsx
+   L55  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Contact</th>
+   L56  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Products</th
+>
+   L57  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
+❌ src/app/[locale]/(admin)/admin/rfq/[id]/page.tsx
+   L26  [es-ES]  Hardcoded locale "es-ES"
+          Received {new Date(rfq.createdAt).toLocaleString("es-ES")}
+   L73  [es-ES]  Hardcoded locale "es-ES"
+          {new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(Number(rfq.quotedTotal))}
+   L73  [currency-EUR]  Hardcoded currency "EUR" in Intl call
+          {new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(Number(rfq.quotedTotal))}
+   L110  [es-ES]  Hardcoded locale "es-ES"
+          ? new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(Number(item.targetPrice))
+   L110  [currency-EUR]  Hardcoded currency "EUR" in Intl call
+          ? new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(Number(item.targetPrice))
+⚠️  src/app/[locale]/(admin)/admin/rfq/[id]/page.tsx
+   L62  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <dt className="w-28 text-xs font-semibold text-gray-500">Status</dt>
+   L71  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <dt className="w-28 text-xs font-semibold text-gray-500">Quoted Total</dt>
+   L79  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <dt className="w-28 text-xs font-semibold text-gray-500">Admin Note</dt>
+   L96  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Product</th>
+   L99  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <th className="text-right px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Target Pric
+e</th>
+   L121  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">Message</h2>
+⚠️  src/app/[locale]/(admin)/admin/sales-orders/new/page.tsx
+   L23  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Create Sales Order</h2>
+⚠️  src/app/[locale]/(admin)/admin/sales-orders/page.tsx
+   L22  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">Sales Orders</h2>
+   L34  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Order Number</TableHead>
+   L35  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Customer</TableHead>
+   L36  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L37  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Total Amount</TableHead>
+   L38  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Created At</TableHead>
+   L39  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Actions</TableHead>
+⚠️  src/app/[locale]/(admin)/admin/search-sync/page.tsx
+   L8  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-2xl font-bold text-gray-900">Search Index Sync</h1>
+   L42  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-sm font-semibold text-gray-900 mb-3">How it works</h2>
+⚠️  src/app/[locale]/(admin)/admin/settings/page.tsx
+   L5  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-3xl font-bold tracking-tight">System Settings</h2>
+⚠️  src/app/[locale]/(admin)/admin/shipping/delete-dialog.tsx
+   L57  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DialogTitle>Delete Shipping Method</DialogTitle>
+⚠️  src/app/[locale]/(admin)/admin/shipping/new/page.tsx
+   L82  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Shipping Details</CardTitle>
+   L102  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="description">Description</Label>
+   L131  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="estimatedDays">Estimated Days</Label>
+   L156  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="isActive">Active</Label>
+   L176  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Link href="/admin/shipping">Cancel</Link>
+❌ src/app/[locale]/(admin)/admin/shipping/page.tsx
+   L68  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <TableCell>€{method.price.toFixed(2)}</TableCell>
+⚠️  src/app/[locale]/(admin)/admin/shipping/page.tsx
+   L25  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Shipping Methods</h1>
+   L36  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-muted-foreground">No shipping methods configured</p>
+   L38  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Link href="/admin/shipping/new">Create your first shipping method</Link>
+   L47  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Price</TableHead>
+   L48  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Estimated Days</TableHead>
+   L49  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L50  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Default</TableHead>
+   L51  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[100px] text-right">Actions</TableHead>
+⚠️  src/app/[locale]/(admin)/admin/shipping/[id]/page.tsx
+   L148  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Shipping Details</CardTitle>
+   L168  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="description">Description</Label>
+   L197  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="estimatedDays">Estimated Days</Label>
+   L222  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="isActive">Active</Label>
+   L242  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Link href="/admin/shipping">Cancel</Link>
+⚠️  src/app/[locale]/(admin)/admin/suppliers/page.tsx
+   L25  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Suppliers</h1>
+   L42  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Contact</TableHead>
+   L43  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Email</TableHead>
+   L44  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Phone</TableHead>
+   L45  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Website</TableHead>
+   L46  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[100px]">Actions</TableHead>
+⚠️  src/app/[locale]/(admin)/admin/vat/page.tsx
+   L76  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Reglas de IVA Intracomunitario</CardTitle>
+   L86  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-slate-500">Régimen general</p>
+   L91  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-blue-600">Inversión del sujeto pasivo</p>
+   L96  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-slate-500">Régimen OSS simplificado</p>
+   L118  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Tipos de IVA por País</CardTitle>
+   L128  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Código</TableHead>
+   L129  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Tipo General</TableHead>
+   L130  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Tipo Reducido</TableHead>
+   L132  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Estado</TableHead>
+❌ src/app/[locale]/(admin)/dashboard/page.tsx
+   L155  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <div className="text-2xl font-bold">€{totalSales.toFixed(2)}</div>
+⚠️  src/app/[locale]/(admin)/dashboard/page.tsx
+   L144  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+   L151  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-sm font-medium">Total Ventas</CardTitle>
+   L186  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs text-muted-foreground">Requieren atención</p>
+   L192  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-sm font-medium">Alertas Stock</CardTitle>
+   L209  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Resumen de Ventas</CardTitle>
+   L218  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Ventas Recientes</CardTitle>
+   L229  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Alertas de Inventario Críticas</CardTitle>
+⚠️  src/app/[locale]/(storefront)/apply-b2b/page.tsx
+   L39  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Acceso Denegado</CardTitle>
+   L46  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Link href="/login">Iniciar Sesión</Link>
+   L106  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="phone">Teléfono</Label>
+   L116  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="industry">Sector</Label>
+❌ src/app/[locale]/(storefront)/compare/page.tsx
+   L28  [es-ES]  Hardcoded locale "es-ES"
+          return new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(v);
+   L28  [currency-EUR]  Hardcoded currency "EUR" in Intl call
+          return new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(v);
+⚠️  src/app/[locale]/(storefront)/compare/page.tsx
+   L47  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Product Comparison</h1>
+   L70  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h1 className="text-2xl font-bold text-gray-900">Product Comparison</h1>
+   L110  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-xs text-gray-300">No image</span>
+⚠️  src/app/[locale]/(storefront)/profile/orders/[id]/page.tsx
+   L234  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[80px] pl-6">Producto</TableHead>
+   L235  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Descripción</TableHead>
+   L236  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Precio</TableHead>
+   L238  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right pr-6">Total</TableHead>
+   L364  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-muted-foreground">Subtotal</span>
+   L370  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-muted-foreground">Envío</span>
+   L381  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="font-bold text-lg">Total</span>
+⚠️  src/app/[locale]/(storefront)/profile/returns/[id]/page.tsx
+   L168  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-lg">Detalles de la solicitud</CardTitle>
+   L174  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-sm text-muted-foreground">Fecha de solicitud</p>
+   L180  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-sm text-muted-foreground mb-1">Motivo</p>
+   L186  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-sm text-muted-foreground mb-1">Notas del cliente</p>
+   L193  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-sm font-medium text-blue-800 mb-1">Mensaje del administrador</p>
+   L200  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-sm text-muted-foreground">Monto a reembolsar</p>
+   L211  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle className="text-lg">Información del pedido</CardTitle>
+   L215  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-muted-foreground">Subtotal</span>
+   L219  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-muted-foreground">Impuestos</span>
+   L223  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-muted-foreground">Envío</span>
+   L227  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span>Total</span>
+   L245  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[80px] pl-6">Producto</TableHead>
+   L246  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Descripción</TableHead>
+   L248  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-center">Estado</TableHead>
+   L249  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right pr-6">Total</TableHead>
+   L313  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h3 className="font-medium text-amber-800">Pendiente de revisión</h3>
+⚠️  src/app/[locale]/(storefront)/rfq/page.tsx
+   L180  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <label className="block text-xs font-semibold text-gray-600 mb-1">Company Name</label>
+   L189  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <label className="block text-xs font-semibold text-gray-600 mb-1">Phone</label>
+   L198  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <label className="block text-xs font-semibold text-gray-600 mb-1">Country</label>
+   L204  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="ES">Spain</option>
+   L205  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="FR">France</option>
+   L206  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="DE">Germany</option>
+   L207  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="IT">Italy</option>
+   L208  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="PT">Portugal</option>
+   L209  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="NL">Netherlands</option>
+   L210  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="PL">Poland</option>
+   L211  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="GB">United Kingdom</option>
+   L212  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="BE">Belgium</option>
+   L213  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="AT">Austria</option>
+   L214  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="CH">Switzerland</option>
+   L215  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="OTHER">Other</option>
+⚠️  src/components/admin/add-rule-dialog.tsx
+   L110  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DialogTitle>Add Price Rule</DialogTitle>
+   L119  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Product Variant</FormLabel>
+   L188  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Min Quantity</FormLabel>
+   L201  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Price</FormLabel>
+⚠️  src/components/admin/attribute-form.tsx
+   L179  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Scope</FormLabel>
+   L261  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="NUMBER">Number</SelectItem>
+   L297  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h3 className="text-lg font-medium">Predefined Options</h3>
+   L305  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-sm font-medium">Value</span>
+⚠️  src/components/admin/bundle-items-manager.tsx
+   L80  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h3 className="text-lg font-medium">Bundle Components</h3>
+   L90  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DialogTitle>Add Product to Bundle</DialogTitle>
+   L146  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Product Name</TableHead>
+   L147  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[100px]">Quantity</TableHead>
+⚠️  src/components/admin/category-form.tsx
+   L166  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>General Info</CardTitle>
+   L187  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Parent Category</FormLabel>
+   L217  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Category Image</FormLabel>
+   L249  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Localized Names</CardTitle>
+⚠️  src/components/admin/cms/banner-form.tsx
+   L241  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="visual">Visual</TabsTrigger>
+   L243  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="actions">Actions</TabsTrigger>
+   L244  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="stats">Stats</TabsTrigger>
+   L271  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label>Content Alignment</Label>
+   L298  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="active">Active Status</Label>
+   L325  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="badge">Top Badge</Label>
+   L350  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="highlightColor">Highlight Color Class</Label>
+   L360  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="description">Description</Label>
+   L413  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label className="text-xs mb-1 block">Style</Label>
+   L468  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label className="text-xs mb-1 block">Value</Label>
+   L479  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label className="text-xs mb-1 block">Label</Label>
+⚠️  src/components/admin/cms/banner-list.tsx
+   L74  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[100px]">Image</TableHead>
+   L75  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Title</TableHead>
+   L76  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L77  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+⚠️  src/components/admin/delete-category-dialog.tsx
+   L61  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DialogTitle>Delete Category</DialogTitle>
+⚠️  src/components/admin/global-stock-adjustment-dialog.tsx
+   L171  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DialogTitle>New Stock Adjustment</DialogTitle>
+   L295  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Quantity</FormLabel>
+⚠️  src/components/admin/header.tsx
+   L26  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="sr-only">Notifications</span>
+⚠️  src/components/admin/image-upload.tsx
+   L178  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="url">Or Add Image URL</Label>
+⚠️  src/components/admin/inventory-history-filter.tsx
+   L65  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="ALL">All Types</SelectItem>
+   L68  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="ADJUSTMENT">Adjustment</SelectItem>
+⚠️  src/components/admin/inventory-history-table.tsx
+   L67  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Quantity</TableHead>
+❌ src/components/admin/overview.tsx
+   L28  [toFixed-euro]  Hardcoded "€" with dynamic value
+          tickFormatter={(value) => `€${value}`}
+   L31  [toFixed-euro]  Hardcoded "€" with dynamic value
+          formatter={(value: number) => [`€${value.toFixed(2)}`, "Total"]}
+⚠️  src/components/admin/price-list-form.tsx
+   L118  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Currency</FormLabel>
+   L131  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Level Code</FormLabel>
+⚠️  src/components/admin/price-list-rules-table.tsx
+   L64  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-xl font-semibold">Pricing Rules</h2>
+   L73  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Product Name</TableHead>
+   L74  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Min Quantity</TableHead>
+   L75  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Price</TableHead>
+   L76  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+⚠️  src/components/admin/product-form.tsx
+   L590  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="details">Details</TabsTrigger>
+   L591  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TabsTrigger value="organization">Organization</TabsTrigger>
+   L598  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Basic Information</CardTitle>
+   L620  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Base SKU</FormLabel>
+   L635  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label>Active Status</Label>
+   L729  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Media</CardTitle>
+   L749  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Organization</CardTitle>
+   L757  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Category</FormLabel>
+   L776  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Brand</FormLabel>
+   L789  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Series</FormLabel>
+   L801  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Origin</FormLabel>
+   L814  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Suppliers</CardTitle>
+   L828  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Product Configuration</CardTitle>
+   L836  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Product Type</FormLabel>
+   L847  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="SIMPLE">Simple Product</SelectItem>
+   L848  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="BUNDLE">Bundle Product</SelectItem>
+   L900  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Price</FormLabel>
+   L913  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Cost Price</FormLabel>
+   L925  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Stock</FormLabel>
+   L983  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Specs</TableHead>
+   L984  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Price</TableHead>
+   L985  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Stock</TableHead>
+   L1055  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Bundle Settings</CardTitle>
+   L1063  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Bundle Price</FormLabel>
+   L1075  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Bundle SKU</FormLabel>
+   L1087  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Bundle Components</CardTitle>
+⚠️  src/components/admin/product-suppliers-manager.tsx
+   L65  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h3 className="text-lg font-medium">Supplier Information</h3>
+   L89  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[200px]">Supplier</TableHead>
+   L90  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Supplier SKU</TableHead>
+   L93  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[80px]">Primary</TableHead>
+❌ src/components/admin/products-table.tsx
+   L121  [toFixed-euro]  Hardcoded "€" with dynamic value
+          ? `€${minPrice}`
+   L122  [toFixed-euro]  Hardcoded "€" with dynamic value
+          : `€${minPrice} - €${maxPrice}`;
+⚠️  src/components/admin/products-table.tsx
+   L90  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="w-[80px]">Image</TableHead>
+   L93  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Category</TableHead>
+   L94  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Price</TableHead>
+   L95  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Stock</TableHead>
+   L96  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Status</TableHead>
+   L97  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Actions</TableHead>
+   L145  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="sr-only">Toggle variants</span>
+   L198  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="sr-only">Open menu</span>
+   L202  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+   L228  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Variant SKU</TableHead>
+   L229  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Specs</TableHead>
+   L230  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Price</TableHead>
+   L231  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Stock</TableHead>
+   L232  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Actions</TableHead>
+⚠️  src/components/admin/purchase-order-details.tsx
+   L194  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Supplier Information</CardTitle>
+   L218  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Order Summary</CardTitle>
+   L239  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Items</CardTitle>
+   L246  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Product Name</TableHead>
+   L247  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Cost Price</TableHead>
+   L248  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Quantity</TableHead>
+   L249  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Total</TableHead>
+⚠️  src/components/admin/purchase-order-form.tsx
+   L154  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Create Purchase Order</CardTitle>
+   L162  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Supplier</FormLabel>
+   L186  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Add Products</FormLabel>
+   L235  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Quantity</TableHead>
+   L236  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Cost Price</TableHead>
+   L237  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Total</TableHead>
+⚠️  src/components/admin/record-payment-dialog.tsx
+   L70  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Button variant="default">Record Payment</Button>
+   L74  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <DialogTitle>Record Payment</DialogTitle>
+   L104  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="BANK_TRANSFER">Bank Transfer</SelectItem>
+   L106  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="STRIPE">Stripe</SelectItem>
+   L107  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="PAYPAL">PayPal</SelectItem>
+   L108  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="CHECK">Check</SelectItem>
+   L109  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="OTHER">Other</SelectItem>
+⚠️  src/components/admin/sales-order-details.tsx
+   L249  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Customer Information</CardTitle>
+   L273  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Order Summary</CardTitle>
+   L294  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Items</CardTitle>
+   L301  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Product Name</TableHead>
+   L302  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Unit Price</TableHead>
+   L303  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Quantity</TableHead>
+   L304  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Total</TableHead>
+⚠️  src/components/admin/sales-order-form.tsx
+   L153  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>Create Sales Order</CardTitle>
+   L161  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Customer</FormLabel>
+   L185  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Add Products</FormLabel>
+   L234  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Quantity</TableHead>
+   L235  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Unit Price</TableHead>
+   L236  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Total</TableHead>
+⚠️  src/components/admin/single-image-upload.tsx
+   L110  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label>Upload Image</Label>
+   L127  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label>Or Image URL</Label>
+⚠️  src/components/admin/stock-adjustment-dialog.tsx
+   L186  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Quantity</FormLabel>
+⚠️  src/components/admin/supplier-form-dialog.tsx
+   L107  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Contact Person</FormLabel>
+   L120  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Email</FormLabel>
+   L133  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Phone</FormLabel>
+   L146  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Website</FormLabel>
+   L155  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Button type="submit">Save changes</Button>
+⚠️  src/components/admin/user-form.tsx
+   L93  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <CardTitle>User Details</CardTitle>
+   L115  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Email</FormLabel>
+   L141  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="CUSTOMER">Customer</SelectItem>
+   L142  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="ADMIN">Admin</SelectItem>
+   L143  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="SALES_REP">Sales Rep</SelectItem>
+   L170  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="NOT_APPLIED">Not Applied</SelectItem>
+   L171  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="PENDING">Pending</SelectItem>
+   L172  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="APPROVED">Approved</SelectItem>
+   L173  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="REJECTED">Rejected</SelectItem>
+   L187  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Customer Level</FormLabel>
+   L204  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel>Personal Price List</FormLabel>
+   L239  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <FormLabel className="text-base">Active Account</FormLabel>
+   L255  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Button type="submit">Save Changes</Button>
+❌ src/components/storefront/cart-sheet.tsx
+   L167  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <span className="font-medium">€{totalPrice.toFixed(2)}</span>
+   L178  [toFixed-euro]  Hardcoded "€" with dynamic value
+          <span>€{(totalPrice * 1.21).toFixed(2)}</span>
+⚠️  src/components/storefront/home-view.tsx
+   L43  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="text-yellow-500">LuxeLED</span>
+⚠️  src/components/storefront/mobile-menu.tsx
+   L134  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="font-medium">Volver</span>
+⚠️  src/components/storefront/product-list-view.tsx
+   L404  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="">Relevancia</option>
+   L407  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <option value="newest">Novedades</option>
+⚠️  src/components/storefront/profile/address-form-dialog.tsx
+   L119  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          {address ? <Pencil className="h-4 w-4" /> : <><Plus className="mr-2 h-4 w-4" /> Add Address</>}
+   L134  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="firstName">First Name</Label>
+   L143  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="lastName">Last Name</Label>
+   L163  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="street">Street Address</Label>
+   L183  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="zipCode">Zip Code</Label>
+   L203  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="country">Country</Label>
+   L214  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="phone">Phone</Label>
+   L223  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <Label htmlFor="type">Address Type</Label>
+   L229  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="SHIPPING">Shipping</SelectItem>
+   L230  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="BILLING">Billing</SelectItem>
+⚠️  src/components/storefront/profile/address-list.tsx
+   L31  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-xl font-semibold">Mis Direcciones</h2>
+❌ src/components/storefront/profile/invoice-list.tsx
+   L45  [es-ES]  Hardcoded locale "es-ES"
+          return new Intl.NumberFormat("es-ES", {
+⚠️  src/components/storefront/profile/invoice-list.tsx
+   L57  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Fecha</TableHead>
+   L58  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Importe</TableHead>
+   L59  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead>Estado</TableHead>
+   L60  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <TableHead className="text-right">Acciones</TableHead>
+⚠️  src/components/storefront/rfq-button.tsx
+   L159  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p className="text-xs font-semibold text-gray-700">Order Details</p>
+⚠️  src/components/storefront/search-controls.tsx
+   L60  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <h2 className="text-lg font-semibold mb-4">Filters</h2>
+   L89  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <SelectItem value="newest">Newest</SelectItem>
+⚠️  src/components/ui/dialog.tsx
+   L49  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="sr-only">Close</span>
+⚠️  src/components/ui/sheet.tsx
+   L70  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <span className="sr-only">Close</span>
+⚠️  src/lib/email.ts
+   L117  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p><a href="${process.env.NEXTAUTH_URL || "http://localhost:3000"}/admin/customers">Ver en panel admin</a></p
+>
+   L158  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <thead><tr><th>Producto</th><th>SKU</th><th>Stock</th></tr></thead>
+   L161  [jsx-hardcoded-text]  Potential JSX hardcoded UI text
+          <p><a href="${process.env.NEXTAUTH_URL || "http://localhost:3000"}/admin/inventory">Ver inventario</a></p>
+❌ src/lib/pdf-generator.ts
+   L119  [toFixed-euro]  Hardcoded "€" with dynamic value
+          `€${Number(item.price).toFixed(2)}`,
+   L120  [toFixed-euro]  Hardcoded "€" with dynamic value
+          `€${Number(item.total).toFixed(2)}`,
+   L123  [toFixed-euro]  Hardcoded "€" with dynamic value
+          ["", "", "", "Subtotal:", `€${Number(data.totals.subtotal).toFixed(2)}`],
+   L124  [toFixed-euro]  Hardcoded "€" with dynamic value
+          ["", "", "", "VAT:", `€${(Number(data.totals.tax) || 0).toFixed(2)}`],
+   L125  [toFixed-euro]  Hardcoded "€" with dynamic value
+          ["", "", "", "Total:", `€${Number(data.totals.total).toFixed(2)}`],
+
+─────────────────────────────────────────────────────────────
+❌ 41 error(s) in 18 file(s) — HARD FAIL
+⚠️  403 warning(s) in 81 file(s) — review recommended
+─────────────────────────────────────────────────────────────
+
+Tip: add  // i18n-scan-ignore  at end of a line to suppress a specific hit.
+     Use --warn-only flag to prevent exit(1) during CI ramp-up.
+
