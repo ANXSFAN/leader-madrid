@@ -80,6 +80,7 @@ export function HeroBanner({ banner }: HeroBannerProps) {
           fill
           className="object-cover"
           priority
+          unoptimized={banner.imageUrl.endsWith(".svg")}
         />
         {/* Gradient Overlay - Industrial Style */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent" />
