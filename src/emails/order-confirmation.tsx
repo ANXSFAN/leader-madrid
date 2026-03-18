@@ -25,7 +25,7 @@ const LABELS = {
     `Hello ${name}, your order has been received and is being processed.`,
   order_number: "Order Number",
   payment_method: "Payment Method",
-  payment_stripe: "Credit / Debit Card",
+  payment_cecabank: "Tarjeta de Cr\u00e9dito / D\u00e9bito (Cecabank)",
   payment_bank: "Bank Transfer",
   vat_label: "Intra-community VAT/Tax ID",
   reverse_charge: "Reverse Charge applied",
@@ -181,8 +181,8 @@ export function OrderConfirmationEmail({
     new Intl.NumberFormat(locale, { style: "currency", currency }).format(n);
 
   const paymentLabel =
-    paymentMethod === "STRIPE"
-      ? LABELS.payment_stripe
+    paymentMethod === "CECABANK"
+      ? LABELS.payment_cecabank
       : paymentMethod === "BANK_TRANSFER"
       ? LABELS.payment_bank
       : paymentMethod;

@@ -23,7 +23,7 @@ const legalPages = [
 </div>
 
 <h2>1. Acceptance of Terms</h2>
-<p>By accessing and using ZELURA's website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+<p>By accessing and using Leader Madrid's website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
 
 <h2>2. Account Registration</h2>
 <p>To access certain features, you may need to register for an account. You are responsible for maintaining the confidentiality of your login credentials and for all activities under your account.</p>
@@ -45,16 +45,16 @@ const legalPages = [
 <p>Submitting an order constitutes an offer to purchase. We reserve the right to accept or decline any order. Payment must be received in full before dispatch.</p>
 
 <h2>5. Intellectual Property</h2>
-<p>All content on this website, including text, images, logos, and product designs, is the intellectual property of ZELURA or its licensors. Unauthorized reproduction is prohibited.</p>
+<p>All content on this website, including text, images, logos, and product designs, is the intellectual property of Leader Madrid or its licensors. Unauthorized reproduction is prohibited.</p>
 
 <h2>6. Limitation of Liability</h2>
-<p>To the maximum extent permitted by law, ZELURA shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products or services.</p>
+<p>To the maximum extent permitted by law, Leader Madrid shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products or services.</p>
 
 <h2>7. Governing Law</h2>
 <p>These terms are governed by the laws of the European Union and the applicable national laws of the customer's jurisdiction.</p>
 
 <h2>8. Contact</h2>
-<p>For questions regarding these Terms of Service, please contact us at <strong>legal@zelura.com</strong>.</p>
+<p>For questions regarding these Terms of Service, please contact us at <strong>legal@leadermadrid.com</strong>.</p>
 `,
       },
       zh: {
@@ -62,7 +62,7 @@ const legalPages = [
         description: "使用我们服务的条款和条件",
         body: `
 <h2>1. 条款接受</h2>
-<p>访问和使用 ZELURA 网站及服务即表示您同意受本服务条款的约束。如果您不同意这些条款，请勿使用我们的服务。</p>
+<p>访问和使用 Leader Madrid 网站及服务即表示您同意受本服务条款的约束。如果您不同意这些条款，请勿使用我们的服务。</p>
 
 <h2>2. 账户注册</h2>
 <p>要访问某些功能，您可能需要注册账户。您有责任维护登录凭据的保密性，并对账户下的所有活动负责。</p>
@@ -84,16 +84,16 @@ const legalPages = [
 <p>提交订单即构成购买要约。我们保留接受或拒绝任何订单的权利。在发货前必须全额付款。</p>
 
 <h2>5. 知识产权</h2>
-<p>本网站上的所有内容，包括文字、图片、标识和产品设计，均为 ZELURA 或其许可方的知识产权。未经授权禁止转载。</p>
+<p>本网站上的所有内容，包括文字、图片、标识和产品设计，均为 Leader Madrid 或其许可方的知识产权。未经授权禁止转载。</p>
 
 <h2>6. 责任限制</h2>
-<p>在法律允许的最大范围内，ZELURA 不对因使用我们的产品或服务而产生的任何间接、附带或后果性损害承担责任。</p>
+<p>在法律允许的最大范围内，Leader Madrid 不对因使用我们的产品或服务而产生的任何间接、附带或后果性损害承担责任。</p>
 
 <h2>7. 适用法律</h2>
 <p>本条款受欧盟法律及客户所在司法管辖区适用的国家法律管辖。</p>
 
 <h2>8. 联系方式</h2>
-<p>如对本服务条款有任何疑问，请联系 <strong>legal@zelura.com</strong>。</p>
+<p>如对本服务条款有任何疑问，请联系 <strong>legal@leadermadrid.com</strong>。</p>
 `,
       },
       es: {
@@ -101,7 +101,7 @@ const legalPages = [
         description: "Términos y condiciones para el uso de nuestros servicios",
         body: `
 <h2>1. Aceptación de los Términos</h2>
-<p>Al acceder y utilizar el sitio web y los servicios de ZELURA, usted acepta quedar vinculado por estos Términos de Servicio. Si no está de acuerdo con estos términos, por favor no utilice nuestros servicios.</p>
+<p>Al acceder y utilizar el sitio web y los servicios de Leader Madrid, usted acepta quedar vinculado por estos Términos de Servicio. Si no está de acuerdo con estos términos, por favor no utilice nuestros servicios.</p>
 
 <h2>2. Registro de Cuenta</h2>
 <p>Para acceder a ciertas funciones, es posible que necesite registrar una cuenta. Usted es responsable de mantener la confidencialidad de sus credenciales de inicio de sesión y de todas las actividades realizadas bajo su cuenta.</p>
@@ -123,16 +123,16 @@ const legalPages = [
 <p>Enviar un pedido constituye una oferta de compra. Nos reservamos el derecho de aceptar o rechazar cualquier pedido. El pago debe recibirse en su totalidad antes del envío.</p>
 
 <h2>5. Propiedad Intelectual</h2>
-<p>Todo el contenido de este sitio web, incluyendo textos, imágenes, logotipos y diseños de productos, es propiedad intelectual de ZELURA o sus licenciantes. Queda prohibida la reproducción no autorizada.</p>
+<p>Todo el contenido de este sitio web, incluyendo textos, imágenes, logotipos y diseños de productos, es propiedad intelectual de Leader Madrid o sus licenciantes. Queda prohibida la reproducción no autorizada.</p>
 
 <h2>6. Limitación de Responsabilidad</h2>
-<p>En la máxima medida permitida por la ley, ZELURA no será responsable de ningún daño indirecto, incidental o consecuente derivado del uso de nuestros productos o servicios.</p>
+<p>En la máxima medida permitida por la ley, Leader Madrid no será responsable de ningún daño indirecto, incidental o consecuente derivado del uso de nuestros productos o servicios.</p>
 
 <h2>7. Ley Aplicable</h2>
 <p>Estos términos se rigen por las leyes de la Unión Europea y las leyes nacionales aplicables de la jurisdicción del cliente.</p>
 
 <h2>8. Contacto</h2>
-<p>Para preguntas sobre estos Términos de Servicio, contáctenos en <strong>legal@zelura.com</strong>.</p>
+<p>Para preguntas sobre estos Términos de Servicio, contáctenos en <strong>legal@leadermadrid.com</strong>.</p>
 `,
       },
     },
@@ -151,7 +151,7 @@ const legalPages = [
 </div>
 
 <h2>1. Introduction</h2>
-<p>ZELURA is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you visit our website or use our services.</p>
+<p>Leader Madrid is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you visit our website or use our services.</p>
 
 <h2>2. Data We Collect</h2>
 <h3>Personal Information</h3>
@@ -201,7 +201,7 @@ const legalPages = [
 <p>We use cookies for essential website functionality, analytics, and preference storage. You can manage cookie preferences through your browser settings.</p>
 
 <h2>8. Contact</h2>
-<p>For privacy-related inquiries, contact our Data Protection Officer at <strong>privacy@zelura.com</strong>.</p>
+<p>For privacy-related inquiries, contact our Data Protection Officer at <strong>privacy@leadermadrid.com</strong>.</p>
 `,
       },
       zh: {
@@ -209,7 +209,7 @@ const legalPages = [
         description: "我们如何收集、使用和保护您的个人数据",
         body: `
 <h2>1. 引言</h2>
-<p>ZELURA 致力于保护您的隐私。本隐私政策说明了当您访问我们的网站或使用我们的服务时，我们如何收集、使用、披露和保护您的个人数据。</p>
+<p>Leader Madrid 致力于保护您的隐私。本隐私政策说明了当您访问我们的网站或使用我们的服务时，我们如何收集、使用、披露和保护您的个人数据。</p>
 
 <h2>2. 我们收集的数据</h2>
 <h3>个人信息</h3>
@@ -259,7 +259,7 @@ const legalPages = [
 <p>我们使用 Cookie 来实现网站基本功能、数据分析和偏好存储。您可以通过浏览器设置管理 Cookie 偏好。</p>
 
 <h2>8. 联系方式</h2>
-<p>如有隐私相关问题，请联系我们的数据保护官：<strong>privacy@zelura.com</strong>。</p>
+<p>如有隐私相关问题，请联系我们的数据保护官：<strong>privacy@leadermadrid.com</strong>。</p>
 `,
       },
       es: {
@@ -267,7 +267,7 @@ const legalPages = [
         description: "Cómo recopilamos, usamos y protegemos sus datos personales",
         body: `
 <h2>1. Introducción</h2>
-<p>ZELURA se compromete a proteger su privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos sus datos personales cuando visita nuestro sitio web o utiliza nuestros servicios.</p>
+<p>Leader Madrid se compromete a proteger su privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos sus datos personales cuando visita nuestro sitio web o utiliza nuestros servicios.</p>
 
 <h2>2. Datos que Recopilamos</h2>
 <h3>Información Personal</h3>
@@ -317,7 +317,7 @@ const legalPages = [
 <p>Utilizamos cookies para la funcionalidad esencial del sitio web, análisis y almacenamiento de preferencias. Puede gestionar las preferencias de cookies a través de la configuración de su navegador.</p>
 
 <h2>8. Contacto</h2>
-<p>Para consultas relacionadas con la privacidad, contacte a nuestro Delegado de Protección de Datos en <strong>privacy@zelura.com</strong>.</p>
+<p>Para consultas relacionadas con la privacidad, contacte a nuestro Delegado de Protección de Datos en <strong>privacy@leadermadrid.com</strong>.</p>
 `,
       },
     },
@@ -369,7 +369,7 @@ const legalPages = [
 <p>If you receive a damaged or defective product, please contact us within <strong>48 hours</strong> of delivery with photos of the damage. We will arrange a free replacement or full refund.</p>
 
 <h2>7. Contact</h2>
-<p>For return-related questions, email <strong>returns@zelura.com</strong> or call our support team.</p>
+<p>For return-related questions, email <strong>returns@leadermadrid.com</strong> or call our support team.</p>
 `,
       },
       zh: {
@@ -414,7 +414,7 @@ const legalPages = [
 <p>如果您收到损坏或有缺陷的产品，请在收货后 <strong>48小时内</strong> 联系我们并附上损坏照片。我们将安排免费更换或全额退款。</p>
 
 <h2>7. 联系方式</h2>
-<p>退换货相关问题请发送邮件至 <strong>returns@zelura.com</strong> 或致电客服团队。</p>
+<p>退换货相关问题请发送邮件至 <strong>returns@leadermadrid.com</strong> 或致电客服团队。</p>
 `,
       },
       es: {
@@ -459,7 +459,7 @@ const legalPages = [
 <p>Si recibe un producto dañado o defectuoso, contáctenos dentro de las <strong>48 horas</strong> posteriores a la entrega con fotos del daño. Organizaremos un reemplazo gratuito o un reembolso completo.</p>
 
 <h2>7. Contacto</h2>
-<p>Para consultas sobre devoluciones, envíe un email a <strong>returns@zelura.com</strong> o llame a nuestro equipo de soporte.</p>
+<p>Para consultas sobre devoluciones, envíe un email a <strong>returns@leadermadrid.com</strong> o llame a nuestro equipo de soporte.</p>
 `,
       },
     },
@@ -509,7 +509,7 @@ const legalPages = [
 <p>Track your order anytime through your account dashboard or using the tracking link sent via email. For any delivery issues, please contact our support team.</p>
 
 <h2>7. Contact</h2>
-<p>For shipping inquiries, email <strong>logistics@zelura.com</strong>.</p>
+<p>For shipping inquiries, email <strong>logistics@leadermadrid.com</strong>.</p>
 `,
       },
       zh: {
@@ -552,7 +552,7 @@ const legalPages = [
 <p>您可以随时通过账户面板或电子邮件中的追踪链接查看订单状态。如有配送问题，请联系我们的客服团队。</p>
 
 <h2>7. 联系方式</h2>
-<p>物流相关问题请发送邮件至 <strong>logistics@zelura.com</strong>。</p>
+<p>物流相关问题请发送邮件至 <strong>logistics@leadermadrid.com</strong>。</p>
 `,
       },
       es: {
@@ -595,7 +595,7 @@ const legalPages = [
 <p>Realice el seguimiento de su pedido en cualquier momento a través del panel de su cuenta o usando el enlace de seguimiento enviado por email. Para cualquier problema de entrega, contacte a nuestro equipo de soporte.</p>
 
 <h2>7. Contacto</h2>
-<p>Para consultas de envío, escriba a <strong>logistics@zelura.com</strong>.</p>
+<p>Para consultas de envío, escriba a <strong>logistics@leadermadrid.com</strong>.</p>
 `,
       },
     },
@@ -666,7 +666,7 @@ const legalPages = [
 </ul>
 
 <h2>6. Contact Us</h2>
-<p>For questions about this Cookie Policy, please contact us at <strong>privacy@zelura.com</strong>.</p>
+<p>For questions about this Cookie Policy, please contact us at <strong>privacy@leadermadrid.com</strong>.</p>
 
 <h2>7. Updates to This Policy</h2>
 <p>We may update this Cookie Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
@@ -734,7 +734,7 @@ const legalPages = [
 </ul>
 
 <h2>6. 联系我们</h2>
-<p>如对本Cookie政策有疑问，请联系 <strong>privacy@zelura.com</strong>。</p>
+<p>如对本Cookie政策有疑问，请联系 <strong>privacy@leadermadrid.com</strong>。</p>
 
 <p><em>最后更新：2026年3月</em></p>
 `,
@@ -788,7 +788,7 @@ const legalPages = [
 </ul>
 
 <h2>5. Contacto</h2>
-<p>Para preguntas sobre esta Política de Cookies, contáctenos en <strong>privacy@zelura.com</strong>.</p>
+<p>Para preguntas sobre esta Política de Cookies, contáctenos en <strong>privacy@leadermadrid.com</strong>.</p>
 
 <p><em>Última actualización: Marzo 2026</em></p>
 `,

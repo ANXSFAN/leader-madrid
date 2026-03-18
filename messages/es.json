@@ -204,11 +204,12 @@
     "up_to_160_lmw": "Hasta 160 lm/W",
     "high_cri": "CRI > 90",
     "real_comfortable_light": "Luz real y confortable",
-    "hero_title": "Ilumina tu Éxito con",
-    "hero_title_brand": "ZELURA",
-    "hero_description": "Calidad industrial para profesionales y particulares. Los mejores precios directamente desde fábrica.",
+    "hero_title": "Iluminación LED",
+    "hero_title_brand": "Profesional",
+    "hero_description": "Distribuidor mayorista de iluminación LED en Madrid. Calidad profesional a precios competitivos.",
     "shop_online": "Tienda Online",
     "b2b_area": "Área B2B",
+    "shop_by_category": "Compra por Categoría",
     "featured_products": "Productos Destacados",
     "featured_desc": "Calidad profesional ahora disponible para tu hogar o negocio.",
     "view_all_shop": "Ver toda la tienda",
@@ -367,6 +368,13 @@
     "credit_card": "Tarjeta de Crédito / Débito",
     "bank_transfer": "Transferencia Bancaria",
     "stripe_desc": "Serás redirigido a la pasarela de pago segura de Stripe al completar el pedido.",
+    "cecabank_desc": "Serás redirigido a la pasarela de pago segura del banco para completar tu compra con tarjeta de crédito o débito.",
+    "payment_success_title": "Pago Realizado con Éxito",
+    "payment_success_desc": "Tu pago se ha procesado correctamente. Recibirás un correo de confirmación en breve.",
+    "payment_failed_title": "Pago Fallido",
+    "payment_failed_desc": "Ha habido un problema al procesar tu pago. Por favor, inténtalo de nuevo o utiliza otro método de pago.",
+    "retry_payment": "Reintentar Pago",
+    "view_orders": "Ver Mis Pedidos",
     "bank_transfer_info": "Información importante:",
     "bank_transfer_desc": "Al confirmar el pedido, recibirás un correo electrónico con los datos bancarios para realizar la transferencia.",
     "po_number": "Número de Orden de Compra (PO)",
@@ -2053,7 +2061,7 @@
         "methods": {
           "BANK_TRANSFER": "Transferencia bancaria",
           "CASH": "Efectivo",
-          "STRIPE": "Stripe",
+          "CECABANK": "Tarjeta de Crédito/Débito (Cecabank)",
           "PAYPAL": "PayPal",
           "CHECK": "Cheque",
           "OTHER": "Otro"
@@ -3469,7 +3477,7 @@
     "title": "Todos los Productos",
     "description": "Explora nuestro catálogo completo de productos LED.",
     "category_not_found": "Categoría no encontrada",
-    "browse_fallback": "Explora {name} en ZELURA."
+    "browse_fallback": "Explora {name} en Leader Madrid."
   },
   "catalog_page": {
     "title": "Catálogo de Productos",

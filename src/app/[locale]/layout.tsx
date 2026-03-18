@@ -8,6 +8,7 @@ import { getMessages } from 'next-intl/server';
 
 import { defaultMetadata } from "@/lib/metadata";
 import { getThemeConfig } from "@/lib/actions/config";
+import { Analytics } from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default async function RootLayout(
           <IntlProvider locale={locale} messages={messages}>
             {children}
             <Toaster />
+            <Analytics />
           </IntlProvider>
         </NextAuthProvider>
       </body>

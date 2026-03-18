@@ -1,23 +1,23 @@
 import { Metadata } from "next";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.zelura.com";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.leadermadrid.com";
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: {
-    default: "ZELURA | Professional LED Lighting Solutions",
-    template: "%s | ZELURA",
+    default: "Leader Madrid | Iluminación LED Profesional",
+    template: "%s | Leader Madrid",
   },
-  description: "High-performance LED lighting for industrial, architectural, and commercial projects. B2B wholesale available.",
-  keywords: ["LED lighting", "B2B LED", "Industrial Lighting", "Architectural Lighting", "ZELURA"],
-  authors: [{ name: "ZELURA" }],
-  creator: "ZELURA",
-  publisher: "ZELURA",
+  description: "Distribuidor mayorista de iluminación LED en Madrid. Calidad profesional a precios competitivos para proyectos industriales, arquitectónicos y comerciales.",
+  keywords: ["iluminación LED", "LED Madrid", "distribuidor LED", "iluminación profesional", "LED mayorista", "Leader Madrid"],
+  authors: [{ name: "Leader Madrid" }],
+  creator: "Leader Madrid",
+  publisher: "Leader Madrid",
   openGraph: {
-    title: "ZELURA | Professional LED Lighting Solutions",
-    description: "High-performance LED lighting for industrial, architectural, and commercial projects.",
+    title: "Leader Madrid | Iluminación LED Profesional",
+    description: "Distribuidor mayorista de iluminación LED en Madrid. Calidad profesional a precios competitivos.",
     url: APP_URL,
-    siteName: "ZELURA",
+    siteName: "Leader Madrid",
     locale: "es_ES",
     type: "website",
     images: [
@@ -25,14 +25,14 @@ export const defaultMetadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ZELURA - Professional LED Lighting",
+        alt: "Leader Madrid - Professional LED Lighting",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZELURA | Professional LED Lighting Solutions",
-    description: "High-performance LED lighting for industrial, architectural, and commercial projects.",
+    title: "Leader Madrid | Iluminación LED Profesional",
+    description: "Distribuidor mayorista de iluminación LED en Madrid. Calidad profesional a precios competitivos.",
     images: ["/og-image.jpg"],
   },
   icons: {

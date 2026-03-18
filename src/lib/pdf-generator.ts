@@ -49,7 +49,7 @@ export function generateOrderPDF(data: OrderPDFData) {
 
   // --- Header ---
   doc.setFontSize(20);
-  doc.text("ZELURA", 14, 22);
+  doc.text("Leader Madrid", 14, 22);
 
   doc.setFontSize(10);
   doc.text("Generated on: " + format(new Date(), "PPP"), 14, 28);

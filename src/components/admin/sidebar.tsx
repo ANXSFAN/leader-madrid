@@ -208,12 +208,12 @@ export function AdminSidebar({ mobile = false, onNavigate, enabledModules }: Adm
           href="/admin"
           className="flex items-center gap-3"
         >
-          <div className="h-9 w-9 rounded-lg bg-[#004e92] shadow-lg shadow-blue-900/30 flex items-center justify-center shrink-0 overflow-hidden">
-            <img src="/logo-icon.svg" alt="ZELURA" className="h-9 w-9" />
+          <div className="h-9 w-9 rounded-lg bg-[#A7144C] shadow-lg shadow-pink-900/30 flex items-center justify-center shrink-0 overflow-hidden">
+            <img src="/logo-icon.svg" alt="Leader Madrid" className="h-9 w-9" />
           </div>
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm leading-none">ZELURA</span>
-            <span className="text-slate-500 text-[10px] tracking-widest uppercase mt-0.5">Admin Panel</span>
+            <span className="text-white font-bold text-sm leading-none">Leader Madrid</span>
+            <span className="text-slate-500 text-[10px] tracking-widest uppercase mt-0.5">Panel Admin</span>
           </div>
         </Link>
       </div>
@@ -266,7 +266,7 @@ export function AdminSidebar({ mobile = false, onNavigate, enabledModules }: Adm
                             className={cn(
                               "flex items-center gap-3 rounded-lg px-3 py-2 transition-all",
                               isItemActive
-                                ? "bg-yellow-500/10 text-yellow-400 border-l-2 border-yellow-500"
+                                ? "bg-[#A7144C]/10 text-[#e91e76] border-l-2 border-[#A7144C]"
                                 : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-200"
                             )}
                           >
@@ -289,7 +289,7 @@ export function AdminSidebar({ mobile = false, onNavigate, enabledModules }: Adm
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all mb-0.5",
                   isActive
-                    ? "bg-yellow-500/10 text-yellow-400 border-l-2 border-yellow-500"
+                    ? "bg-[#A7144C]/10 text-[#e91e76] border-l-2 border-[#A7144C]"
                     : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-200"
                 )}
               >

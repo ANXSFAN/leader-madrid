@@ -68,7 +68,7 @@ export function RecordPaymentDialog({ invoiceId, remainingAmount }: RecordPaymen
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="border-l-4 border-yellow-500 pl-3">{t("payment.title")}</DialogTitle>
+          <DialogTitle className="border-l-4 border-[#A7144C] pl-3">{t("payment.title")}</DialogTitle>
           <DialogDescription>
             {t("payment.description")}
           </DialogDescription>
@@ -100,7 +100,7 @@ export function RecordPaymentDialog({ invoiceId, remainingAmount }: RecordPaymen
                 <SelectContent>
                   <SelectItem value="BANK_TRANSFER">{t("payment.methods.BANK_TRANSFER")}</SelectItem>
                   <SelectItem value="CASH">{t("payment.methods.CASH")}</SelectItem>
-                  <SelectItem value="STRIPE">{t("payment.methods.STRIPE")}</SelectItem>
+                  <SelectItem value="CECABANK">{t("payment.methods.CECABANK")}</SelectItem>
                   <SelectItem value="PAYPAL">{t("payment.methods.PAYPAL")}</SelectItem>
                   <SelectItem value="CHECK">{t("payment.methods.CHECK")}</SelectItem>
                   <SelectItem value="OTHER">{t("payment.methods.OTHER")}</SelectItem>
@@ -124,7 +124,7 @@ export function RecordPaymentDialog({ invoiceId, remainingAmount }: RecordPaymen
             <Button type="button" variant="outline" onClick={() => setOpen(false)}>
               {t("payment.cancel")}
             </Button>
-            <Button type="submit" disabled={loading} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button type="submit" disabled={loading} className="bg-[#A7144C] hover:bg-[#8a103f] text-white font-black">
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {t("payment.save")}
             </Button>

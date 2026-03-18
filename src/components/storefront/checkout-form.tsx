@@ -89,7 +89,7 @@ export default function CheckoutForm({
     zipCode: "",
     country: "ES",
     phone: "",
-    paymentMethod: "STRIPE",
+    paymentMethod: "CECABANK",
     poNumber: "",
     vatNumber: "",
   });
@@ -275,10 +275,57 @@ export default function CheckoutForm({
       }
 
       if (result.success && result.orderId) {
-        setIsSuccess(true);
         clearCart();
-        toast.success(t("errors.success"));
 
+        // Cecabank: redirect to TPV via hidden form auto-submit
+        if (formData.paymentMethod === "CECABANK") {
+          try {
+            const initRes = await fetch("/api/payments/cecabank/init", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                orderId: result.orderId,
+                locale,
+              }),
+            });
+
+            if (!initRes.ok) {
+              const errData = await initRes.json();
+              toast.error(errData.error || t("errors.unexpected"));
+              setIsSubmitting(false);
+              return;
+            }
+
+            const { tpvUrl, fields } = await initRes.json();
+
+            // Create and auto-submit a hidden form
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = tpvUrl;
+            form.style.display = "none";
+
+            for (const [key, value] of Object.entries(fields)) {
+              const input = document.createElement("input");
+              input.type = "hidden";
+              input.name = key;
+              input.value = value as string;
+              form.appendChild(input);
+            }
+
+            document.body.appendChild(form);
+            setIsSuccess(true);
+            form.submit();
+            return;
+          } catch {
+            toast.error(t("errors.unexpected"));
+            setIsSubmitting(false);
+            return;
+          }
+        }
+
+        // Non-Cecabank: standard redirect to success page
+        setIsSuccess(true);
+        toast.success(t("errors.success"));
         const params = new URLSearchParams();
         if (result.orderId) params.set("orderId", result.orderId);
         router.push(`/checkout/success?${params.toString()}`);
@@ -595,7 +642,7 @@ export default function CheckoutForm({
                       <SelectValue placeholder={t("select_placeholder")} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="STRIPE">
+                      <SelectItem value="CECABANK">
                         <div className="flex items-center gap-2">
                           <CreditCard className="w-4 h-4" /> {t("credit_card")}
                         </div>
@@ -609,9 +656,9 @@ export default function CheckoutForm({
                   </Select>
                 </div>
 
-                {formData.paymentMethod === "STRIPE" && (
+                {formData.paymentMethod === "CECABANK" && (
                   <div className="p-4 bg-muted rounded-lg border border-border text-base text-muted-foreground">
-                    <p>{t("stripe_desc")}</p>
+                    <p>{t("cecabank_desc")}</p>
                   </div>
                 )}
 

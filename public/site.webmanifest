@@ -1,6 +1,6 @@
 {
-  "name": "ZELURA Lighting Systems",
-  "short_name": "ZELURA",
+  "name": "Leader Madrid - Iluminación LED",
+  "short_name": "Leader Madrid",
   "icons": [
     {
       "src": "/logo-icon.svg",
@@ -8,7 +8,7 @@
       "type": "image/svg+xml"
     }
   ],
-  "theme_color": "#004e92",
+  "theme_color": "#A7144C",
   "background_color": "#ffffff",
   "display": "standalone"
 }

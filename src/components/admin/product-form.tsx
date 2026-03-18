@@ -108,7 +108,7 @@ function deriveSpecsFromVariants(
   variants: ProductVariant[],
   existingSpecs: Record<string, string | string[]>
 ) {
-  if (!variants || variants.length <= 1) return existingSpecs;
+  if (!variants || variants.length === 0) return existingSpecs;
 
   const variantSpecsMap: Record<string, Set<string>> = {};
 
@@ -123,8 +123,11 @@ function deriveSpecsFromVariants(
   const mergedSpecs = { ...existingSpecs };
 
   Object.entries(variantSpecsMap).forEach(([key, valueSet]) => {
+    if (mergedSpecs[key]) return; // don't overwrite existing product-level specs
     if (valueSet.size > 1) {
       mergedSpecs[key] = Array.from(valueSet);
+    } else if (valueSet.size === 1) {
+      mergedSpecs[key] = Array.from(valueSet)[0];
     }
   });
 
@@ -689,13 +692,21 @@ export function ProductForm({
         hsCode: data.hsCode,
         specs: commonSpecs, // Only common specs
         images: data.images,
-        variants: data.variants.map((v) => ({
-          ...v,
-          price: Number(v.price),
-          physicalStock: Number(v.physicalStock),
-          allocatedStock: Number(v.allocatedStock),
-          minStock: Number(v.minStock),
-        })),
+        variants: data.variants.map((v) => {
+          // For single-variant products, sync common specs into the variant
+          const variantSpecs =
+            data.variants.length === 1
+              ? { ...commonSpecs, ...(v.specs || {}) }
+              : v.specs || {};
+          return {
+            ...v,
+            price: Number(v.price),
+            physicalStock: Number(v.physicalStock),
+            allocatedStock: Number(v.allocatedStock),
+            minStock: Number(v.minStock),
+            specs: variantSpecs,
+          };
+        }),
         bundleItems: data.type === "BUNDLE" ? data.bundleItems : undefined,
         productSuppliers: data.productSuppliers,
         documents: data.documents,

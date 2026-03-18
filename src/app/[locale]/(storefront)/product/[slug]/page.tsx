@@ -80,7 +80,7 @@ export async function generateMetadata(
     title: content.name,
     description:
       content.description?.substring(0, 160) ||
-      `Comprar ${content.name} en ZELURA.`,
+      `Comprar ${content.name} en Leader Madrid.`,
     openGraph: {
       title: content.name,
       description: content.description?.substring(0, 160),

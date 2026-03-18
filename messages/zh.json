@@ -204,11 +204,12 @@
     "up_to_160_lmw": "高达 160 lm/W",
     "high_cri": "显色指数 CRI > 90",
     "real_comfortable_light": "自然舒适的光线",
-    "hero_title": "用以下品牌点亮您的成功",
-    "hero_title_brand": "ZELURA",
-    "hero_description": "面向专业人士和个人的工业品质。工厂直供最优价格。",
+    "hero_title": "专业LED",
+    "hero_title_brand": "照明",
+    "hero_description": "马德里LED照明批发商。专业品质，价格具有竞争力。",
     "shop_online": "在线商店",
     "b2b_area": "B2B专区",
+    "shop_by_category": "按类别选购",
     "featured_products": "精选产品",
     "featured_desc": "专业品质，现已面向您的家庭或企业开放。",
     "view_all_shop": "浏览全部商品",
@@ -367,6 +368,13 @@
     "credit_card": "信用卡 / 借记卡",
     "bank_transfer": "银行转账",
     "stripe_desc": "您将被跳转至Stripe安全支付页面。",
+    "cecabank_desc": "您将被跳转至银行安全支付页面，使用信用卡或借记卡完成购买。",
+    "payment_success_title": "支付成功",
+    "payment_success_desc": "您的付款已成功处理。您将很快收到确认邮件。",
+    "payment_failed_title": "支付失败",
+    "payment_failed_desc": "处理您的付款时出现问题。请重试或使用其他支付方式。",
+    "retry_payment": "重试支付",
+    "view_orders": "查看我的订单",
     "bank_transfer_info": "重要提示：",
     "bank_transfer_desc": "确认后，您将收到含银行账户信息的邮件。",
     "po_number": "采购订单号（PO）",
@@ -2412,7 +2420,7 @@
         "methods": {
           "BANK_TRANSFER": "银行转账",
           "CASH": "现金",
-          "STRIPE": "Stripe",
+          "CECABANK": "信用卡/借记卡 (Cecabank)",
           "PAYPAL": "PayPal",
           "CHECK": "支票",
           "OTHER": "其他"
@@ -3910,7 +3918,7 @@
     "title": "所有产品",
     "description": "探索我们完整的 LED 产品目录。",
     "category_not_found": "分类未找到",
-    "browse_fallback": "在 ZELURA 浏览{name}。"
+    "browse_fallback": "在 Leader Madrid 浏览{name}。"
   },
   "catalog_page": {
     "title": "产品目录",

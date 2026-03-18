@@ -32,7 +32,7 @@ export function AdminHeader({ onMenuToggle }: AdminHeaderProps) {
             <Input
               type="search"
               placeholder={t("actions.search_placeholder")}
-              className="w-full bg-slate-50 pl-8 md:w-[300px] lg:w-[400px] focus-visible:border-yellow-400 focus-visible:ring-yellow-200"
+              className="w-full bg-slate-50 pl-8 md:w-[300px] lg:w-[400px] focus-visible:border-[#A7144C] focus-visible:ring-[#e91e76]/20"
             />
           </div>
         </form>
@@ -41,13 +41,13 @@ export function AdminHeader({ onMenuToggle }: AdminHeaderProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="text-slate-400 hover:text-yellow-500 transition-colors"
+          className="text-slate-400 hover:text-[#A7144C] transition-colors"
         >
           <Bell className="h-5 w-5" />
           <span className="sr-only">{t("notifications.label")}</span>
         </Button>
-        <div className="h-9 w-9 rounded-lg bg-yellow-500 flex items-center justify-center shadow-sm cursor-pointer hover:bg-yellow-600 transition-colors">
-          <span className="text-gray-900 font-black text-sm">A</span>
+        <div className="h-9 w-9 rounded-lg bg-[#A7144C] flex items-center justify-center shadow-sm cursor-pointer hover:bg-[#8a103f] transition-colors">
+          <span className="text-white font-black text-sm">A</span>
         </div>
       </div>
     </header>

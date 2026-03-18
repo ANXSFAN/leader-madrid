@@ -1,13 +1,14 @@
 "use client";
 
 import { ProductCard, HighlightAttribute } from "@/components/storefront/product-card";
-import { CheckCircle, Users, ShoppingBag, User, FileText, Loader2 } from "lucide-react";
+import { CheckCircle, Users, ShoppingBag, User, FileText, Loader2, ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Product, Category, ProductVariant } from "@prisma/client";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useSession, signIn } from "next-auth/react";
 import { useState } from "react";
 import { HeroCarousel } from "./hero-carousel";
+import { getLocalized } from "@/lib/content";
 
 interface HomeViewProps {
   featuredProducts: (Product & {
@@ -19,6 +20,7 @@ interface HomeViewProps {
   productPrices: Record<string, number>;
   currency?: string;
   highlightAttributes?: HighlightAttribute[];
+  categories?: Category[];
 }
 
 export function HomeView({
@@ -28,8 +30,10 @@ export function HomeView({
   productPrices,
   currency = "EUR",
   highlightAttributes = [],
+  categories = [],
 }: HomeViewProps) {
   const t = useTranslations("home");
+  const locale = useLocale();
   const { data: session } = useSession();
 
   return (
@@ -58,7 +62,7 @@ export function HomeView({
                 {t("hero_description")}
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link href="/category/all">
+                <Link href="/search">
                   <button className="px-8 py-4 bg-accent hover:opacity-90 text-accent-foreground font-bold rounded-lg transition-all shadow-lg uppercase text-sm tracking-widest">
                     {t("shop_online")}
                   </button>
@@ -74,6 +78,55 @@ export function HomeView({
         </section>
       )}
 
+      {/* --- Category Grid --- */}
+      {categories.length > 0 && (
+        <section className="py-16 max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <h2 className="text-4xl font-bold text-foreground tracking-tight">
+                {t("shop_by_category")}
+              </h2>
+            </div>
+            <Link
+              href="/search"
+              className="text-base font-medium text-foreground/70 hover:text-accent transition-colors"
+            >
+              {t("view_all_shop")}
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            {categories.map((cat) => {
+              const catContent = getLocalized(cat.content, locale);
+              const imageUrl = (cat.content as Record<string, unknown>)?.imageUrl as string | undefined;
+              return (
+                <Link
+                  key={cat.id}
+                  href={`/category/${cat.slug}`}
+                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-secondary hover:shadow-lg transition-all"
+                >
+                  {imageUrl ? (
+                    <img
+                      src={imageUrl}
+                      alt={catContent.name}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                      {catContent.name}
+                      <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </h3>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* --- B2C Section: Featured Products --- */}
       <section className="py-16 max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-end mb-12">
@@ -84,7 +137,7 @@ export function HomeView({
             </h2>
           </div>
           <Link
-            href="/category/all"
+            href="/search"
             className="text-base font-medium text-foreground/70 hover:text-accent transition-colors"
           >
             {t("view_all_shop")}

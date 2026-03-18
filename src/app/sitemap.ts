@@ -5,7 +5,7 @@ const LOCALES = ["en", "es", "fr", "de", "it", "pt", "nl", "pl", "zh"] as const;
 const DEFAULT_LOCALE = "es";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.zelura.com";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.leadermadrid.com";
 
   const [products, categories] = await Promise.all([
     db.product.findMany({

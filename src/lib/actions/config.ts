@@ -36,7 +36,7 @@ export interface SiteSettingsData {
 }
 
 const DEFAULT_SETTINGS: SiteSettingsData = {
-  siteName: "ZELURA",
+  siteName: "Leader Madrid",
   contactEmail: "info@example.com",
   phoneNumber: "+1 555 000 0000",
   whatsapp: "+1 555 000 0001",

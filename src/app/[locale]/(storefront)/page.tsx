@@ -19,16 +19,16 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const settings = await getSiteSettings();
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.zelura.com";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.leadermadrid.com";
 
   return {
     title: {
-      absolute: `${settings.siteName} | Professional LED Lighting Solutions`,
+      absolute: `${settings.siteName} | Iluminación LED Profesional`,
     },
-    description: "High-performance LED lighting for industrial, architectural, and commercial projects. B2B wholesale available.",
+    description: "Distribuidor mayorista de iluminación LED en Madrid. Calidad profesional a precios competitivos.",
     openGraph: {
-      title: `${settings.siteName} | Professional LED Lighting Solutions`,
-      description: "High-performance LED lighting for industrial, architectural, and commercial projects.",
+      title: `${settings.siteName} | Iluminación LED Profesional`,
+      description: "Distribuidor mayorista de iluminación LED en Madrid. Calidad profesional a precios competitivos.",
       url: appUrl,
       siteName: settings.siteName,
       locale: params.locale,
@@ -60,20 +60,25 @@ async function getFeaturedProducts() {
 
 export default async function Home(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  const [products, session, banners, settings, displayCurrency, allAttributes] = await Promise.all([
+  const [products, session, banners, settings, displayCurrency, allAttributes, l1Categories] = await Promise.all([
     getFeaturedProducts(),
     getServerSession(authOptions),
     getActiveBanners(),
     getSiteSettings(),
     resolveDisplayCurrency(params.locale),
     getGlobalAttributes(),
+    db.category.findMany({
+      where: { parentId: null },
+      orderBy: { slug: "asc" },
+      take: 4,
+    }),
   ]);
 
   const highlightAttributes = allAttributes
     .filter((a) => a.isHighlight)
     .map((a) => ({ key: a.key, name: a.name, unit: a.unit }));
   const isB2B = session?.user?.b2bStatus === "APPROVED";
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.zelura.com";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.leadermadrid.com";
 
   // Calculate prices for each product (first variant) in display currency
   const productPrices: Record<string, number> = {};
@@ -150,6 +155,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
         productPrices={productPrices}
         currency={displayCurrency}
         highlightAttributes={highlightAttributes}
+        categories={l1Categories}
       />
     </>
   );

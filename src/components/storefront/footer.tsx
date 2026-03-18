@@ -47,12 +47,12 @@ export async function Footer() {
         <div className="space-y-6">
           <div className="flex items-center gap-2">
             {settings.logoUrl ? (
-              <img src={settings.logoUrl} alt={settings.siteName || "ZELURA"} className="h-8 object-contain" />
+              <img src={settings.logoUrl} alt={settings.siteName || "Leader Madrid"} className="h-8 object-contain" />
             ) : (
-              <img src="/logo-icon.svg" alt="ZELURA" className="h-8 w-8" />
+              <img src="/logo-icon.svg" alt="Leader Madrid" className="h-8 w-8" />
             )}
             <span className="text-2xl font-bold text-foreground tracking-tight uppercase">
-              {settings.siteName || "ZELURA"}
+              {settings.siteName || "Leader Madrid"}
             </span>
           </div>
           <p className="text-base leading-relaxed">

@@ -177,13 +177,13 @@ export function Navbar({ categories, settings, megaMenuSolutions, megaMenuResour
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 cursor-pointer group">
           {settings?.logoUrl ? (
-            <img src={settings.logoUrl} alt={settings.siteName || "ZELURA"} className="h-10 object-contain" />
+            <img src={settings.logoUrl} alt={settings.siteName || "Leader Madrid"} className="h-10 object-contain" />
           ) : (
-            <img src="/logo-icon.svg" alt="ZELURA" className="h-11 w-11 group-hover:rotate-6 transition-transform" />
+            <img src="/logo-icon.svg" alt="Leader Madrid" className="h-11 w-11 group-hover:rotate-6 transition-transform" />
           )}
           <div className="leading-none">
             <span className="text-xl font-bold tracking-tight">
-              {settings?.siteName || "ZELURA"}
+              {settings?.siteName || "Leader Madrid"}
             </span>
             <p className="text-[11px] text-muted-foreground tracking-[0.2em] font-medium">
               {t("professional")}

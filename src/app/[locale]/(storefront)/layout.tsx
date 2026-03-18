@@ -6,6 +6,7 @@ import { CartSync } from "@/components/cart-sync";
 import { BottomNavigation } from "@/components/storefront/bottom-navigation";
 import { CompareBar } from "@/components/storefront/compare-bar";
 import { CookieConsent } from "@/components/storefront/cookie-consent";
+import { WhatsAppButton } from "@/components/storefront/whatsapp-button";
 import { resolveDisplayCurrency } from "@/lib/currency.server";
 import type { MegaMenuData } from "@/lib/types/mega-menu";
 import { SUPPORTED_CURRENCIES, BASE_CURRENCY, type SupportedCurrency } from "@/lib/currency";
@@ -69,6 +70,7 @@ export default async function StorefrontLayout(
       <BottomNavigation />
       <CompareBar />
       <CookieConsent />
+      <WhatsAppButton />
     </div>
   );
 }

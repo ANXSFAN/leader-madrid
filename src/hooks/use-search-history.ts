@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-const HISTORY_KEY = "zelura_search_history";
+const HISTORY_KEY = "leadermadrid_search_history";
 const MAX_ITEMS = 6;
 
 export function useSearchHistory() {

@@ -3,6 +3,12 @@ import { PaymentStatus } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import crypto from "crypto";
 import { updateSOStatus } from "@/lib/actions/sales-order";
+import {
+  generateCecabankPaymentParams,
+  verifyCecabankSignature,
+  mapCecabankResponse,
+  type CecabankFormParams,
+} from "@/lib/providers/cecabank";
 
 type PaymentEventInput = {
   provider: string;
@@ -38,6 +44,37 @@ export function verifyWebhookSignature(
     return false;
   }
   return crypto.timingSafeEqual(sigBuffer, digestBuffer);
+}
+
+/**
+ * Verify a Cecabank webhook notification signature.
+ * Cecabank sends form-encoded POST with its own signature scheme.
+ */
+export function verifyCecabankWebhook(params: {
+  numOperacion: string;
+  importe: string;
+  tipoMoneda: string;
+  exponente: string;
+  referencia?: string;
+  firma: string;
+}): boolean {
+  return verifyCecabankSignature(
+    {
+      numOperacion: params.numOperacion,
+      importe: params.importe,
+      tipoMoneda: params.tipoMoneda,
+      exponente: params.exponente,
+      referencia: params.referencia,
+    },
+    params.firma
+  );
+}
+
+/**
+ * Map a Cecabank response code to our PaymentStatus.
+ */
+export function mapCecabankStatus(responseCode: string): PaymentStatus {
+  return mapCecabankResponse(responseCode) as PaymentStatus;
 }
 
 export function mapPaymentStatus(input?: string) {
@@ -140,6 +177,35 @@ export async function createPaymentTransaction(orderId: string) {
   }
 
   return transaction;
+}
+
+/**
+ * Generate Cecabank TPV form parameters for a given order.
+ * Returns the TPV URL and all hidden form fields needed for the redirect.
+ */
+export async function getCecabankPaymentForm(
+  orderId: string,
+  locale?: string
+): Promise<CecabankFormParams> {
+  const order = await db.order.findUnique({
+    where: { id: orderId },
+    select: {
+      id: true,
+      orderNumber: true,
+      total: true,
+    },
+  });
+
+  if (!order) {
+    throw new Error("Order not found");
+  }
+
+  return generateCecabankPaymentParams({
+    id: order.id,
+    orderNumber: order.orderNumber,
+    total: Number(order.total),
+    locale,
+  });
 }
 
 export async function applyPaymentEvent(input: PaymentEventInput) {

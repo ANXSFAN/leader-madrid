@@ -178,11 +178,12 @@
     "up_to_160_lmw": "Up to 160 lm/W",
     "high_cri": "CRI > 90",
     "real_comfortable_light": "Real and comfortable light",
-    "hero_title": "Light Up Your Success with",
-    "hero_title_brand": "ZELURA",
-    "hero_description": "Industrial quality for professionals and individuals. The best prices directly from the factory.",
+    "hero_title": "Professional LED",
+    "hero_title_brand": "Lighting",
+    "hero_description": "Wholesale LED lighting distributor in Madrid. Professional quality at competitive prices.",
     "shop_online": "Online Shop",
     "b2b_area": "B2B Area",
+    "shop_by_category": "Shop by Category",
     "featured_products": "Featured Products",
     "featured_desc": "Professional quality now available for your home or business.",
     "view_all_shop": "View All Products",
@@ -322,6 +323,13 @@
     "credit_card": "Credit / Debit Card",
     "bank_transfer": "Bank Transfer",
     "stripe_desc": "You'll be redirected to Stripe's secure payment gateway to complete your order.",
+    "cecabank_desc": "You will be redirected to the secure bank payment gateway to complete your purchase with credit or debit card.",
+    "payment_success_title": "Payment Successful",
+    "payment_success_desc": "Your payment has been processed successfully. You will receive a confirmation email shortly.",
+    "payment_failed_title": "Payment Failed",
+    "payment_failed_desc": "There was an issue processing your payment. Please try again or use a different payment method.",
+    "retry_payment": "Retry Payment",
+    "view_orders": "View My Orders",
     "bank_transfer_info": "Important information:",
     "bank_transfer_desc": "Upon confirming your order, you'll receive an email with bank details for the transfer.",
     "po_number": "Purchase Order Number (PO)",
@@ -2367,7 +2375,7 @@
         "methods": {
           "BANK_TRANSFER": "Bank Transfer",
           "CASH": "Cash",
-          "STRIPE": "Stripe",
+          "CECABANK": "Credit/Debit Card (Cecabank)",
           "PAYPAL": "PayPal",
           "CHECK": "Check",
           "OTHER": "Other"
@@ -3955,7 +3963,7 @@
     "title": "All Products",
     "description": "Explore our complete catalog of LED products.",
     "category_not_found": "Category Not Found",
-    "browse_fallback": "Browse {name} at ZELURA."
+    "browse_fallback": "Browse {name} at Leader Madrid."
   },
   "catalog_page": {
     "title": "Product Catalog",

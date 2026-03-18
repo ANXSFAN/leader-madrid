@@ -1,19 +1,19 @@
 import { ImageResponse } from "next/og";
 import { getSiteSettings } from "@/lib/actions/config";
 
-export const alt = "ZELURA – Professional LED Lighting Solutions";
+export const alt = "Leader Madrid – Iluminación LED Profesional";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
   const settings = await getSiteSettings();
-  const siteName = settings.siteName || "ZELURA";
+  const siteName = settings.siteName || "Leader Madrid";
 
   return new ImageResponse(
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #1e3a5f 0%, #0f2040 60%, #1a1a2e 100%)",
+          background: "linear-gradient(135deg, #A7144C 0%, #7a0f38 60%, #4a0a22 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -33,7 +33,7 @@ export default async function Image() {
             transform: "translateX(-50%)",
             width: 300,
             height: 300,
-            background: "radial-gradient(ellipse at center, rgba(250,204,21,0.3) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, transparent 70%)",
             borderRadius: "50%",
           }}
         />
@@ -43,7 +43,7 @@ export default async function Image() {
           style={{
             fontSize: 72,
             fontWeight: 900,
-            color: "#facc15",
+            color: "#ffffff",
             letterSpacing: "-2px",
             marginBottom: 16,
           }}
@@ -61,23 +61,23 @@ export default async function Image() {
             textTransform: "uppercase",
           }}
         >
-          Professional LED Lighting Solutions
+          Iluminación LED Profesional
         </div>
 
         {/* B2B badge */}
         <div
           style={{
             marginTop: 40,
-            background: "rgba(250,204,21,0.15)",
-            border: "1px solid rgba(250,204,21,0.4)",
+            background: "rgba(255,255,255,0.15)",
+            border: "1px solid rgba(255,255,255,0.3)",
             borderRadius: 8,
             padding: "10px 28px",
-            color: "#facc15",
+            color: "#ffffff",
             fontSize: 18,
             fontWeight: 600,
           }}
         >
-          B2B Wholesale Available
+          Distribuidor Mayorista B2B
         </div>
       </div>
     ),

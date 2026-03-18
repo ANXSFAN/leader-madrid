@@ -21,7 +21,7 @@ export default async function Image(
     getSiteSettings(),
   ]);
 
-  const siteName = settings.siteName || "ZELURA";
+  const siteName = settings.siteName || "Leader Madrid";
 
   if (!product) {
     // Fallback OG image
@@ -29,7 +29,7 @@ export default async function Image(
       (
         <div
           style={{
-            background: "#1e3a5f",
+            background: "#A7144C",
             width: "100%",
             height: "100%",
             display: "flex",
@@ -58,7 +58,7 @@ export default async function Image(
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #1e3a5f 0%, #0f2040 100%)",
+          background: "linear-gradient(135deg, #A7144C 0%, #7a0f38 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -109,7 +109,7 @@ export default async function Image(
             <div
               style={{
                 fontSize: 18,
-                color: "#facc15",
+                color: "#ffffff",
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "2px",
@@ -166,7 +166,7 @@ export default async function Image(
           <div
             style={{
               fontSize: 16,
-              color: "#facc15",
+              color: "#ffffff",
               fontWeight: 700,
               letterSpacing: "1px",
             }}
