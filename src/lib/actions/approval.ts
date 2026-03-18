@@ -29,10 +29,10 @@ const approvalFiltersSchema = z.object({
 /**
  * Determines if a given entity requires approval based on business rules.
  */
-export function requiresApproval(
+export async function requiresApproval(
   entityType: string,
   data: { totalAmount?: number; quantity?: number }
-): boolean {
+): Promise<boolean> {
   switch (entityType) {
     case "PURCHASE_ORDER":
       return (data.totalAmount ?? 0) > 5000;
