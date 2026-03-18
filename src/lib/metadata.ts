@@ -36,8 +36,8 @@ export const defaultMetadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/logo-icon.svg",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   manifest: "/site.webmanifest",
 };

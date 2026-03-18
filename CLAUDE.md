@@ -1,8 +1,8 @@
 Este es el proyecto de produccion de Leader Madrid (fork de my-led-erp).
 
 Marca: Leader Madrid
-Color primario: #A7144C (magenta)
-Color acento: magenta claro (#e91e76 / hsl 340 82% 45%)
+Color primario: Deep Blue (#1e3a5f / hsl 213 52% 25%)
+Color acento: Yellow-500 (#eab308 / hsl 48 96% 47%)
 
 修复语法错误的时候请不要修改业务逻辑，尤其是不要在项目未完成的时候死磕npm run build的报错。
 
