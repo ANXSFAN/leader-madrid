@@ -71,7 +71,7 @@ export function HeroBanner({ banner }: HeroBannerProps) {
   const description = rf(content.description);
 
   return (
-    <div className="w-full relative min-h-[520px] md:min-h-[700px] lg:min-h-[897px] flex items-center overflow-hidden font-sans bg-primary">
+    <div className="w-full relative min-h-[520px] md:min-h-[700px] lg:min-h-[897px] flex items-center overflow-hidden font-sans bg-black">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -82,8 +82,8 @@ export function HeroBanner({ banner }: HeroBannerProps) {
           priority
           unoptimized={banner.imageUrl.endsWith(".svg")}
         />
-        {/* Gradient Overlay - Industrial Style */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
         {/* Subtle Texture/Pattern Overlay (Optional) */}
         <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')] mix-blend-overlay" />
       </div>
