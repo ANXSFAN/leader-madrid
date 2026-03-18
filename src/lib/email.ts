@@ -2,7 +2,11 @@ import { Resend } from "resend";
 import { render } from "@react-email/render";
 import { getSiteSettings } from "@/lib/actions/config";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let _resend: Resend | null = null;
+function getResend() {
+  if (!_resend) _resend = new Resend(process.env.RESEND_API_KEY || "");
+  return _resend;
+}
 
 const FROM_EMAIL = process.env.EMAIL_FROM || "noreply@factorled.com";
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@factorled.com";
@@ -60,7 +64,7 @@ async function sendEmail(options: {
     const settings = await getSiteSettings();
     const from = `${settings.siteName} <${FROM_EMAIL}>`;
 
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from,
       to: Array.isArray(options.to) ? options.to : [options.to],
       subject: options.subject,
