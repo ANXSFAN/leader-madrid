@@ -1,8 +1,8 @@
 Este es el proyecto de produccion de Leader Madrid (fork de my-led-erp).
 
 Marca: Leader Madrid
-Color primario: Deep Blue (#1e3a5f / hsl 213 52% 25%)
-Color acento: Yellow-500 (#eab308 / hsl 48 96% 47%)
+Color primario: #0088cc (azul / hsl 200 100% 40%) — igual que WordPress Porto theme
+Color acento: #A7144C (magenta / hsl 337 79% 37%) — igual que WordPress WooCommerce accent
 
 修复语法错误的时候请不要修改业务逻辑，尤其是不要在项目未完成的时候死磕npm run build的报错。
 
