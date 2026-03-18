@@ -99,7 +99,7 @@ export function CheckoutOrderSummary({
           </div>
 
           {(vatDetermination.isReverseCharge || vatDetermination.isExempt) && (
-            <div className="flex items-start gap-2 p-2 bg-blue-50 rounded text-sm text-blue-700">
+            <div className="flex items-start gap-2 p-2 bg-accent/10 rounded text-sm text-accent">
               <Info className="w-3 h-3 mt-0.5 shrink-0" />
               <span>
                 {vatDetermination.isReverseCharge

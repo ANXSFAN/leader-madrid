@@ -267,7 +267,7 @@ export function AttributeForm({ initialData }: AttributeFormProps) {
             {/* Left column: basic fields */}
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">{t("attributes.form.fields.key")}</CardTitle>
+                <CardTitle className="border-l-4 border-accent pl-3">{t("attributes.form.fields.key")}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <FormField
@@ -300,14 +300,14 @@ export function AttributeForm({ initialData }: AttributeFormProps) {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="bg-white">
+                          <SelectTrigger className="bg-card">
                             <SelectValue
                               defaultValue={field.value}
                               placeholder="Select a scope"
                             />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-white">
+                        <SelectContent className="bg-card">
                           <SelectItem value="PRODUCT">
                             {t("attributes.form.scopes.product")}
                           </SelectItem>
@@ -333,14 +333,14 @@ export function AttributeForm({ initialData }: AttributeFormProps) {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="bg-white">
+                          <SelectTrigger className="bg-card">
                             <SelectValue
                               defaultValue={field.value}
                               placeholder="Select a type"
                             />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-white">
+                        <SelectContent className="bg-card">
                           <SelectItem value="TEXT">
                             {t("attributes.form.types.text")}
                           </SelectItem>
@@ -425,7 +425,7 @@ export function AttributeForm({ initialData }: AttributeFormProps) {
             {/* Right column: localized names */}
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">{t("categories.fields.localized_names")}</CardTitle>
+                <CardTitle className="border-l-4 border-accent pl-3">{t("categories.fields.localized_names")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <Tabs value={activeLangTab} onValueChange={setActiveLangTab}>
@@ -486,7 +486,7 @@ export function AttributeForm({ initialData }: AttributeFormProps) {
               </CardContent>
             </Card>
           </div>
-          <Button disabled={loading || aiTranslating} type="submit" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button disabled={loading || aiTranslating} type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             {initialData ? t("common.actions.save") : t("common.actions.create")}
           </Button>
         </form>
@@ -542,7 +542,7 @@ export function AttributeForm({ initialData }: AttributeFormProps) {
               </Button>
             </div>
 
-            <div className="rounded-md border bg-white">
+            <div className="rounded-md border bg-card">
               <div className="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {initialData.options.map((option) => (
                   <div

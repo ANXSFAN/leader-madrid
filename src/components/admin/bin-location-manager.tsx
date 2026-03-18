@@ -298,7 +298,7 @@ export function BinLocationManager({ warehouses }: Props) {
   return (
     <div className="space-y-4">
       {error && (
-        <div className="rounded-md bg-red-50 text-red-700 p-3 text-sm">{error}</div>
+        <div className="rounded-md bg-destructive/10 text-destructive p-3 text-sm">{error}</div>
       )}
 
       {/* Stats cards */}
@@ -349,14 +349,14 @@ export function BinLocationManager({ warehouses }: Props) {
 
         <Button
           onClick={() => { resetForm(); setShowCreateDialog(true); }}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           <Plus className="mr-2 h-4 w-4" />
           {t("actions.create")}
         </Button>
       </div>
 
-      <div className="rounded-md border bg-white">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             <TableRow>
@@ -375,7 +375,7 @@ export function BinLocationManager({ warehouses }: Props) {
             {bins.map((bin) => {
               const totalQty = getTotalQty(bin);
               return (
-                <TableRow key={bin.id} className="hover:bg-yellow-50/50">
+                <TableRow key={bin.id} className="hover:bg-accent/5">
                   <TableCell className="font-mono font-medium">{bin.code}</TableCell>
                   <TableCell>{bin.zone || "-"}</TableCell>
                   <TableCell>{bin.aisle || "-"}</TableCell>
@@ -420,7 +420,7 @@ export function BinLocationManager({ warehouses }: Props) {
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button variant="ghost" size="sm">
-                            <Trash2 className="h-4 w-4 text-red-500" />
+                            <Trash2 className="h-4 w-4 text-destructive" />
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>
@@ -434,7 +434,7 @@ export function BinLocationManager({ warehouses }: Props) {
                             <AlertDialogCancel>{t("dialog.cancel")}</AlertDialogCancel>
                             <AlertDialogAction
                               onClick={() => handleDelete(bin.id)}
-                              className="bg-red-600 hover:bg-red-700"
+                              className="bg-destructive hover:bg-destructive/90 text-destructive-foreground"
                             >
                               {t("dialog.delete")}
                             </AlertDialogAction>
@@ -475,7 +475,7 @@ export function BinLocationManager({ warehouses }: Props) {
             <Button
               onClick={handleCreate}
               disabled={isPending}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
             >
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {t("actions.create")}
@@ -498,7 +498,7 @@ export function BinLocationManager({ warehouses }: Props) {
             <Button
               onClick={handleUpdate}
               disabled={isPending}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
             >
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {t("actions.save")}
@@ -553,7 +553,7 @@ export function BinLocationManager({ warehouses }: Props) {
                           disabled={isPending}
                           title={t("contents.unassign")}
                         >
-                          <X className="h-4 w-4 text-red-500" />
+                          <X className="h-4 w-4 text-destructive" />
                         </Button>
                       </TableCell>
                     </TableRow>

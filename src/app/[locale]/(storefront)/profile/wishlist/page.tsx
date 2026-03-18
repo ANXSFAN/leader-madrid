@@ -62,16 +62,16 @@ export default async function WishlistPage(
       {wishlistItems.length === 0 ? (
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-16 text-center px-4">
-            <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6">
-              <Heart className="w-12 h-12 text-slate-400" />
+            <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-6">
+              <Heart className="w-12 h-12 text-muted-foreground" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+            <h3 className="text-xl font-bold text-foreground mb-2">
               {tProfile("wishlist.empty")}
             </h3>
-            <p className="text-slate-500 mb-8 max-w-md">
+            <p className="text-muted-foreground mb-8 max-w-md">
               {tProfile("wishlist.empty_desc")}
             </p>
-            <Button asChild className="bg-yellow-500 hover:bg-yellow-600">
+            <Button asChild className="bg-accent hover:bg-accent/90">
               <Link href="/">
                 <ShoppingBag className="w-4 h-4 mr-2" />
                 {tProfile("orders.start_shopping")}
@@ -95,7 +95,7 @@ export default async function WishlistPage(
                 className="overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <Link href={`/product/${item.product.slug}`}>
-                  <div className="aspect-square relative bg-slate-100 overflow-hidden">
+                  <div className="aspect-square relative bg-muted overflow-hidden">
                     {mainImage ? (
                       <Image
                         src={mainImage}
@@ -105,7 +105,7 @@ export default async function WishlistPage(
                         className="object-cover hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
-                      <div className="flex items-center justify-center h-full text-slate-300">
+                      <div className="flex items-center justify-center h-full text-muted-foreground/50">
                         <ShoppingBag size={48} />
                       </div>
                     )}
@@ -120,12 +120,12 @@ export default async function WishlistPage(
                 </Link>
                 <CardContent className="p-4">
                   <Link href={`/product/${item.product.slug}`}>
-                    <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 hover:text-yellow-600 transition-colors mb-2">
+                    <h3 className="font-semibold text-foreground text-sm line-clamp-2 hover:text-accent transition-colors mb-2">
                       {content.name}
                     </h3>
                   </Link>
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-lg font-bold text-slate-900">
+                    <span className="text-lg font-bold text-foreground">
                       {fm(price)}
                     </span>
                     {stock > 0 && (
@@ -137,7 +137,7 @@ export default async function WishlistPage(
                   <div className="flex gap-2">
                     <Button
                       size="sm"
-                      className="flex-1 bg-slate-900 hover:bg-slate-800"
+                      className="flex-1 bg-primary hover:bg-primary/90"
                       asChild
                     >
                       <Link href={`/product/${item.product.slug}`}>

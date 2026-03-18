@@ -279,8 +279,8 @@ export default function ApplyB2BPage() {
           </Card>
 
           {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-600 text-sm">{error}</p>
+            <div className="p-3 bg-destructive/10 border border-destructive/30 rounded-lg">
+              <p className="text-destructive text-sm">{error}</p>
             </div>
           )}
 

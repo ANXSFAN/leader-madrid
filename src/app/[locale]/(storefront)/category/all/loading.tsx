@@ -11,7 +11,7 @@ export default function CategoryLoading() {
       </div>
 
       {/* Header Skeleton */}
-      <div className="mb-8 border-b border-slate-200 pb-8 space-y-4">
+      <div className="mb-8 border-b border-border pb-8 space-y-4">
         <Skeleton className="h-10 w-48" />
         <Skeleton className="h-4 w-96" />
         <Skeleton className="h-4 w-24" />

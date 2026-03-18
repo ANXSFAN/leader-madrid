@@ -56,7 +56,7 @@ export function CompareBar() {
               </span>
               <button
                 onClick={() => remove(p.id)}
-                className="text-muted-foreground hover:text-red-500 transition-colors ml-1"
+                className="text-muted-foreground hover:text-destructive transition-colors ml-1"
               >
                 <X size={13} />
               </button>
@@ -77,7 +77,7 @@ export function CompareBar() {
         <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto justify-between sm:justify-end">
           <button
             onClick={clear}
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-red-500 transition-colors"
+            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-destructive transition-colors"
           >
             <Trash2 size={14} />
             {t("clear_all")}

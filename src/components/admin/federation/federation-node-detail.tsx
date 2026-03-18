@@ -198,7 +198,7 @@ export function FederationNodeDetail({ node, suppliers }: Props) {
         <form onSubmit={handleUpdate}>
           <Card className="hover:shadow-md transition-shadow">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">
+              <CardTitle className="border-l-4 border-accent pl-3">
                 {t("basic_info")}
               </CardTitle>
             </CardHeader>
@@ -243,7 +243,7 @@ export function FederationNodeDetail({ node, suppliers }: Props) {
                   </SelectContent>
                 </Select>
               </div>
-              <Button type="submit" disabled={loading} className="bg-yellow-500 hover:bg-yellow-600 text-black w-full">
+              <Button type="submit" disabled={loading} className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
                 {t("save_changes")}
               </Button>
             </CardContent>
@@ -253,7 +253,7 @@ export function FederationNodeDetail({ node, suppliers }: Props) {
         {/* API Keys */}
         <Card className="hover:shadow-md transition-shadow">
           <CardHeader>
-            <CardTitle className="border-l-4 border-yellow-500 pl-3 flex items-center gap-2">
+            <CardTitle className="border-l-4 border-accent pl-3 flex items-center gap-2">
               <Key className="h-4 w-4" />
               {t("api_keys")}
             </CardTitle>

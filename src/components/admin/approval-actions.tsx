@@ -52,7 +52,7 @@ export function ApprovalActions({ approvalId, status }: ApprovalActionsProps) {
         <Button
           size="sm"
           variant="outline"
-          className="text-green-600 border-green-300 hover:bg-green-50"
+          className="text-success border-success/30 hover:bg-success/10"
           onClick={() => setDialogType("approve")}
         >
           <Check className="mr-1 h-3.5 w-3.5" />
@@ -61,7 +61,7 @@ export function ApprovalActions({ approvalId, status }: ApprovalActionsProps) {
         <Button
           size="sm"
           variant="outline"
-          className="text-red-600 border-red-300 hover:bg-red-50"
+          className="text-destructive border-destructive/30 hover:bg-destructive/10"
           onClick={() => setDialogType("reject")}
         >
           <X className="mr-1 h-3.5 w-3.5" />
@@ -101,8 +101,8 @@ export function ApprovalActions({ approvalId, status }: ApprovalActionsProps) {
               disabled={isPending}
               className={
                 dialogType === "approve"
-                  ? "bg-green-600 hover:bg-green-700 text-white"
-                  : "bg-red-600 hover:bg-red-700 text-white"
+                  ? "bg-success hover:bg-success/90 text-primary-foreground"
+                  : "bg-destructive hover:bg-destructive/90 text-destructive-foreground"
               }
             >
               {isPending

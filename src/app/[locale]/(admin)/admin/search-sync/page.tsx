@@ -13,17 +13,17 @@ export default async function SearchSyncPage() {
         description={t("description")}
       />
 
-      <div className="rounded-lg border bg-white p-6 shadow-sm space-y-5">
+      <div className="rounded-lg border bg-card p-6 shadow-sm space-y-5">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-gray-700">{t("status_label")}:</span>
+          <span className="text-sm font-medium text-muted-foreground">{t("status_label")}:</span>
           {IS_TYPESENSE_ENABLED ? (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-0.5 text-xs font-medium text-green-800">
               <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
               {t("status_connected")}
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-0.5 text-xs font-medium text-gray-600">
-              <span className="h-1.5 w-1.5 rounded-full bg-gray-400" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-0.5 text-xs font-medium text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60" />
               {t("status_disabled")}
             </span>
           )}
@@ -38,9 +38,9 @@ export default async function SearchSyncPage() {
         )}
       </div>
 
-      <div className="rounded-lg border bg-white p-6 shadow-sm">
-        <h2 className="text-sm font-semibold text-gray-900 mb-3">{t("how_title")}</h2>
-        <ul className="list-disc list-inside space-y-1.5 text-sm text-gray-600">
+      <div className="rounded-lg border bg-card p-6 shadow-sm">
+        <h2 className="text-sm font-semibold text-foreground mb-3">{t("how_title")}</h2>
+        <ul className="list-disc list-inside space-y-1.5 text-sm text-muted-foreground">
           <li>{t("how_1")}</li>
           <li>{t("how_2")}</li>
           <li>{t("how_3")}</li>

@@ -98,8 +98,8 @@ export function ShippingMethodFormClient({ currency, initialData }: ShippingMeth
         <div className="grid gap-6 max-w-2xl">
           <Card className="hover:shadow-md transition-shadow duration-200">
             <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-yellow-500 pl-3">
-                <Truck className="h-5 w-5 text-yellow-600" />
+              <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-accent pl-3">
+                <Truck className="h-5 w-5 text-accent" />
                 {t("card_title")}
               </CardTitle>
             </CardHeader>
@@ -116,7 +116,7 @@ export function ShippingMethodFormClient({ currency, initialData }: ShippingMeth
                     setFormData({ ...formData, name: e.target.value })
                   }
                   required
-                  className="transition-colors focus:border-yellow-500"
+                  className="transition-colors focus:border-accent"
                 />
               </div>
 
@@ -189,7 +189,7 @@ export function ShippingMethodFormClient({ currency, initialData }: ShippingMeth
 
                 <div className="border-t pt-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Star className="h-4 w-4 text-yellow-500" />
+                    <Star className="h-4 w-4 text-accent" />
                     <Label htmlFor="isDefault" className="text-sm font-medium cursor-pointer">
                       {t("fields.set_default")}
                     </Label>
@@ -213,7 +213,7 @@ export function ShippingMethodFormClient({ currency, initialData }: ShippingMeth
             <Button
               type="submit"
               disabled={loading}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black min-w-[160px]"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black min-w-[160px]"
             >
               {loading ? (
                 <>

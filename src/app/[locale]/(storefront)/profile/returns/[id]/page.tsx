@@ -23,11 +23,11 @@ import { getItemProductName, getItemProductImage, getItemSku } from "@/lib/utils
 
 const STATUS_COLORS: Record<string, string> = {
   REQUESTED: "bg-amber-100 text-amber-800 hover:bg-amber-100",
-  APPROVED: "bg-blue-100 text-blue-800 hover:bg-blue-100",
-  REJECTED: "bg-red-100 text-red-800 hover:bg-red-100",
+  APPROVED: "bg-info/10 text-info hover:bg-info/10",
+  REJECTED: "bg-destructive/10 text-destructive hover:bg-destructive/10",
   RECEIVED: "bg-purple-100 text-purple-800 hover:bg-purple-100",
-  REFUNDED: "bg-green-100 text-green-800 hover:bg-green-100",
-  CLOSED: "bg-slate-100 text-slate-600 hover:bg-slate-100",
+  REFUNDED: "bg-success/10 text-success hover:bg-success/10",
+  CLOSED: "bg-muted text-muted-foreground hover:bg-muted",
 };
 
 function getStatusIcon(status: string) {
@@ -169,16 +169,16 @@ export default async function ReturnDetailsPage(
             )}
 
             {returnRequest.adminNotes && (
-              <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-sm font-medium text-blue-800 mb-1">{t("admin_message")}</p>
-                <p className="text-sm text-blue-700">{returnRequest.adminNotes}</p>
+              <div className="p-3 bg-info/10 border border-info/30 rounded-lg">
+                <p className="text-sm font-medium text-info mb-1">{t("admin_message")}</p>
+                <p className="text-sm text-info">{returnRequest.adminNotes}</p>
               </div>
             )}
 
             {returnRequest.refundAmount && (
-              <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+              <div className="p-3 bg-success/10 border border-success/30 rounded-lg">
                 <p className="text-sm text-muted-foreground">{t("refund_amount")}</p>
-                <p className="text-xl font-bold text-green-700">
+                <p className="text-xl font-bold text-success">
                   {fm(returnRequest.refundAmount)}
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default async function ReturnDetailsPage(
                 return (
                   <TableRow key={item.id}>
                     <TableCell className="pl-6 py-4">
-                      <div className="relative h-16 w-16 rounded-md overflow-hidden border border-slate-200 bg-white">
+                      <div className="relative h-16 w-16 rounded-md overflow-hidden border border-border bg-card">
                         <Image
                           src={imageUrl}
                           alt={productName}
@@ -259,7 +259,7 @@ export default async function ReturnDetailsPage(
                       </div>
                     </TableCell>
                     <TableCell className="text-center py-4">
-                      <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800">
+                      <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-muted text-foreground">
                         x{item.quantity}
                       </span>
                     </TableCell>

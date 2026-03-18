@@ -85,13 +85,13 @@ export default function ContactSubmissionsPage() {
           <TableBody>
             {loading ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-slate-400">
+                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground/60">
                   {t("loading")}
                 </TableCell>
               </TableRow>
             ) : submissions.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-slate-400">
+                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground/60">
                   {t("empty")}
                 </TableCell>
               </TableRow>
@@ -100,14 +100,14 @@ export default function ContactSubmissionsPage() {
                 <>
                   <TableRow
                     key={sub.id}
-                    className="hover:bg-yellow-50/50 cursor-pointer"
+                    className="hover:bg-accent/5 cursor-pointer"
                     onClick={() => setExpandedId(expandedId === sub.id ? null : sub.id)}
                   >
                     <TableCell className="font-medium">{sub.name}</TableCell>
                     <TableCell>{sub.email}</TableCell>
                     <TableCell>{sub.subject}</TableCell>
                     <TableCell>{getStatusBadge(sub.status)}</TableCell>
-                    <TableCell className="text-sm text-slate-500">
+                    <TableCell className="text-sm text-muted-foreground">
                       {formatDistanceToNow(new Date(sub.createdAt), { addSuffix: true })}
                     </TableCell>
                     <TableCell>
@@ -137,16 +137,16 @@ export default function ContactSubmissionsPage() {
                           </Button>
                         )}
                         {expandedId === sub.id ? (
-                          <ChevronUp className="h-4 w-4 mt-2 text-slate-400" />
+                          <ChevronUp className="h-4 w-4 mt-2 text-muted-foreground/60" />
                         ) : (
-                          <ChevronDown className="h-4 w-4 mt-2 text-slate-400" />
+                          <ChevronDown className="h-4 w-4 mt-2 text-muted-foreground/60" />
                         )}
                       </div>
                     </TableCell>
                   </TableRow>
                   {expandedId === sub.id && (
                     <TableRow key={`${sub.id}-detail`}>
-                      <TableCell colSpan={6} className="bg-slate-50">
+                      <TableCell colSpan={6} className="bg-secondary">
                         <div className="p-4 space-y-2">
                           {sub.company && (
                             <p className="text-sm"><span className="font-bold">{t("detail_company")}:</span> {sub.company}</p>
@@ -156,7 +156,7 @@ export default function ContactSubmissionsPage() {
                           )}
                           <div className="mt-2">
                             <p className="font-bold text-sm mb-1">{t("detail_message")}:</p>
-                            <p className="text-sm text-slate-600 whitespace-pre-wrap bg-white p-3 rounded border">
+                            <p className="text-sm text-muted-foreground whitespace-pre-wrap bg-card p-3 rounded border">
                               {sub.message}
                             </p>
                           </div>

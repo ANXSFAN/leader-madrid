@@ -59,7 +59,7 @@ export function BinLocationForm({ warehouses }: BinLocationFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
       {error && (
-        <div className="text-sm text-red-600 bg-red-50 p-2 rounded">{error}</div>
+        <div className="text-sm text-destructive bg-destructive/10 p-2 rounded">{error}</div>
       )}
 
       <div className="grid grid-cols-2 gap-3">
@@ -109,7 +109,7 @@ export function BinLocationForm({ warehouses }: BinLocationFormProps) {
         <Input id="description" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Optional description..." />
       </div>
 
-      <Button type="submit" disabled={isPending} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900">
+      <Button type="submit" disabled={isPending} className="bg-accent hover:bg-accent/90 text-accent-foreground">
         {isPending ? "Creating..." : "Create Bin Location"}
       </Button>
     </form>

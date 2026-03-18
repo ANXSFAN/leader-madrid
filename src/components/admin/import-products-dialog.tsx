@@ -96,7 +96,7 @@ export function ImportProductsDialog() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle className="border-l-4 border-yellow-500 pl-3">{t("title")}</DialogTitle>
+          <DialogTitle className="border-l-4 border-accent pl-3">{t("title")}</DialogTitle>
           <DialogDescription>{t("description")}</DialogDescription>
         </DialogHeader>
 
@@ -149,7 +149,7 @@ export function ImportProductsDialog() {
           <Button variant="outline" onClick={() => setIsOpen(false)}>
             {t("cancel")}
           </Button>
-          <Button onClick={handleImport} disabled={!file || uploading} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button onClick={handleImport} disabled={!file || uploading} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             {uploading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {t("submit")}
           </Button>

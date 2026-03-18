@@ -276,7 +276,7 @@ export function CategoryForm({ initialData, categories }: CategoryFormProps) {
               {initialData ? t("categories.title_edit") : t("categories.title_create")}
             </h2>
           </div>
-          <Button type="submit" disabled={loading} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button type="submit" disabled={loading} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             {loading ? t("common.actions.loading") : t("common.actions.save")}
           </Button>
         </div>
@@ -284,7 +284,7 @@ export function CategoryForm({ initialData, categories }: CategoryFormProps) {
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="hover:shadow-md transition-all duration-200">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">{t("common.status.active")}</CardTitle>
+              <CardTitle className="border-l-4 border-accent pl-3">{t("common.status.active")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <FormField
@@ -373,7 +373,7 @@ export function CategoryForm({ initialData, categories }: CategoryFormProps) {
 
           <Card className="hover:shadow-md transition-all duration-200">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">{t("categories.fields.localized_names")}</CardTitle>
+              <CardTitle className="border-l-4 border-accent pl-3">{t("categories.fields.localized_names")}</CardTitle>
             </CardHeader>
             <CardContent>
               <Tabs value={activeLangTab} onValueChange={setActiveLangTab}>

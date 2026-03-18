@@ -75,7 +75,7 @@ export function RestockNotify({ productName, variantId }: RestockNotifyProps) {
               placeholder={t("email_placeholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 bg-white"
+              className="flex-1 bg-card"
               required
             />
             <Button

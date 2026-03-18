@@ -4,7 +4,7 @@ export default function Loading() {
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
       {/* Hero Skeleton with gradient background */}
-      <Skeleton className="w-full h-[500px] md:h-[600px] rounded-xl bg-slate-200" />
+      <Skeleton className="w-full h-[500px] md:h-[600px] rounded-xl bg-muted" />
 
       {/* Trust Indicators Skeleton */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

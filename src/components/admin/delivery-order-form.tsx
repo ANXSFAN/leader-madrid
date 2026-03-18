@@ -166,8 +166,8 @@ export function DeliveryOrderForm({ salesOrders, warehouses }: DeliveryOrderForm
         {/* SO & Warehouse Selection */}
         <Card className="hover:shadow-md transition-shadow duration-200">
           <CardHeader className="pb-4">
-            <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-yellow-500 pl-3">
-              <Truck className="h-5 w-5 text-yellow-600" />
+            <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-accent pl-3">
+              <Truck className="h-5 w-5 text-accent" />
               Create Delivery Order
             </CardTitle>
           </CardHeader>
@@ -228,8 +228,8 @@ export function DeliveryOrderForm({ salesOrders, warehouses }: DeliveryOrderForm
         {selectedSOId && (
           <Card className="hover:shadow-md transition-shadow duration-200">
             <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-yellow-500 pl-3">
-                <Package className="h-5 w-5 text-yellow-600" />
+              <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-accent pl-3">
+                <Package className="h-5 w-5 text-accent" />
                 Delivery Items
               </CardTitle>
             </CardHeader>
@@ -326,7 +326,7 @@ export function DeliveryOrderForm({ salesOrders, warehouses }: DeliveryOrderForm
             <Button
               type="submit"
               disabled={loading || loadingRemaining}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black min-w-[160px]"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black min-w-[160px]"
             >
               {loading ? (
                 <>

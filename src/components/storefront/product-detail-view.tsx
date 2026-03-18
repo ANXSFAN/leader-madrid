@@ -482,7 +482,7 @@ export function ProductDetailView({
                   .map((cert) => (
                     <div
                       key={cert.id}
-                      className="relative h-16 w-16 rounded-lg border border-border bg-white p-1"
+                      className="relative h-16 w-16 rounded-lg border border-border bg-card p-1"
                       title={cert.name}
                     >
                       <Image

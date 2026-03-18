@@ -106,7 +106,7 @@ function ToolbarBtn({
       className={cn(
         "h-7 w-7 p-0 rounded flex items-center justify-center transition-colors shrink-0",
         isActive
-          ? "bg-yellow-500 text-gray-900 hover:bg-yellow-400"
+          ? "bg-accent text-accent-foreground hover:bg-accent/90"
           : "text-muted-foreground hover:bg-muted hover:text-foreground",
         disabled && "opacity-40 cursor-not-allowed pointer-events-none"
       )}
@@ -172,7 +172,7 @@ function ImageInsertPopover({ onInsert }: { onInsert: (url: string) => void }) {
           className={cn(
             "h-7 w-7 p-0 rounded flex items-center justify-center transition-colors shrink-0",
             open
-              ? "bg-yellow-500 text-gray-900 hover:bg-yellow-400"
+              ? "bg-accent text-accent-foreground hover:bg-accent/90"
               : "text-muted-foreground hover:bg-muted hover:text-foreground"
           )}
         >
@@ -198,13 +198,13 @@ function ImageInsertPopover({ onInsert }: { onInsert: (url: string) => void }) {
               className={cn(
                 "flex flex-col items-center justify-center w-full h-24 border-2 border-dashed rounded-lg cursor-pointer transition-colors",
                 uploading
-                  ? "border-yellow-400 bg-yellow-50 cursor-not-allowed"
-                  : "border-border hover:border-yellow-400 hover:bg-yellow-50/50"
+                  ? "border-accent bg-accent/10 cursor-not-allowed"
+                  : "border-border hover:border-accent hover:bg-accent/5"
               )}
             >
               {uploading ? (
                 <>
-                  <Loader2 className="h-5 w-5 animate-spin text-yellow-600 mb-1" />
+                  <Loader2 className="h-5 w-5 animate-spin text-accent mb-1" />
                   <span className="text-xs text-muted-foreground">上传中...</span>
                 </>
               ) : (
@@ -243,7 +243,7 @@ function ImageInsertPopover({ onInsert }: { onInsert: (url: string) => void }) {
               type="button"
               onClick={handleUrlInsert}
               disabled={!urlInput.trim()}
-              className="w-full h-8 rounded bg-yellow-500 hover:bg-yellow-400 text-gray-900 text-xs font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="w-full h-8 rounded bg-accent hover:bg-accent/90 text-accent-foreground text-xs font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               插入图片
             </button>

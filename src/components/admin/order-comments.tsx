@@ -81,7 +81,7 @@ export function OrderComments({ orderId, initialComments }: OrderCommentsProps) 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-base border-l-4 border-yellow-500 pl-3">
+        <CardTitle className="flex items-center gap-2 text-base border-l-4 border-accent pl-3">
           <MessageSquare className="h-5 w-5" />
           {t("title")}
           <Badge variant="secondary" className="ml-1">
@@ -103,7 +103,7 @@ export function OrderComments({ orderId, initialComments }: OrderCommentsProps) 
                 className="flex gap-3 group rounded-lg p-3 hover:bg-slate-50 transition-colors"
               >
                 {/* Avatar */}
-                <div className="h-8 w-8 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-xs font-bold shrink-0">
+                <div className="h-8 w-8 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold shrink-0">
                   {getInitials(comment)}
                 </div>
 
@@ -152,7 +152,7 @@ export function OrderComments({ orderId, initialComments }: OrderCommentsProps) 
             <Button
               type="submit"
               size="sm"
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
               disabled={isPending || !content.trim()}
             >
               {isPending && <Loader2 className="h-4 w-4 mr-1 animate-spin" />}

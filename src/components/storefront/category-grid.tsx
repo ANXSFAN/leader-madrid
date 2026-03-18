@@ -51,7 +51,7 @@ export function CategoryGrid({ categories }: CategoryGridProps) {
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 25vw"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-white rounded-xl">
+                    <div className="w-full h-full flex items-center justify-center bg-card rounded-xl">
                       <span className="text-5xl font-bold text-muted-foreground">
                         {content.name.charAt(0)}
                       </span>

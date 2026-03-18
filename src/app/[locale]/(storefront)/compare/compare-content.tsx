@@ -42,12 +42,12 @@ export function CompareContent({ currency }: { currency: string }) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-6 px-4">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">{t("title")}</h1>
-          <p className="text-gray-500">{t("no_products")}</p>
+          <h1 className="text-2xl font-bold text-foreground mb-2">{t("title")}</h1>
+          <p className="text-muted-foreground">{t("no_products")}</p>
         </div>
         <Link
           href={`/${locale}/search`}
-          className="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-lg transition-colors"
+          className="px-6 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg transition-colors"
         >
           {t("browse_catalog")}
         </Link>
@@ -63,14 +63,14 @@ export function CompareContent({ currency }: { currency: string }) {
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">{t("title")}</h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <h1 className="text-2xl font-bold text-foreground">{t("title")}</h1>
+          <p className="text-sm text-muted-foreground mt-1">
             {t("subtitle", { count: products.length })}
           </p>
         </div>
         <button
           onClick={clear}
-          className="flex items-center gap-2 text-sm text-gray-500 hover:text-red-500 transition-colors border border-gray-200 rounded-lg px-3 py-1.5"
+          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors border border-border rounded-lg px-3 py-1.5"
         >
           <X size={14} />
           {t("clear_all")}
@@ -81,19 +81,19 @@ export function CompareContent({ currency }: { currency: string }) {
         <table className="w-full border-collapse">
           <thead>
             <tr>
-              <td className="w-40 p-3 bg-gray-50 border border-gray-100 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              <td className="w-40 p-3 bg-secondary border border-border text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 {t("col_product")}
               </td>
               {products.map((p) => (
-                <td key={p.id} className="p-4 border border-gray-100 bg-white min-w-[200px]">
+                <td key={p.id} className="p-4 border border-border bg-card min-w-[200px]">
                   <div className="relative">
                     <button
                       onClick={() => remove(p.id)}
-                      className="absolute -top-1 -right-1 p-1 bg-gray-100 hover:bg-red-100 hover:text-red-500 rounded-full transition-colors"
+                      className="absolute -top-1 -right-1 p-1 bg-muted hover:bg-destructive/10 hover:text-destructive rounded-full transition-colors"
                     >
                       <X size={12} />
                     </button>
-                    <div className="relative h-36 mb-3 bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
+                    <div className="relative h-36 mb-3 bg-secondary rounded-lg overflow-hidden flex items-center justify-center">
                       {p.image ? (
                         <Image
                           src={p.image}
@@ -103,14 +103,14 @@ export function CompareContent({ currency }: { currency: string }) {
                           sizes="200px"
                         />
                       ) : (
-                        <span className="text-xs text-gray-300">{t("no_image")}</span>
+                        <span className="text-xs text-muted-foreground/40">{t("no_image")}</span>
                       )}
                     </div>
-                    <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1">{p.name}</h3>
-                    <p className="text-xs font-mono text-gray-400 mb-3">SKU: {p.sku}</p>
+                    <h3 className="font-bold text-foreground text-sm leading-tight mb-1">{p.name}</h3>
+                    <p className="text-xs font-mono text-muted-foreground/60 mb-3">SKU: {p.sku}</p>
                     <Link
                       href={`/${locale}/product/${p.slug}`}
-                      className="text-xs text-blue-600 hover:underline"
+                      className="text-xs text-accent hover:underline"
                     >
                       {t("view_product")}
                     </Link>
@@ -121,26 +121,26 @@ export function CompareContent({ currency }: { currency: string }) {
           </thead>
 
           <tbody>
-            <tr className="bg-yellow-50">
-              <td className="p-3 border border-gray-100 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-gray-50">
+            <tr className="bg-accent/5">
+              <td className="p-3 border border-border text-xs font-semibold text-muted-foreground uppercase tracking-wider bg-secondary">
                 {isB2B ? t("b2b_price_label") : t("price_label")}
               </td>
               {products.map((p) => {
                 const price = isB2B && p.b2bPrice ? p.b2bPrice : p.price;
                 const showOrig = isB2B && p.b2bPrice && p.b2bPrice < p.price;
                 return (
-                  <td key={p.id} className="p-4 border border-gray-100">
+                  <td key={p.id} className="p-4 border border-border">
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-xl font-black text-gray-900">
+                      <span className="text-xl font-black text-foreground">
                         {formatMoney(price, { locale, currency })}
                       </span>
                       {showOrig && (
-                        <span className="text-xs line-through text-gray-400">
+                        <span className="text-xs line-through text-muted-foreground/60">
                           {formatMoney(p.price, { locale, currency })}
                         </span>
                       )}
                       {isB2B && (
-                        <span className="text-xs font-medium text-yellow-700 bg-yellow-100 px-1.5 py-0.5 rounded w-fit">
+                        <span className="text-xs font-medium text-accent bg-accent/10 px-1.5 py-0.5 rounded w-fit">
                           {t("wholesale_badge")}
                         </span>
                       )}
@@ -151,8 +151,8 @@ export function CompareContent({ currency }: { currency: string }) {
             </tr>
 
             {specKeys.map((key) => (
-              <tr key={key} className="hover:bg-gray-50 transition-colors">
-                <td className="p-3 border border-gray-100 text-xs font-semibold text-gray-500 bg-gray-50 uppercase tracking-wider">
+              <tr key={key} className="hover:bg-secondary transition-colors">
+                <td className="p-3 border border-border text-xs font-semibold text-muted-foreground bg-secondary uppercase tracking-wider">
                   {SPEC_LABELS[key] || key}
                 </td>
                 {products.map((p) => {
@@ -161,8 +161,8 @@ export function CompareContent({ currency }: { currency: string }) {
                     <td
                       key={p.id}
                       className={cn(
-                        "p-4 border border-gray-100 text-sm font-medium",
-                        val === undefined ? "text-gray-300" : "text-gray-900"
+                        "p-4 border border-border text-sm font-medium",
+                        val === undefined ? "text-muted-foreground/40" : "text-foreground"
                       )}
                     >
                       {val !== undefined ? String(val) : t("na")}
@@ -173,15 +173,15 @@ export function CompareContent({ currency }: { currency: string }) {
             ))}
 
             <tr>
-              <td className="p-3 border border-gray-100 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-gray-50">
+              <td className="p-3 border border-border text-xs font-semibold text-muted-foreground uppercase tracking-wider bg-secondary">
                 {t("col_actions")}
               </td>
               {products.map((p) => (
-                <td key={p.id} className="p-4 border border-gray-100">
+                <td key={p.id} className="p-4 border border-border">
                   <div className="flex flex-col gap-2">
                     <Link
                       href={`/${locale}/product/${p.slug}`}
-                      className="flex items-center justify-center gap-2 px-3 py-2 bg-gray-900 hover:bg-gray-800 text-white text-xs font-bold rounded-lg transition-colors"
+                      className="flex items-center justify-center gap-2 px-3 py-2 bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold rounded-lg transition-colors"
                     >
                       <ShoppingCart size={13} />
                       {isB2B ? t("order_now") : t("add_to_cart")}
@@ -189,7 +189,7 @@ export function CompareContent({ currency }: { currency: string }) {
                     {isB2B && (
                       <Link
                         href={`/${locale}/rfq?product=${p.id}`}
-                        className="flex items-center justify-center gap-2 px-3 py-2 bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-bold rounded-lg transition-colors"
+                        className="flex items-center justify-center gap-2 px-3 py-2 bg-accent hover:bg-accent/90 text-accent-foreground text-xs font-bold rounded-lg transition-colors"
                       >
                         <FileText size={13} />
                         {t("request_quote")}

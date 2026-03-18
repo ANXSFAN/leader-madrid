@@ -135,7 +135,7 @@ export function ReorderSuggestionsTable({ suggestions, warehouses, locale, curre
           </span>
           <Button
             onClick={handleCreatePO}
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
           >
             <ShoppingCart className="mr-2 h-4 w-4" />
             {t("create_po")}
@@ -143,7 +143,7 @@ export function ReorderSuggestionsTable({ suggestions, warehouses, locale, curre
         </div>
       )}
 
-      <div className="rounded-md border bg-white">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             <TableRow>
@@ -233,7 +233,7 @@ export function ReorderSuggestionsTable({ suggestions, warehouses, locale, curre
             <Button
               onClick={confirmCreatePO}
               disabled={isPending}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
             >
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {t("dialog.confirm")}

@@ -134,9 +134,9 @@ export function StockAdjustmentDialog({
           {t("inventory.adjust.title")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 z-[100]">
+      <DialogContent className="sm:max-w-[425px] bg-card dark:bg-slate-900 text-foreground dark:text-slate-50 z-[100]">
         <DialogHeader>
-          <DialogTitle className="text-slate-900 dark:text-slate-50 border-l-4 border-yellow-500 pl-3">
+          <DialogTitle className="text-slate-900 dark:text-slate-50 border-l-4 border-accent pl-3">
             {t("inventory.adjust.title")}
           </DialogTitle>
           <DialogDescription className="text-slate-500 dark:text-slate-400">
@@ -251,7 +251,7 @@ export function StockAdjustmentDialog({
             />
 
             <DialogFooter>
-              <Button type="submit" disabled={loading} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+              <Button type="submit" disabled={loading} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {t("common.actions.save")}
               </Button>

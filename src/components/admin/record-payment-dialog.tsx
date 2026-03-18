@@ -68,7 +68,7 @@ export function RecordPaymentDialog({ invoiceId, remainingAmount }: RecordPaymen
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="border-l-4 border-[#A7144C] pl-3">{t("payment.title")}</DialogTitle>
+          <DialogTitle className="border-l-4 border-accent pl-3">{t("payment.title")}</DialogTitle>
           <DialogDescription>
             {t("payment.description")}
           </DialogDescription>
@@ -124,7 +124,7 @@ export function RecordPaymentDialog({ invoiceId, remainingAmount }: RecordPaymen
             <Button type="button" variant="outline" onClick={() => setOpen(false)}>
               {t("payment.cancel")}
             </Button>
-            <Button type="submit" disabled={loading} className="bg-[#A7144C] hover:bg-[#8a103f] text-white font-black">
+            <Button type="submit" disabled={loading} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {t("payment.save")}
             </Button>

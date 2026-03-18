@@ -417,10 +417,10 @@ export default function CheckoutForm({
                       onChange={(e) =>
                         handleInputChange("firstName", e.target.value)
                       }
-                      className={errors.firstName ? "border-red-500" : ""}
+                      className={errors.firstName ? "border-destructive" : ""}
                     />
                     {errors.firstName && (
-                      <p className="text-sm text-red-500">{errors.firstName}</p>
+                      <p className="text-sm text-destructive">{errors.firstName}</p>
                     )}
                   </div>
                   <div className="space-y-2">
@@ -431,10 +431,10 @@ export default function CheckoutForm({
                       onChange={(e) =>
                         handleInputChange("lastName", e.target.value)
                       }
-                      className={errors.lastName ? "border-red-500" : ""}
+                      className={errors.lastName ? "border-destructive" : ""}
                     />
                     {errors.lastName && (
-                      <p className="text-sm text-red-500">{errors.lastName}</p>
+                      <p className="text-sm text-destructive">{errors.lastName}</p>
                     )}
                   </div>
                 </div>
@@ -448,10 +448,10 @@ export default function CheckoutForm({
                     onChange={(e) =>
                       handleInputChange("address", e.target.value)
                     }
-                    className={errors.address ? "border-red-500" : ""}
+                    className={errors.address ? "border-destructive" : ""}
                   />
                   {errors.address && (
-                    <p className="text-sm text-red-500">{errors.address}</p>
+                    <p className="text-sm text-destructive">{errors.address}</p>
                   )}
                 </div>
 
@@ -464,10 +464,10 @@ export default function CheckoutForm({
                       onChange={(e) =>
                         handleInputChange("city", e.target.value)
                       }
-                      className={errors.city ? "border-red-500" : ""}
+                      className={errors.city ? "border-destructive" : ""}
                     />
                     {errors.city && (
-                      <p className="text-sm text-red-500">{errors.city}</p>
+                      <p className="text-sm text-destructive">{errors.city}</p>
                     )}
                   </div>
                   <div className="space-y-2">
@@ -478,10 +478,10 @@ export default function CheckoutForm({
                       onChange={(e) =>
                         handleInputChange("zipCode", e.target.value)
                       }
-                      className={errors.zipCode ? "border-red-500" : ""}
+                      className={errors.zipCode ? "border-destructive" : ""}
                     />
                     {errors.zipCode && (
-                      <p className="text-sm text-red-500">{errors.zipCode}</p>
+                      <p className="text-sm text-destructive">{errors.zipCode}</p>
                     )}
                   </div>
                 </div>
@@ -528,10 +528,10 @@ export default function CheckoutForm({
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className={errors.phone ? "border-red-500" : ""}
+                    className={errors.phone ? "border-destructive" : ""}
                   />
                   {errors.phone && (
-                    <p className="text-sm text-red-500">{errors.phone}</p>
+                    <p className="text-sm text-destructive">{errors.phone}</p>
                   )}
                 </div>
 
@@ -555,12 +555,12 @@ export default function CheckoutForm({
                       }
                       className={
                         errors.vatNumber || vatNumberError
-                          ? "border-red-500"
+                          ? "border-destructive"
                           : ""
                       }
                     />
                     {(errors.vatNumber || vatNumberError) && (
-                      <p className="text-sm text-red-500">
+                      <p className="text-sm text-destructive">
                         {errors.vatNumber || vatNumberError}
                       </p>
                     )}
@@ -616,7 +616,7 @@ export default function CheckoutForm({
                       </div>
                     )}
                     {errors.shippingMethod && (
-                      <p className="text-sm text-red-500">
+                      <p className="text-sm text-destructive">
                         {errors.shippingMethod}
                       </p>
                     )}
@@ -663,7 +663,7 @@ export default function CheckoutForm({
                 )}
 
                 {formData.paymentMethod === "BANK_TRANSFER" && (
-                  <div className="p-4 bg-blue-50 rounded-lg border border-blue-200 text-base text-blue-700">
+                  <div className="p-4 bg-accent/10 rounded-lg border border-accent/30 text-base text-accent">
                     <p className="font-medium">{t("bank_transfer_info")}</p>
                     <p>{t("bank_transfer_desc")}</p>
                   </div>

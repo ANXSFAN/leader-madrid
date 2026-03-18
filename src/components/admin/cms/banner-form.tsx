@@ -440,7 +440,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <Tabs defaultValue="visual" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 bg-slate-100 p-1">
+        <TabsList className="grid w-full grid-cols-4 bg-muted p-1">
           <TabsTrigger value="visual">{t("tab_visual")}</TabsTrigger>
           <TabsTrigger value="text">{t("tab_text")}</TabsTrigger>
           <TabsTrigger value="actions">{t("tab_actions")}</TabsTrigger>
@@ -451,7 +451,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
         <TabsContent value="visual" className="pt-4">
           <Card className="hover:shadow-md transition-all duration-200">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">
+              <CardTitle className="border-l-4 border-accent pl-3">
                 {t("visual_title")}
               </CardTitle>
               <CardDescription>
@@ -520,7 +520,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
         <TabsContent value="text" className="pt-4">
           <Card className="hover:shadow-md transition-all duration-200">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">
+              <CardTitle className="border-l-4 border-accent pl-3">
                 {t("text_title")}
               </CardTitle>
               <CardDescription>
@@ -569,7 +569,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
                       <Label>
                         {t("main_heading", { locale: loc.toUpperCase() })}
                       </Label>
-                      <div className="text-xs text-slate-500 mb-1">
+                      <div className="text-xs text-muted-foreground mb-1">
                         {t("heading_hint")}
                       </div>
                       <Textarea
@@ -616,7 +616,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
             <CardHeader>
               <div className="flex justify-between items-center">
                 <div>
-                  <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                  <CardTitle className="border-l-4 border-accent pl-3">
                     {t("actions_title")}
                   </CardTitle>
                   <CardDescription className="mt-1.5">
@@ -640,14 +640,14 @@ export function BannerForm({ initialData }: BannerFormProps) {
               )}
 
               {formButtons.length === 0 && (
-                <div className="text-center py-8 text-sm text-slate-400">
+                <div className="text-center py-8 text-sm text-muted-foreground">
                   {t("no_buttons")}
                 </div>
               )}
               {formButtons.map((btn, index) => (
                 <div
                   key={index}
-                  className="flex gap-2 items-start p-3 bg-slate-50 rounded-md border"
+                  className="flex gap-2 items-start p-3 bg-secondary rounded-md border"
                 >
                   <div className="grid grid-cols-3 gap-2 flex-1">
                     <div>
@@ -691,7 +691,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
                     type="button"
                     variant="ghost"
                     size="icon"
-                    className="mt-6 text-red-500 hover:text-red-700 hover:bg-red-50"
+                    className="mt-6 text-destructive hover:text-destructive hover:bg-destructive/10"
                     onClick={() => removeButton(index)}
                   >
                     <Trash2 className="h-4 w-4" />
@@ -708,7 +708,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
             <CardHeader>
               <div className="flex justify-between items-center">
                 <div>
-                  <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                  <CardTitle className="border-l-4 border-accent pl-3">
                     {t("stats_title")}
                   </CardTitle>
                   <CardDescription className="mt-1.5">
@@ -732,14 +732,14 @@ export function BannerForm({ initialData }: BannerFormProps) {
               )}
 
               {formStats.length === 0 && (
-                <div className="text-center py-8 text-sm text-slate-400">
+                <div className="text-center py-8 text-sm text-muted-foreground">
                   {t("no_stats")}
                 </div>
               )}
               {formStats.map((stat, index) => (
                 <div
                   key={index}
-                  className="flex gap-2 items-start p-3 bg-slate-50 rounded-md border"
+                  className="flex gap-2 items-start p-3 bg-secondary rounded-md border"
                 >
                   <div className="grid grid-cols-3 gap-2 flex-1">
                     <div>
@@ -787,7 +787,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
                     type="button"
                     variant="ghost"
                     size="icon"
-                    className="mt-6 text-red-500 hover:text-red-700 hover:bg-red-50"
+                    className="mt-6 text-destructive hover:text-destructive hover:bg-destructive/10"
                     onClick={() => removeStat(index)}
                   >
                     <Trash2 className="h-4 w-4" />
@@ -800,7 +800,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
       </Tabs>
 
       {/* Footer Actions */}
-      <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+      <div className="flex items-center justify-between pt-4 border-t border-border">
         <Link href="/admin/cms/banners">
           <Button type="button" variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -810,7 +810,7 @@ export function BannerForm({ initialData }: BannerFormProps) {
         <Button
           type="submit"
           disabled={loading}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isEditing ? t("update_banner") : t("create_banner")}

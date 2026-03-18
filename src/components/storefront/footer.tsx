@@ -46,7 +46,7 @@ export async function Footer() {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <img src="/logo.jpg" alt={settings.siteName || "Leader Madrid"} className="h-10 object-contain rounded" />
+            <img src={settings.logoUrl || "/logo.jpg"} alt={settings.siteName || "Leader Madrid"} className="h-10 object-contain rounded" />
           </div>
           <p className="text-base leading-relaxed">
             {t("description")}

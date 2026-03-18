@@ -24,8 +24,8 @@ export default async function OrderSuccessPage(props: Props) {
       <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6 animate-in zoom-in duration-300">
         <CheckCircle2 className="w-12 h-12 text-green-600" />
       </div>
-      <h1 className="text-3xl font-bold text-slate-900 mb-2">{t("title")}</h1>
-      <p className="text-slate-500 mb-8 max-w-md">
+      <h1 className="text-3xl font-bold text-foreground mb-2">{t("title")}</h1>
+      <p className="text-muted-foreground mb-8 max-w-md">
         {orderNumber
           ? t("desc", { number: `#${orderNumber}` })
           : t("desc_no_number")}

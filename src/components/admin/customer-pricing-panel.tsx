@@ -58,7 +58,7 @@ export function CustomerPricingPanel({
 
   return (
     <Card>
-      <CardHeader className="border-b border-yellow-400">
+      <CardHeader className="border-b border-accent">
         <CardTitle className="flex items-center gap-2">
           <Tag className="h-5 w-5" />
           {t("title")}

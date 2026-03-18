@@ -161,44 +161,58 @@ export function HomeView({
 
       {/* --- Flash Promo Banner --- */}
       <section className="max-w-7xl mx-auto px-4 mb-20">
-        <div className="bg-primary rounded-2xl px-8 py-[46px] md:px-12 md:py-[67px] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-          <div className="relative z-10 space-y-4 text-center md:text-left">
-            <span className="bg-accent text-accent-foreground text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-              {t("weekly_offer")}
-            </span>
-            <h2 className="text-5xl font-bold text-primary-foreground leading-none">
-              {t("promo_title")}
-            </h2>
-            <p className="text-primary-foreground/70 font-medium max-w-md">
-              {t("promo_desc")}
-            </p>
-            <div className="flex gap-4 justify-center md:justify-start pt-2">
-              <div className="bg-card/10 backdrop-blur-md p-3 rounded-lg text-center min-w-[60px]">
-                <div className="text-2xl font-bold text-primary-foreground">02</div>
-                <div className="text-[11px] uppercase font-medium text-primary-foreground/60">
-                  {t("days")}
-                </div>
+        <div className="relative rounded-2xl overflow-hidden">
+          {/* Background with diagonal split */}
+          <div className="absolute inset-0 bg-primary" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/10 skew-x-[-6deg] translate-x-12 hidden md:block" />
+          {/* Decorative elements */}
+          <div className="absolute top-6 left-6 w-20 h-20 border-2 border-primary-foreground/10 rounded-full" />
+          <div className="absolute top-10 left-10 w-12 h-12 border-2 border-primary-foreground/5 rounded-full" />
+          <div className="absolute bottom-8 right-[45%] w-16 h-16 border-2 border-accent/20 rounded-full hidden md:block" />
+          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
+          <div className="absolute -top-8 right-1/4 w-40 h-40 bg-accent/8 rounded-full blur-3xl" />
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-0">
+            {/* Left: text content */}
+            <div className="flex-1 px-8 py-10 md:px-12 md:py-14 space-y-5 text-center md:text-left">
+              <span className="inline-block bg-accent text-accent-foreground text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                {t("weekly_offer")}
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground leading-tight">
+                {t("promo_title")}
+              </h2>
+              <p className="text-primary-foreground/70 font-medium max-w-md text-lg leading-relaxed">
+                {t("promo_desc")}
+              </p>
+              <div className="flex items-center gap-4 justify-center md:justify-start pt-1">
+                <Link href="/offers">
+                  <button className="px-8 py-4 bg-accent text-accent-foreground font-bold rounded-xl hover:opacity-90 transition-all shadow-lg uppercase tracking-widest text-sm">
+                    {t("buy_now")}
+                  </button>
+                </Link>
+                <Link
+                  href="/search"
+                  className="text-primary-foreground/60 hover:text-accent font-semibold text-sm uppercase tracking-wider transition-colors flex items-center gap-1"
+                >
+                  {t("view_all_shop")}
+                  <ChevronRight size={16} />
+                </Link>
               </div>
-              <div className="bg-card/10 backdrop-blur-md p-3 rounded-lg text-center min-w-[60px]">
-                <div className="text-2xl font-bold text-primary-foreground">14</div>
-                <div className="text-[11px] uppercase font-medium text-primary-foreground/60">
-                  {t("hours")}
-                </div>
-              </div>
-              <div className="bg-card/10 backdrop-blur-md p-3 rounded-lg text-center min-w-[60px]">
-                <div className="text-2xl font-bold text-primary-foreground">35</div>
-                <div className="text-[11px] uppercase font-medium text-primary-foreground/60">
-                  {t("minutes")}
+            </div>
+
+            {/* Right: big discount display */}
+            <div className="flex-shrink-0 px-8 pb-10 md:pb-0 md:px-12 md:py-14 flex flex-col items-center justify-center">
+              <div className="relative">
+                {/* Glow ring */}
+                <div className="absolute inset-0 rounded-full bg-accent/20 blur-xl scale-110" />
+                <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full border-4 border-dashed border-accent/40 flex flex-col items-center justify-center bg-primary-foreground/5 backdrop-blur-sm">
+                  <span className="text-accent text-lg font-bold uppercase tracking-wider">{t("weekly_offer")}</span>
+                  <span className="text-6xl md:text-7xl font-black text-primary-foreground leading-none">40<span className="text-4xl md:text-5xl">%</span></span>
+                  <span className="text-primary-foreground/50 text-sm font-bold uppercase tracking-widest">OFF</span>
                 </div>
               </div>
             </div>
           </div>
-          <Link href="/offers">
-            <button className="relative z-10 px-10 py-5 bg-accent text-accent-foreground font-bold rounded-2xl hover:scale-105 transition-transform shadow-2xl uppercase tracking-widest text-base">
-              {t("buy_now")}
-            </button>
-          </Link>
         </div>
       </section>
 
@@ -330,7 +344,7 @@ function DealerLoginForm({ t }: { t: any }) {
           className="w-full px-4 py-3 border border-primary-foreground/10 bg-primary-foreground/5 text-primary-foreground rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder:text-primary-foreground/30"
         />
         {error && (
-          <p className="text-red-500 text-sm">{error}</p>
+          <p className="text-destructive text-sm">{error}</p>
         )}
         <button
           type="submit"

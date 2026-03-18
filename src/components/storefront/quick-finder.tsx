@@ -39,7 +39,7 @@ export function QuickFinder() {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Select value={application} onValueChange={setApplication}>
-          <SelectTrigger className="bg-white border-border">
+          <SelectTrigger className="bg-card border-border">
             <SelectValue placeholder={t("select_application")} />
           </SelectTrigger>
           <SelectContent>
@@ -51,7 +51,7 @@ export function QuickFinder() {
         </Select>
 
         <Select value={base} onValueChange={setBase}>
-          <SelectTrigger className="bg-white border-border">
+          <SelectTrigger className="bg-card border-border">
             <SelectValue placeholder={t("select_base")} />
           </SelectTrigger>
           <SelectContent>
@@ -63,7 +63,7 @@ export function QuickFinder() {
         </Select>
 
         <Select value={cct} onValueChange={setCct}>
-          <SelectTrigger className="bg-white border-border">
+          <SelectTrigger className="bg-card border-border">
             <SelectValue placeholder={t("select_cct")} />
           </SelectTrigger>
           <SelectContent>

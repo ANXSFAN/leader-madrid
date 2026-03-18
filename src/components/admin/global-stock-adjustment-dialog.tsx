@@ -184,7 +184,7 @@ export function GlobalStockAdjustmentDialog({ warehouses }: GlobalStockAdjustmen
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle className="border-l-4 border-yellow-500 pl-3">
+          <DialogTitle className="border-l-4 border-accent pl-3">
             {t(`${adj}.new_title`)}
           </DialogTitle>
           <DialogDescription>
@@ -373,7 +373,7 @@ export function GlobalStockAdjustmentDialog({ warehouses }: GlobalStockAdjustmen
                 <Button
                   type="submit"
                   disabled={loading || !selectedVariant}
-                  className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+                  className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-black"
                 >
                   {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {t(`${adj}.save_button`)}

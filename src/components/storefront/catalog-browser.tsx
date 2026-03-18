@@ -82,7 +82,7 @@ export function CatalogBrowser({ categories }: CatalogBrowserProps) {
               )}
 
               {/* Icon / Image */}
-              <div className="relative w-10 h-10 md:w-9 md:h-9 rounded-lg bg-white shrink-0 overflow-hidden border border-border/50">
+              <div className="relative w-10 h-10 md:w-9 md:h-9 rounded-lg bg-card shrink-0 overflow-hidden border border-border/50">
                 {imageUrl ? (
                   <Image
                     src={imageUrl}

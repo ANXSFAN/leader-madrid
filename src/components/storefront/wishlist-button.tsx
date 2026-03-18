@@ -59,14 +59,14 @@ export function WishlistButton({
         onClick={handleToggle}
         disabled={isPending}
         className={cn(
-          "p-4 border-2 border-border rounded-xl text-muted-foreground hover:text-red-500 hover:border-red-100 transition-all disabled:opacity-50",
-          isInWishlist && "text-red-500 border-red-100",
+          "p-4 border-2 border-border rounded-xl text-muted-foreground hover:text-destructive hover:border-destructive/20 transition-all disabled:opacity-50",
+          isInWishlist && "text-destructive border-destructive/20",
           className
         )}
       >
         <Heart
           size={20}
-          className={cn(isInWishlist && "fill-red-500")}
+          className={cn(isInWishlist && "fill-destructive")}
         />
       </button>
     );
@@ -77,14 +77,14 @@ export function WishlistButton({
       variant="outline"
       className={cn(
         "flex-1 h-12 border-border",
-        isInWishlist && "text-red-500 border-red-200 bg-red-50 hover:bg-red-100",
+        isInWishlist && "text-destructive border-destructive/30 bg-destructive/10 hover:bg-destructive/15",
         className
       )}
       onClick={handleToggle}
       disabled={isPending}
     >
       <Heart
-        className={cn("mr-2 h-4 w-4", isInWishlist && "fill-red-500")}
+        className={cn("mr-2 h-4 w-4", isInWishlist && "fill-destructive")}
       />
       {isInWishlist ? t("in_wishlist") : t("add_to_favorites")}
     </Button>

@@ -173,7 +173,7 @@ export function PurchaseReturnForm({ purchaseOrders, warehouses, locale, currenc
 
       <Card>
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("form.select_po")}
           </CardTitle>
         </CardHeader>
@@ -219,7 +219,7 @@ export function PurchaseReturnForm({ purchaseOrders, warehouses, locale, currenc
       {selectedPO && selectedPO.items.filter((i) => i.receivedQty > 0).length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="border-l-4 border-yellow-500 pl-3">
+            <CardTitle className="border-l-4 border-accent pl-3">
               {t("form.select_items")}
             </CardTitle>
           </CardHeader>
@@ -284,7 +284,7 @@ export function PurchaseReturnForm({ purchaseOrders, warehouses, locale, currenc
               <Button
                 onClick={handleSubmit}
                 disabled={isPending}
-                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
               >
                 {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {t("form.create_return")}

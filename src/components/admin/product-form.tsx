@@ -798,7 +798,7 @@ export function ProductForm({
           <Button
             type="submit"
             disabled={loading}
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
           >
             {loading
               ? t("products.form.buttons.saving")
@@ -830,7 +830,7 @@ export function ProductForm({
           <TabsContent value="details" className="space-y-4 pt-4">
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                <CardTitle className="border-l-4 border-accent pl-3">
                   {t("products.form.tabs.details")}
                 </CardTitle>
               </CardHeader>
@@ -1066,7 +1066,7 @@ export function ProductForm({
 
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                <CardTitle className="border-l-4 border-accent pl-3">
                   {t("products.form.extra.media_title")}
                 </CardTitle>
               </CardHeader>
@@ -1088,7 +1088,7 @@ export function ProductForm({
           <TabsContent value="organization" className="space-y-4 pt-4">
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                <CardTitle className="border-l-4 border-accent pl-3">
                   {t("products.form.tabs.organization")}
                 </CardTitle>
               </CardHeader>
@@ -1233,7 +1233,7 @@ export function ProductForm({
 
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                <CardTitle className="border-l-4 border-accent pl-3">
                   {t("products.form.tabs.suppliers")}
                 </CardTitle>
               </CardHeader>
@@ -1249,7 +1249,7 @@ export function ProductForm({
           <TabsContent value="variants" className="space-y-4 pt-4">
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                <CardTitle className="border-l-4 border-accent pl-3">
                   {t("products.form.tabs.variants")}
                 </CardTitle>
               </CardHeader>
@@ -1320,7 +1320,7 @@ export function ProductForm({
             {isSimple && (
               <Card className="hover:shadow-md transition-all duration-200">
                 <CardHeader>
-                  <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                  <CardTitle className="border-l-4 border-accent pl-3">
                     {t("products.form.extra.pricing_title")}
                   </CardTitle>
                 </CardHeader>
@@ -1435,7 +1435,7 @@ export function ProductForm({
               <>
                 <Card className="hover:shadow-md transition-all duration-200">
                   <CardHeader>
-                    <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                    <CardTitle className="border-l-4 border-accent pl-3">
                       {t("products.form.extra.bundle_title")}
                     </CardTitle>
                   </CardHeader>
@@ -1485,7 +1485,7 @@ export function ProductForm({
 
                 <Card className="hover:shadow-md transition-all duration-200">
                   <CardHeader>
-                    <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                    <CardTitle className="border-l-4 border-accent pl-3">
                       {t("products.form.tabs.bundle")}
                     </CardTitle>
                   </CardHeader>
@@ -1503,7 +1503,7 @@ export function ProductForm({
           <TabsContent value="documents" className="space-y-4 pt-4">
             <Card className="hover:shadow-md transition-all duration-200">
               <CardHeader>
-                <CardTitle className="border-l-4 border-yellow-500 pl-3">
+                <CardTitle className="border-l-4 border-accent pl-3">
                   {t("products.form.tabs.documents")}
                 </CardTitle>
               </CardHeader>

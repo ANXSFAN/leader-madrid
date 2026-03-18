@@ -23,7 +23,7 @@ export default async function ResourcePage(
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <Link href="/" className="inline-flex items-center text-sm text-gray-500 hover:text-yellow-600 mb-8">
+      <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
         <ArrowLeft className="h-4 w-4 mr-1" />
         {t("back")}
       </Link>
@@ -41,17 +41,17 @@ export default async function ResourcePage(
         </div>
       )}
 
-      <h1 className="text-4xl font-black text-gray-900 mb-4">
+      <h1 className="text-4xl font-black text-foreground mb-4">
         {localized.title || t("untitled")}
       </h1>
 
       {localized.description && (
-        <p className="text-lg text-gray-600 mb-8">{localized.description}</p>
+        <p className="text-lg text-muted-foreground mb-8">{localized.description}</p>
       )}
 
       {localized.body && (
         <div
-          className="prose prose-lg max-w-none prose-headings:font-black prose-a:text-yellow-600"
+          className="prose prose-lg max-w-none prose-headings:font-black prose-a:text-accent"
           dangerouslySetInnerHTML={{ __html: localized.body }}
         />
       )}

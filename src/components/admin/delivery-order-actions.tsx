@@ -113,7 +113,7 @@ export function DeliveryOrderActions({ deliveryOrder }: DeliveryOrderActionsProp
             )
           }
           disabled={isPending}
-          className="bg-blue-600 hover:bg-blue-700 text-white"
+          className="bg-info hover:bg-info/90 text-primary-foreground"
         >
           {isPending ? (
             <Loader2 className="mr-1 h-4 w-4 animate-spin" />
@@ -157,7 +157,7 @@ export function DeliveryOrderActions({ deliveryOrder }: DeliveryOrderActionsProp
             )
           }
           disabled={isPending}
-          className="bg-purple-600 hover:bg-purple-700 text-white"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground"
         >
           {isPending ? (
             <Loader2 className="mr-1 h-4 w-4 animate-spin" />
@@ -174,7 +174,7 @@ export function DeliveryOrderActions({ deliveryOrder }: DeliveryOrderActionsProp
           <DialogTrigger asChild>
             <Button
               size="sm"
-              className="bg-green-600 hover:bg-green-700 text-white"
+              className="bg-success hover:bg-success/90 text-primary-foreground"
             >
               <Truck className="mr-1 h-4 w-4" />
               Ship
@@ -218,7 +218,7 @@ export function DeliveryOrderActions({ deliveryOrder }: DeliveryOrderActionsProp
               <Button
                 onClick={handleShip}
                 disabled={isPending}
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className="bg-success hover:bg-success/90 text-primary-foreground"
               >
                 {isPending ? (
                   <Loader2 className="mr-1 h-4 w-4 animate-spin" />
@@ -243,7 +243,7 @@ export function DeliveryOrderActions({ deliveryOrder }: DeliveryOrderActionsProp
             )
           }
           disabled={isPending}
-          className="bg-green-600 hover:bg-green-700 text-white"
+          className="bg-success hover:bg-success/90 text-primary-foreground"
         >
           {isPending ? (
             <Loader2 className="mr-1 h-4 w-4 animate-spin" />

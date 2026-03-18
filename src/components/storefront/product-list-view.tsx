@@ -380,7 +380,7 @@ export function ProductListView({
                     ))}
                     <button
                       onClick={clearAllFilters}
-                      className="text-[11px] font-bold text-muted-foreground hover:text-red-500 ml-2"
+                      className="text-[11px] font-bold text-muted-foreground hover:text-destructive ml-2"
                     >
                       {t("clear_all")}
                     </button>

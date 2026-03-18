@@ -40,7 +40,7 @@ export default async function PurchaseReturnsPage() {
       <PageHeader
         title={t("title")}
         actions={
-          <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             <Link href="/admin/purchase-returns/new">
               <Plus className="mr-2 h-4 w-4" /> {t("actions.create")}
             </Link>
@@ -48,7 +48,7 @@ export default async function PurchaseReturnsPage() {
         }
       />
 
-      <div className="rounded-md border bg-white">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             <TableRow>

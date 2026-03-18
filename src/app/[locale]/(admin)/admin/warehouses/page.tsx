@@ -24,7 +24,7 @@ export default async function WarehousesPage() {
         title={t("title")}
         description={t("subtitle")}
         actions={
-          <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             <Link href="/admin/warehouses/new">
               <Plus className="mr-2 h-4 w-4" /> {t("actions.new")}
             </Link>
@@ -39,7 +39,7 @@ export default async function WarehousesPage() {
               <WarehouseIcon className="h-10 w-10 text-muted-foreground" />
             </div>
             <p className="text-muted-foreground text-sm mb-3">{t("empty")}</p>
-            <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Link href="/admin/warehouses/new">
                 <Plus className="mr-2 h-4 w-4" />
                 {t("actions.new")}
@@ -66,14 +66,14 @@ export default async function WarehousesPage() {
                 <TableRow key={wh.id} className="hover:bg-muted/30 transition-colors">
                   <TableCell className="font-medium">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-yellow-50 text-yellow-600">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
                         <WarehouseIcon className="h-4 w-4" />
                       </div>
                       <span>{wh.name}</span>
                     </div>
                   </TableCell>
                   <TableCell>
-                    <code className="text-xs bg-slate-100 px-2 py-0.5 rounded">{wh.code}</code>
+                    <code className="text-xs bg-muted px-2 py-0.5 rounded">{wh.code}</code>
                   </TableCell>
                   <TableCell className="text-sm text-muted-foreground">
                     {[wh.city, wh.country].filter(Boolean).join(", ") || "-"}

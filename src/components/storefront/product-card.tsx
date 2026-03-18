@@ -204,7 +204,7 @@ export function ProductCard({
               <Search size={16} />
             </button>
           )}
-          <button className="p-2.5 bg-card rounded-full shadow-lg text-muted-foreground hover:text-red-500 transition-colors">
+          <button className="p-2.5 bg-card rounded-full shadow-lg text-muted-foreground hover:text-destructive transition-colors">
             <Heart size={16} />
           </button>
           <button className="p-2.5 bg-card rounded-full shadow-lg text-muted-foreground hover:text-accent transition-colors">

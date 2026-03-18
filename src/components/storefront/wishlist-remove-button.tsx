@@ -33,11 +33,11 @@ export function WishlistRemoveButton({ productId }: WishlistRemoveButtonProps) {
     <Button
       size="sm"
       variant="outline"
-      className="text-red-500 border-red-200 hover:bg-red-50"
+      className="text-destructive border-destructive/30 hover:bg-destructive/10"
       onClick={handleRemove}
       disabled={isPending}
     >
-      <Heart className="h-4 w-4 fill-red-500" />
+      <Heart className="h-4 w-4 fill-destructive" />
     </Button>
   );
 }

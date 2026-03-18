@@ -62,13 +62,13 @@ async function getOrders(userId: string) {
 function getOrderStatusBadge(status: string, label: string) {
   switch (status) {
     case "PENDING":
-      return <Badge className="bg-yellow-500 hover:bg-yellow-600">{label}</Badge>;
+      return <Badge className="bg-accent hover:bg-accent/90">{label}</Badge>;
     case "CONFIRMED":
-      return <Badge className="bg-blue-500 hover:bg-blue-600">{label}</Badge>;
+      return <Badge className="bg-info hover:bg-info/90">{label}</Badge>;
     case "PROCESSING":
-      return <Badge className="bg-blue-400 hover:bg-blue-500">{label}</Badge>;
+      return <Badge className="bg-accent/60 hover:bg-accent/70">{label}</Badge>;
     case "SHIPPED":
-      return <Badge className="bg-green-500 hover:bg-green-600">{label}</Badge>;
+      return <Badge className="bg-success hover:bg-success/90">{label}</Badge>;
     case "DELIVERED":
       return <Badge className="bg-emerald-600 hover:bg-emerald-700">{label}</Badge>;
     case "RETURNED":
@@ -211,14 +211,14 @@ export default async function ProfilePage(
           <Card>
             <CardContent className="flex items-center justify-between p-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center">
-                  <Heart className="h-6 w-6 text-red-500" />
+                <div className="w-12 h-12 bg-destructive/10 rounded-full flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-destructive" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     {tProfile("wishlist.title")}
                   </h3>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-muted-foreground">
                     {tProfile("wishlist.empty_desc")}
                   </p>
                 </div>
@@ -244,13 +244,13 @@ export default async function ProfilePage(
             <CardContent>
               {orders.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center px-4">
-                  <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6">
-                    <ShoppingBag className="w-12 h-12 text-slate-400" />
+                  <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-6">
+                    <ShoppingBag className="w-12 h-12 text-muted-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {tProfile("orders.empty_title")}
                   </h3>
-                  <p className="text-slate-500 mb-8 max-w-md">
+                  <p className="text-muted-foreground mb-8 max-w-md">
                     {tProfile("orders.empty_desc")}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
@@ -260,7 +260,7 @@ export default async function ProfilePage(
                         {tProfile("orders.browse_led")}
                       </Link>
                     </Button>
-                    <Button asChild className="bg-yellow-500 hover:bg-yellow-600">
+                    <Button asChild className="bg-accent hover:bg-accent/90">
                       <Link href="/">
                         <ShoppingBag className="w-4 h-4 mr-2" />
                         {tProfile("orders.start_shopping")}
@@ -359,13 +359,13 @@ export default async function ProfilePage(
             <CardContent>
               {returns.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center px-4">
-                  <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6">
-                    <RotateCcw className="w-12 h-12 text-slate-400" />
+                  <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-6">
+                    <RotateCcw className="w-12 h-12 text-muted-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {tProfile("returns.empty_title")}
                   </h3>
-                  <p className="text-slate-500 mb-4 max-w-md">
+                  <p className="text-muted-foreground mb-4 max-w-md">
                     {tProfile("returns.empty_desc")}
                   </p>
                 </div>
@@ -397,12 +397,12 @@ export default async function ProfilePage(
                                 ret.status === "REQUESTED"
                                   ? "bg-amber-100 text-amber-800"
                                   : ret.status === "APPROVED"
-                                    ? "bg-blue-100 text-blue-800"
+                                    ? "bg-info/10 text-info"
                                     : ret.status === "REJECTED"
-                                      ? "bg-red-100 text-red-800"
+                                      ? "bg-destructive/10 text-destructive"
                                       : ret.status === "REFUNDED"
-                                        ? "bg-green-100 text-green-800"
-                                        : "bg-slate-100 text-slate-600"
+                                        ? "bg-success/10 text-success"
+                                        : "bg-muted text-muted-foreground"
                               }
                             >
                               {labelCode(tReturns as (key: string) => string, "status", ret.status)}

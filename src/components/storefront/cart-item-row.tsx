@@ -66,7 +66,7 @@ export function CartItemRow({
             </h4>
             <button
               onClick={() => onRemove(item.id)}
-              className="text-muted-foreground hover:text-red-500 transition-colors p-1 -mr-2 -mt-1"
+              className="text-muted-foreground hover:text-destructive transition-colors p-1 -mr-2 -mt-1"
             >
               <X size={16} />
             </button>
@@ -77,7 +77,7 @@ export function CartItemRow({
         </div>
 
         <div className="flex items-center justify-between mt-2">
-          <div className="flex items-center border rounded-md h-8 bg-white">
+          <div className="flex items-center border rounded-md h-8 bg-card">
             <button
               className="px-2 h-full hover:bg-muted text-muted-foreground disabled:opacity-50"
               onClick={handleDecrement}

@@ -60,13 +60,13 @@ export default function ResetPasswordPage() {
   // Invalid / missing token state
   if (!token) {
     return (
-      <div className="flex flex-col min-h-screen items-center justify-center bg-gray-50 p-4">
-        <div className="w-full max-w-[400px] bg-white rounded-2xl shadow-2xl shadow-yellow-900/5 border border-gray-100 p-8 text-center">
-          <AlertCircle className="h-12 w-12 text-red-400 mx-auto mb-4" />
-          <p className="text-gray-700 font-medium mb-6">{t("invalid_link")}</p>
+      <div className="flex flex-col min-h-screen items-center justify-center bg-background p-4">
+        <div className="w-full max-w-[400px] bg-card rounded-2xl shadow-2xl shadow-accent/5 border border-border p-8 text-center">
+          <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
+          <p className="text-muted-foreground font-medium mb-6">{t("invalid_link")}</p>
           <Link
             href="/forgot-password"
-            className="inline-flex items-center gap-1.5 text-yellow-600 font-semibold hover:text-yellow-700 text-sm"
+            className="inline-flex items-center gap-1.5 text-accent font-semibold hover:text-accent/80 text-sm"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             {t("request_new_link")}
@@ -79,16 +79,16 @@ export default function ResetPasswordPage() {
   // Success state
   if (success) {
     return (
-      <div className="flex flex-col min-h-screen items-center justify-center bg-gray-50 p-4">
-        <div className="w-full max-w-[400px] bg-white rounded-2xl shadow-2xl shadow-yellow-900/5 border border-gray-100 p-8 text-center">
+      <div className="flex flex-col min-h-screen items-center justify-center bg-background p-4">
+        <div className="w-full max-w-[400px] bg-card rounded-2xl shadow-2xl shadow-accent/5 border border-border p-8 text-center">
           <CheckCircle2 className="h-12 w-12 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl font-bold text-foreground mb-2">
             {t("success_title")}
           </h2>
-          <p className="text-gray-500 text-sm mb-8">{t("success_desc")}</p>
+          <p className="text-muted-foreground text-sm mb-8">{t("success_desc")}</p>
           <Link
             href="/login"
-            className="block w-full bg-yellow-500 text-yellow-950 py-3 rounded-xl font-bold shadow-lg shadow-yellow-500/20 hover:bg-yellow-400 active:scale-[0.98] transition-all text-center"
+            className="block w-full bg-accent text-accent-foreground py-3 rounded-xl font-bold shadow-lg shadow-accent/20 hover:bg-accent/90 active:scale-[0.98] transition-all text-center"
           >
             {t("login_now")}
           </Link>
@@ -98,17 +98,17 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-50 p-4">
-      <div className="w-full max-w-[400px] bg-white rounded-2xl shadow-2xl shadow-yellow-900/5 border border-gray-100 p-8">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-background p-4">
+      <div className="w-full max-w-[400px] bg-card rounded-2xl shadow-2xl shadow-accent/5 border border-border p-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">{t("title")}</h1>
-          <p className="text-gray-500 text-sm mt-2">{t("subtitle")}</p>
+          <h1 className="text-2xl font-bold text-foreground">{t("title")}</h1>
+          <p className="text-muted-foreground text-sm mt-2">{t("subtitle")}</p>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="mb-6 p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl">
+          <div className="mb-6 p-3 text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-xl">
             <div className="flex items-start gap-2">
               <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
               <span>{error}</span>
@@ -123,7 +123,7 @@ export default function ResetPasswordPage() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 ml-1">
+                  <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 ml-1">
                     {t("new_password")}
                   </label>
                   <FormControl>
@@ -131,7 +131,7 @@ export default function ResetPasswordPage() {
                       type="password"
                       placeholder="••••••••"
                       disabled={loading}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:bg-white focus:border-transparent outline-none transition-all text-sm placeholder:text-gray-300 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-card focus:border-transparent outline-none transition-all text-sm placeholder:text-muted-foreground/40 disabled:opacity-50"
                       {...field}
                     />
                   </FormControl>
@@ -144,7 +144,7 @@ export default function ResetPasswordPage() {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 ml-1">
+                  <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 ml-1">
                     {t("confirm_password")}
                   </label>
                   <FormControl>
@@ -152,7 +152,7 @@ export default function ResetPasswordPage() {
                       type="password"
                       placeholder="••••••••"
                       disabled={loading}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:bg-white focus:border-transparent outline-none transition-all text-sm placeholder:text-gray-300 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-card focus:border-transparent outline-none transition-all text-sm placeholder:text-muted-foreground/40 disabled:opacity-50"
                       {...field}
                     />
                   </FormControl>
@@ -164,7 +164,7 @@ export default function ResetPasswordPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-yellow-500 text-yellow-950 py-3 rounded-xl font-bold shadow-lg shadow-yellow-500/20 hover:bg-yellow-400 active:scale-[0.98] transition-all mt-2 disabled:opacity-50 flex items-center justify-center gap-2"
+              className="w-full bg-accent text-accent-foreground py-3 rounded-xl font-bold shadow-lg shadow-accent/20 hover:bg-accent/90 active:scale-[0.98] transition-all mt-2 disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {loading && <Loader2 className="h-4 w-4 animate-spin" />}
               {t("submit")}
@@ -176,7 +176,7 @@ export default function ResetPasswordPage() {
         <p className="text-center mt-8">
           <Link
             href="/forgot-password"
-            className="inline-flex items-center gap-1.5 text-yellow-600 font-semibold hover:text-yellow-700 text-sm"
+            className="inline-flex items-center gap-1.5 text-accent font-semibold hover:text-accent/80 text-sm"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             {t("request_new_link")}

@@ -122,7 +122,7 @@ export function UserForm({ initialData, priceLists }: UserFormProps) {
               {initialData ? t("users.title_edit") : t("users.title_create")}
             </h2>
           </div>
-          <Button type="submit" disabled={loading} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button type="submit" disabled={loading} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             {loading ? t("common.actions.loading") : t("common.actions.save")}
           </Button>
         </div>
@@ -130,7 +130,7 @@ export function UserForm({ initialData, priceLists }: UserFormProps) {
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="hover:shadow-md transition-all duration-200">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">{t("users.account_info")}</CardTitle>
+              <CardTitle className="border-l-4 border-accent pl-3">{t("users.account_info")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <FormField
@@ -210,7 +210,7 @@ export function UserForm({ initialData, priceLists }: UserFormProps) {
 
           <Card className="hover:shadow-md transition-all duration-200">
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">{t("users.fields.b2b_pricing")}</CardTitle>
+              <CardTitle className="border-l-4 border-accent pl-3">{t("users.fields.b2b_pricing")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <FormField

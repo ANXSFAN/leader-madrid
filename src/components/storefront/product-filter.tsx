@@ -342,7 +342,7 @@ export function ProductFilter({
                   isChecked
                     ? "ring-2 ring-primary ring-offset-2 border-transparent"
                     : "hover:scale-110 border-border",
-                  isWhite ? "bg-white" : "border-transparent"
+                  isWhite ? "bg-card" : "border-transparent"
                 )}
                 style={{ backgroundColor: colorCode }}
                 title={`${option.value} (${option.count})`}
@@ -378,8 +378,8 @@ export function ProductFilter({
                 className={cn(
                   "px-2 py-1.5 rounded border text-base text-center transition-colors truncate",
                   isChecked
-                    ? "bg-primary text-white border-primary"
-                    : "bg-white text-foreground/80 border-border hover:border-border"
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card text-foreground/80 border-border hover:border-border"
                 )}
                 title={`${option.value} (${option.count})`}
               >
@@ -451,7 +451,7 @@ export function ProductFilter({
                 variant="ghost"
                 size="sm"
                 onClick={clearAll}
-                className="text-sm text-red-500 hover:text-red-600 hover:bg-red-50 h-auto p-0"
+                className="text-sm text-destructive hover:text-destructive hover:bg-destructive/10 h-auto p-0"
               >
                 {t("clear_all")}
               </Button>
@@ -514,7 +514,7 @@ export function ProductFilter({
                     setPriceRange([val, priceRange[1]]);
                   }
                 }}
-                className="h-8 bg-white text-sm"
+                className="h-8 bg-card text-sm"
               />
             </div>
             <div className="flex items-center gap-2 flex-1">
@@ -531,7 +531,7 @@ export function ProductFilter({
                     setPriceRange([priceRange[0], val]);
                   }
                 }}
-                className="h-8 bg-white text-sm"
+                className="h-8 bg-card text-sm"
               />
             </div>
           </div>

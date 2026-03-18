@@ -176,7 +176,7 @@ export function Navbar({ categories, settings, megaMenuSolutions, megaMenuResour
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between relative bg-card/95 backdrop-blur-md">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 cursor-pointer group">
-          <img src="/logo.jpg" alt={settings?.siteName || "Leader Madrid"} className="h-12 object-contain rounded" />
+          <img src={settings?.logoUrl || "/logo.jpg"} alt={settings?.siteName || "Leader Madrid"} className="h-12 object-contain rounded" />
         </Link>
 
         {/* Desktop Nav */}

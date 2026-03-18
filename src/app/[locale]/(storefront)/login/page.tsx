@@ -80,17 +80,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-50 p-4">
-      <div className="w-full max-w-[400px] bg-white rounded-2xl shadow-2xl shadow-yellow-900/5 border border-gray-100 p-8">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-background p-4">
+      <div className="w-full max-w-[400px] bg-card rounded-2xl shadow-2xl shadow-accent/5 border border-border p-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">{t("title")}</h1>
-          <p className="text-gray-500 text-sm mt-2">{t("subtitle")}</p>
+          <h1 className="text-2xl font-bold text-foreground">{t("title")}</h1>
+          <p className="text-muted-foreground text-sm mt-2">{t("subtitle")}</p>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="mb-6 p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl">
+          <div className="mb-6 p-3 text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-xl">
             <div className="flex items-start gap-2">
               <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
               <span>{error}</span>
@@ -103,7 +103,7 @@ export default function LoginPage() {
           type="button"
           onClick={onGoogleSignIn}
           disabled={loading}
-          className="flex items-center justify-center gap-3 w-full py-2.5 border border-gray-300 rounded-xl hover:bg-yellow-50 hover:border-yellow-200 transition-all font-medium text-gray-700 mb-6 group disabled:opacity-50"
+          className="flex items-center justify-center gap-3 w-full py-2.5 border border-border rounded-xl hover:bg-accent/10 hover:border-accent/30 transition-all font-medium text-muted-foreground mb-6 group disabled:opacity-50"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -111,16 +111,16 @@ export default function LoginPage() {
             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
             <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
           </svg>
-          <span className="group-hover:text-yellow-700">{t("google_button")}</span>
+          <span className="group-hover:text-accent">{t("google_button")}</span>
         </button>
 
         {/* Divider */}
         <div className="relative mb-6">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200"></div>
+            <div className="w-full border-t border-border"></div>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-4 text-gray-400">{t("or")}</span>
+            <span className="bg-card px-4 text-muted-foreground/50">{t("or")}</span>
           </div>
         </div>
 
@@ -132,7 +132,7 @@ export default function LoginPage() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 ml-1">
+                  <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 ml-1">
                     {t("email")}
                   </label>
                   <FormControl>
@@ -143,7 +143,7 @@ export default function LoginPage() {
                       autoComplete="email"
                       autoCorrect="off"
                       disabled={loading}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:bg-white focus:border-transparent outline-none transition-all text-sm placeholder:text-gray-300 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-card focus:border-transparent outline-none transition-all text-sm placeholder:text-muted-foreground/40 disabled:opacity-50"
                       {...field}
                     />
                   </FormControl>
@@ -157,12 +157,12 @@ export default function LoginPage() {
               render={({ field }) => (
                 <FormItem>
                   <div className="flex justify-between mb-1.5 ml-1">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                       {t("password")}
                     </label>
                     <Link
                       href="/forgot-password"
-                      className="text-xs text-yellow-600 font-semibold hover:text-yellow-700"
+                      className="text-xs text-accent font-semibold hover:text-accent/80"
                     >
                       {t("forgot_password")}
                     </Link>
@@ -175,7 +175,7 @@ export default function LoginPage() {
                       autoComplete="current-password"
                       autoCorrect="off"
                       disabled={loading}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:bg-white focus:border-transparent outline-none transition-all text-sm placeholder:text-gray-300 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-card focus:border-transparent outline-none transition-all text-sm placeholder:text-muted-foreground/40 disabled:opacity-50"
                       {...field}
                     />
                   </FormControl>
@@ -186,7 +186,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-yellow-500 text-yellow-950 py-3 rounded-xl font-bold shadow-lg shadow-yellow-500/20 hover:bg-yellow-400 active:scale-[0.98] transition-all mt-2 disabled:opacity-50 flex items-center justify-center gap-2"
+              className="w-full bg-accent text-accent-foreground py-3 rounded-xl font-bold shadow-lg shadow-accent/20 hover:bg-accent/90 active:scale-[0.98] transition-all mt-2 disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {loading && <Loader2 className="h-4 w-4 animate-spin" />}
               {t("submit")}
@@ -195,9 +195,9 @@ export default function LoginPage() {
         </Form>
 
         {/* Footer */}
-        <p className="text-center text-sm text-gray-600 mt-8">
+        <p className="text-center text-sm text-muted-foreground mt-8">
           {t("no_account")}{" "}
-          <Link href="/register" className="text-yellow-600 font-bold hover:underline">
+          <Link href="/register" className="text-accent font-bold hover:underline">
             {t("register_link")}
           </Link>
         </p>

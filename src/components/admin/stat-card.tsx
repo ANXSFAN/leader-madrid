@@ -24,9 +24,9 @@ interface StatCardProps {
 
 const COLOR_MAP: Record<StatCardColor, { bg: string; icon: string; text: string }> = {
   yellow: {
-    bg: "bg-yellow-50",
-    icon: "bg-yellow-500/15 text-yellow-600",
-    text: "text-yellow-600",
+    bg: "bg-accent/10",
+    icon: "bg-accent/15 text-accent",
+    text: "text-accent",
   },
   green: {
     bg: "bg-green-50",
@@ -86,7 +86,7 @@ export function StatCard({
   return (
     <div
       className={cn(
-        "rounded-xl border bg-white p-5 shadow-sm hover:shadow-md transition-all duration-200",
+        "rounded-xl border bg-card p-5 shadow-sm hover:shadow-md transition-all duration-200",
         className
       )}
     >

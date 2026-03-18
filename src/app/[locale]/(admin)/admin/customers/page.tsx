@@ -160,8 +160,8 @@ export default async function CustomersPage(
             href="/admin/customers"
             className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors ${
               !tagFilter
-                ? "bg-slate-900 text-white"
-                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
             }`}
           >
             {t("tabs.all")}

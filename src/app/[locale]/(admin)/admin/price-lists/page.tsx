@@ -25,7 +25,7 @@ export default async function PriceListsPage() {
         title={t("title")}
         description={t("description")}
         actions={
-          <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             <Link href="/admin/price-lists/new">
               <Plus className="mr-2 h-4 w-4" />
               {t("create")}
@@ -34,7 +34,7 @@ export default async function PriceListsPage() {
         }
       />
 
-      <div className="rounded-md border bg-white">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             <TableRow>

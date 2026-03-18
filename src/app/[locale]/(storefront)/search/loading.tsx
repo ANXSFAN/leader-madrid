@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function SearchLoading() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex items-baseline justify-between mb-8 border-b border-slate-200 pb-4">
+      <div className="flex items-baseline justify-between mb-8 border-b border-border pb-4">
         <Skeleton className="h-10 w-64" />
       </div>
 

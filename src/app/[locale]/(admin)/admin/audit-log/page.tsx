@@ -161,7 +161,7 @@ export default async function AuditLogPage({ searchParams }: AuditLogPageProps) 
               />
             </div>
 
-            <Button type="submit" size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold">
+            <Button type="submit" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
               {t("filter_apply")}
             </Button>
           </form>
@@ -169,7 +169,7 @@ export default async function AuditLogPage({ searchParams }: AuditLogPageProps) 
       </Card>
 
       {/* Table */}
-      <div className="rounded-md border bg-white">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             <TableRow>
@@ -190,7 +190,7 @@ export default async function AuditLogPage({ searchParams }: AuditLogPageProps) 
               </TableRow>
             )}
             {logs.map((log) => (
-              <TableRow key={log.id} className="hover:bg-yellow-50/50">
+              <TableRow key={log.id} className="hover:bg-accent/5">
                 <TableCell className="whitespace-nowrap">
                   <div className="text-sm">
                     {formatDistanceToNow(new Date(log.createdAt), { addSuffix: true })}
@@ -223,7 +223,7 @@ export default async function AuditLogPage({ searchParams }: AuditLogPageProps) 
                       <summary className="text-xs text-blue-600 hover:underline">
                         {t("col_details")}
                       </summary>
-                      <pre className="mt-1 text-xs bg-slate-50 p-2 rounded overflow-auto max-h-40 whitespace-pre-wrap">
+                      <pre className="mt-1 text-xs bg-secondary p-2 rounded overflow-auto max-h-40 whitespace-pre-wrap">
                         {JSON.stringify(log.changes, null, 2)}
                       </pre>
                     </details>

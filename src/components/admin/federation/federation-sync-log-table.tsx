@@ -59,7 +59,7 @@ export function FederationSyncLogTable({ logs, total, page, totalPages, nodeId }
               </TableRow>
             ) : (
               logs.map((log) => (
-                <TableRow key={log.id} className="hover:bg-yellow-500/5">
+                <TableRow key={log.id} className="hover:bg-accent/5">
                   <TableCell>
                     <Badge variant={log.direction === "INBOUND" ? "secondary" : "default"}>
                       {log.direction === "INBOUND" ? "IN" : "OUT"}

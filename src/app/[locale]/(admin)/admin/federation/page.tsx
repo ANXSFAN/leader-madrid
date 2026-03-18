@@ -23,7 +23,7 @@ export default async function FederationPage() {
         description={t("subtitle")}
         actions={
           <Link href="/admin/federation/new">
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Plus className="mr-2 h-4 w-4" />
               {t("add_node")}
             </Button>

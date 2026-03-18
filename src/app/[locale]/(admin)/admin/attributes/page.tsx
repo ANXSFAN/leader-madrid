@@ -68,11 +68,11 @@ export default async function AttributesPage() {
           </div>
           <p className="mt-1 text-2xl font-bold text-blue-900">{filterable.length}</p>
         </div>
-        <div className="rounded-lg border bg-slate-50 p-3">
-          <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
+        <div className="rounded-lg border bg-secondary p-3">
+          <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
             {t("groups.regular")}
           </div>
-          <p className="mt-1 text-2xl font-bold text-slate-800">{regular.length}</p>
+          <p className="mt-1 text-2xl font-bold text-foreground">{regular.length}</p>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export default async function AttributesPage() {
       />
 
       {attributes.length === 0 && (
-        <div className="rounded-md border bg-white p-8 text-center text-muted-foreground">
+        <div className="rounded-md border bg-card p-8 text-center text-muted-foreground">
           {t("table.no_attributes")}
         </div>
       )}

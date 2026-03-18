@@ -56,7 +56,7 @@ export function ModuleTogglesForm({ initialToggles }: ModuleTogglesFormProps) {
           </div>
         ))}
       </div>
-      <Button onClick={handleSave} disabled={isPending} className="bg-yellow-500 hover:bg-yellow-600 text-black">
+      <Button onClick={handleSave} disabled={isPending} className="bg-accent hover:bg-accent/90 text-accent-foreground">
         {isPending ? t("modules_saving") : t("modules_save")}
       </Button>
     </div>

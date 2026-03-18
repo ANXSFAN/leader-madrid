@@ -23,7 +23,7 @@ export default function StorefrontError({
     <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 p-6">
       <AlertTriangle className="h-12 w-12 text-amber-500" />
       <h2 className="text-xl font-bold">{t("title")}</h2>
-      <p className="text-sm text-slate-500 max-w-md text-center">
+      <p className="text-sm text-muted-foreground max-w-md text-center">
         {t("description")}
       </p>
       <div className="flex gap-3">

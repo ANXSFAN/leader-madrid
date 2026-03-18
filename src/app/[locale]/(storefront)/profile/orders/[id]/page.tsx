@@ -115,19 +115,19 @@ export default async function OrderDetailsPage(
     switch (status) {
       case "PENDING":
         return (
-          <Badge className="bg-yellow-500 hover:bg-yellow-600 gap-1">
+          <Badge className="bg-accent hover:bg-accent/90 gap-1">
             <Clock className="w-3 h-3" /> {t(statusKey)}
           </Badge>
         );
       case "CONFIRMED":
         return (
-          <Badge className="bg-blue-500 hover:bg-blue-600 gap-1">
+          <Badge className="bg-info hover:bg-info/90 gap-1">
             <CheckCircle className="w-3 h-3" /> {t(statusKey)}
           </Badge>
         );
       case "SHIPPED":
         return (
-          <Badge className="bg-green-500 hover:bg-green-600 gap-1">
+          <Badge className="bg-success hover:bg-success/90 gap-1">
             <Truck className="w-3 h-3" /> {t(statusKey)}
           </Badge>
         );
@@ -139,7 +139,7 @@ export default async function OrderDetailsPage(
         );
       case "DELIVERED":
         return (
-          <Badge className="bg-green-700 hover:bg-green-800 gap-1">
+          <Badge className="bg-success/80 hover:bg-success/70 gap-1">
             <CheckCircle className="w-3 h-3" /> {t(statusKey)}
           </Badge>
         );
@@ -155,7 +155,7 @@ export default async function OrderDetailsPage(
           variant="ghost"
           size="sm"
           asChild
-          className="mb-6 hover:bg-slate-100"
+          className="mb-6 hover:bg-muted"
         >
           <Link
             href="/profile"
@@ -168,7 +168,7 @@ export default async function OrderDetailsPage(
 
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b pb-6">
           <div>
-            <h1 className="text-3xl font-bold flex items-center gap-3 text-slate-900">
+            <h1 className="text-3xl font-bold flex items-center gap-3 text-foreground">
               {t("order_number")}{order.orderNumber || order.id.slice(0, 8)}
             </h1>
             <p className="text-muted-foreground mt-2 flex items-center gap-2">
@@ -227,10 +227,10 @@ export default async function OrderDetailsPage(
       <div className="grid gap-8 lg:grid-cols-3">
         {/* Main Content: Order Items */}
         <div className="lg:col-span-2 space-y-8">
-          <Card className="overflow-hidden border-slate-200 shadow-sm">
-            <CardHeader className="bg-slate-50 border-b border-slate-100">
+          <Card className="overflow-hidden border-border shadow-sm">
+            <CardHeader className="bg-secondary border-b border-border">
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Package className="h-5 w-5 text-slate-500" />
+                <Package className="h-5 w-5 text-muted-foreground" />
                 {t("order_items")}
               </CardTitle>
             </CardHeader>
@@ -254,10 +254,10 @@ export default async function OrderDetailsPage(
                       return (
                         <TableRow
                           key={item.id}
-                          className="hover:bg-slate-50/50"
+                          className="hover:bg-secondary/50"
                         >
                           <TableCell className="pl-6 py-4">
-                            <div className="relative h-16 w-16 rounded-md overflow-hidden border border-slate-200 bg-white">
+                            <div className="relative h-16 w-16 rounded-md overflow-hidden border border-border bg-card">
                               <Image
                                 src={imageUrl}
                                 alt={productName}
@@ -267,18 +267,18 @@ export default async function OrderDetailsPage(
                             </div>
                           </TableCell>
                           <TableCell className="py-4">
-                            <div className="font-medium text-slate-900">
+                            <div className="font-medium text-foreground">
                               {productName}
                             </div>
                             <div className="text-xs text-muted-foreground mt-1 font-mono">
                               SKU: {item.sku}
                             </div>
                           </TableCell>
-                          <TableCell className="text-right py-4 font-mono text-slate-600">
+                          <TableCell className="text-right py-4 font-mono text-muted-foreground">
                             {fm(item.price)}
                           </TableCell>
                           <TableCell className="text-center py-4">
-                            <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800">
+                            <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-muted text-foreground">
                               x{item.quantity}
                             </span>
                           </TableCell>
@@ -292,14 +292,14 @@ export default async function OrderDetailsPage(
                 </Table>
               </div>
 
-              <div className="md:hidden divide-y divide-slate-100">
+              <div className="md:hidden divide-y divide-border">
                 {order.items.map((item) => {
                   const productName = item.name;
                   const imageUrl = getItemProductImage(item);
 
                   return (
                     <div key={item.id} className="p-4 flex gap-4">
-                      <div className="relative h-20 w-20 rounded-md overflow-hidden border border-slate-200 bg-white shrink-0">
+                      <div className="relative h-20 w-20 rounded-md overflow-hidden border border-border bg-card shrink-0">
                         <Image
                           src={imageUrl}
                           alt={productName}
@@ -308,14 +308,14 @@ export default async function OrderDetailsPage(
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-medium text-slate-900 text-sm leading-tight">
+                        <div className="font-medium text-foreground text-sm leading-tight">
                           {productName}
                         </div>
                         <div className="text-xs text-muted-foreground mt-1 font-mono">
                           SKU: {item.sku}
                         </div>
                         <div className="flex items-center justify-between mt-2">
-                          <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800">
+                          <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-xs font-medium bg-muted text-foreground">
                             x{item.quantity}
                           </span>
                           <div className="text-right">
@@ -338,10 +338,10 @@ export default async function OrderDetailsPage(
 
         {/* Sidebar: Summary & Address */}
         <div className="space-y-6">
-          <Card className="border-slate-200 shadow-sm">
-            <CardHeader className="bg-slate-50 border-b border-slate-100 pb-3">
+          <Card className="border-border shadow-sm">
+            <CardHeader className="bg-secondary border-b border-border pb-3">
               <CardTitle className="flex items-center gap-2 text-base">
-                <Receipt className="h-4 w-4 text-slate-500" />
+                <Receipt className="h-4 w-4 text-muted-foreground" />
                 {t("financial_summary")}
               </CardTitle>
             </CardHeader>
@@ -368,17 +368,17 @@ export default async function OrderDetailsPage(
             </CardContent>
           </Card>
 
-          <Card className="border-slate-200 shadow-sm">
-            <CardHeader className="bg-slate-50 border-b border-slate-100 pb-3">
+          <Card className="border-border shadow-sm">
+            <CardHeader className="bg-secondary border-b border-border pb-3">
               <CardTitle className="flex items-center gap-2 text-base">
-                <MapPin className="h-4 w-4 text-slate-500" />
+                <MapPin className="h-4 w-4 text-muted-foreground" />
                 {t("shipping_address")}
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               {order.shippingAddress ? (
                 <div className="text-sm space-y-3">
-                  <div className="font-medium text-slate-900 border-b pb-2">
+                  <div className="font-medium text-foreground border-b pb-2">
                     {order.shippingAddress.firstName}{" "}
                     {order.shippingAddress.lastName}
                     {order.shippingAddress.company && (
@@ -415,10 +415,10 @@ export default async function OrderDetailsPage(
             </CardContent>
           </Card>
 
-          <Card className="border-slate-200 shadow-sm">
-            <CardHeader className="bg-slate-50 border-b border-slate-100 pb-3">
+          <Card className="border-border shadow-sm">
+            <CardHeader className="bg-secondary border-b border-border pb-3">
               <CardTitle className="flex items-center gap-2 text-base">
-                <Truck className="h-4 w-4 text-slate-500" />
+                <Truck className="h-4 w-4 text-muted-foreground" />
                 {t("shipping_tracking")}
               </CardTitle>
             </CardHeader>
@@ -433,10 +433,10 @@ export default async function OrderDetailsPage(
 
               {/* Tracking number + link */}
               {order.trackingNumber && (
-                <div className="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm">
+                <div className="rounded-md border border-border bg-secondary px-3 py-2 text-sm">
                   <p className="text-xs text-muted-foreground mb-0.5">{t("tracking_number")}</p>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="font-mono font-medium text-slate-800">{order.trackingNumber}</span>
+                    <span className="font-mono font-medium text-foreground">{order.trackingNumber}</span>
                     {order.trackingUrl && (
                       <Link
                         href={order.trackingUrl as string}
@@ -468,7 +468,7 @@ export default async function OrderDetailsPage(
 
                   if (isCancelled) {
                     return (
-                      <div className="flex items-center gap-2 py-2 text-sm text-red-600">
+                      <div className="flex items-center gap-2 py-2 text-sm text-destructive">
                         <XCircle className="h-4 w-4" />
                         <span className="font-medium">{t("order_cancelled")}</span>
                       </div>
@@ -482,18 +482,18 @@ export default async function OrderDetailsPage(
                         <div
                           className={`h-5 w-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 ${
                             step.done
-                              ? "border-blue-600 bg-blue-600"
-                              : "border-slate-300 bg-white"
+                              ? "border-accent bg-accent"
+                              : "border-border bg-card"
                           }`}
                         >
                           {step.done && (
-                            <CheckCircle className="h-3 w-3 text-white" />
+                            <CheckCircle className="h-3 w-3 text-primary-foreground" />
                           )}
                         </div>
                         {i < steps.length - 1 && (
                           <div
                             className={`w-0.5 h-6 ${
-                              steps[i + 1].done ? "bg-blue-600" : "bg-slate-200"
+                              steps[i + 1].done ? "bg-accent" : "bg-border"
                             }`}
                           />
                         )}
@@ -503,10 +503,10 @@ export default async function OrderDetailsPage(
                         <p
                           className={`text-sm leading-5 ${
                             step.active
-                              ? "font-semibold text-slate-900"
+                              ? "font-semibold text-foreground"
                               : step.done
-                              ? "text-slate-700"
-                              : "text-slate-400"
+                              ? "text-foreground/80"
+                              : "text-muted-foreground"
                           }`}
                         >
                           {step.label}

@@ -101,7 +101,7 @@ function ProductSearchInput({
   return (
     <div ref={containerRef} className="relative">
       <div className="relative">
-        <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400" />
+        <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground/60" />
         <input
           value={query}
           onChange={(e) => {
@@ -109,16 +109,16 @@ function ProductSearchInput({
             onChange(e.target.value);
           }}
           onFocus={() => results.length > 0 && setIsOpen(true)}
-          className="w-full border border-gray-200 rounded-lg pl-8 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+          className="w-full border border-border rounded-lg pl-8 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
           placeholder={t("placeholder_product")}
         />
         {searching && (
-          <Loader2 size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 animate-spin" />
+          <Loader2 size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground/60 animate-spin" />
         )}
       </div>
 
       {isOpen && (
-        <div className="absolute z-50 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
+        <div className="absolute z-50 mt-1 w-full bg-card border border-border rounded-xl shadow-lg max-h-64 overflow-y-auto">
           {results.map((product) => (
             <button
               key={product.productId}
@@ -128,7 +128,7 @@ function ProductSearchInput({
                 setQuery(product.productName);
                 setIsOpen(false);
               }}
-              className="w-full text-left px-3 py-2.5 hover:bg-yellow-50 transition-colors border-b border-gray-50 last:border-0 flex items-center gap-3"
+              className="w-full text-left px-3 py-2.5 hover:bg-accent/5 transition-colors border-b border-border/50 last:border-0 flex items-center gap-3"
             >
               {product.imageUrl ? (
                 <Image
@@ -136,21 +136,21 @@ function ProductSearchInput({
                   alt=""
                   width={40}
                   height={40}
-                  className="w-10 h-10 rounded-lg object-cover bg-gray-100 flex-shrink-0"
+                  className="w-10 h-10 rounded-lg object-cover bg-muted flex-shrink-0"
                 />
               ) : (
-                <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
-                  <Package size={16} className="text-gray-400" />
+                <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
+                  <Package size={16} className="text-muted-foreground/60" />
                 </div>
               )}
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate">
+                <p className="text-sm font-medium text-foreground truncate">
                   {product.productName}
                 </p>
-                <div className="flex items-center gap-2 text-xs text-gray-500">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   {product.productSku && <span>SKU: {product.productSku}</span>}
                   {product.variants.length > 0 && (
-                    <span className="font-semibold text-yellow-700">
+                    <span className="font-semibold text-accent">
                       €{(isB2B && product.variants[0].b2bPrice
                         ? product.variants[0].b2bPrice
                         : product.variants[0].price
@@ -164,7 +164,7 @@ function ProductSearchInput({
           ))}
 
           {results.length === 0 && !searching && (
-            <div className="px-3 py-4 text-sm text-gray-500 text-center">
+            <div className="px-3 py-4 text-sm text-muted-foreground text-center">
               {t("search_no_results")}
             </div>
           )}
@@ -290,19 +290,19 @@ export default function RFQPage() {
           <CheckCircle className="h-10 w-10 text-green-500" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">{t("success_title")}</h1>
-          <p className="text-gray-500 max-w-md">{t("success_desc")}</p>
+          <h1 className="text-2xl font-bold text-foreground mb-2">{t("success_title")}</h1>
+          <p className="text-muted-foreground max-w-md">{t("success_desc")}</p>
         </div>
         <div className="flex gap-3 mt-2">
           <Link
             href="/"
-            className="px-5 py-2.5 border border-gray-200 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+            className="px-5 py-2.5 border border-border rounded-lg text-sm font-medium hover:bg-secondary transition-colors"
           >
             {t("back_home")}
           </Link>
           <Link
             href="/search"
-            className="px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-black rounded-lg text-sm font-bold transition-colors"
+            className="px-5 py-2.5 bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg text-sm font-bold transition-colors"
           >
             {t("continue_shopping")}
           </Link>
@@ -317,14 +317,14 @@ export default function RFQPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-1">
-          <div className="h-11 w-11 bg-yellow-100 rounded-xl flex items-center justify-center">
-            <FileText className="h-5 w-5 text-yellow-700" />
+          <div className="h-11 w-11 bg-accent/10 rounded-xl flex items-center justify-center">
+            <FileText className="h-5 w-5 text-accent" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-foreground">
               {isB2B ? t("b2b_title") : t("title")}
             </h1>
-            <p className="text-sm text-gray-500 mt-0.5">
+            <p className="text-sm text-muted-foreground mt-0.5">
               {isB2B ? t("b2b_subtitle") : t("subtitle")}
             </p>
           </div>
@@ -333,70 +333,70 @@ export default function RFQPage() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* ─── Contact Section ─── */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <div className="px-6 py-4 bg-gray-50/60 border-b border-gray-100 flex items-center gap-2">
-            <User size={15} className="text-gray-500" />
-            <h2 className="text-sm font-bold text-gray-700 uppercase tracking-wider">
+        <section className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
+          <div className="px-6 py-4 bg-secondary/60 border-b border-border flex items-center gap-2">
+            <User size={15} className="text-muted-foreground" />
+            <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
               {t("contact_section")}
             </h2>
           </div>
           <div className="p-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                  {t("full_name")} <span className="text-red-400">*</span>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
+                  {t("full_name")} <span className="text-destructive/70">*</span>
                 </label>
                 <input
                   required
                   value={form.contactName}
                   onChange={(e) => setForm((f) => ({ ...f, contactName: e.target.value }))}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                  className="w-full border border-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder={t("placeholder_name")}
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                  {t("email")} <span className="text-red-400">*</span>
+                <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
+                  {t("email")} <span className="text-destructive/70">*</span>
                 </label>
                 <input
                   required
                   type="email"
                   value={form.contactEmail}
                   onChange={(e) => setForm((f) => ({ ...f, contactEmail: e.target.value }))}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                  className="w-full border border-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder={t("placeholder_email")}
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
                   {t("company")}
                 </label>
                 <input
                   value={form.companyName}
                   onChange={(e) => setForm((f) => ({ ...f, companyName: e.target.value }))}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                  className="w-full border border-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder={t("placeholder_company")}
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
                   {t("phone")}
                 </label>
                 <input
                   value={form.phone}
                   onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                  className="w-full border border-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder={t("placeholder_phone")}
                 />
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
                   {t("country")}
                 </label>
                 <select
                   value={form.country}
                   onChange={(e) => setForm((f) => ({ ...f, country: e.target.value }))}
-                  className="w-full sm:w-1/2 border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent bg-white"
+                  className="w-full sm:w-1/2 border border-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-card"
                 >
                   {COUNTRIES.map((code) => (
                     <option key={code} value={code}>
@@ -410,18 +410,18 @@ export default function RFQPage() {
         </section>
 
         {/* ─── Products Section ─── */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <div className="px-6 py-4 bg-gray-50/60 border-b border-gray-100 flex items-center justify-between">
+        <section className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
+          <div className="px-6 py-4 bg-secondary/60 border-b border-border flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Package size={15} className="text-gray-500" />
-              <h2 className="text-sm font-bold text-gray-700 uppercase tracking-wider">
+              <Package size={15} className="text-muted-foreground" />
+              <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
                 {t("products_section")}
               </h2>
             </div>
             <button
               type="button"
               onClick={addItem}
-              className="flex items-center gap-1.5 text-xs text-yellow-700 hover:text-yellow-600 font-semibold transition-colors bg-yellow-50 hover:bg-yellow-100 px-3 py-1.5 rounded-lg"
+              className="flex items-center gap-1.5 text-xs text-accent hover:text-accent/80 font-semibold transition-colors bg-accent/5 hover:bg-accent/10 px-3 py-1.5 rounded-lg"
             >
               <Plus size={13} />
               {t("add_item")}
@@ -432,18 +432,18 @@ export default function RFQPage() {
             {items.map((item, i) => (
               <div
                 key={i}
-                className="relative bg-gray-50/80 rounded-xl p-4 border border-gray-100"
+                className="relative bg-secondary/80 rounded-xl p-4 border border-border"
               >
                 {/* Item number badge & delete */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-semibold text-gray-400 uppercase">
+                  <span className="text-xs font-semibold text-muted-foreground/60 uppercase">
                     {t("item_number", { number: i + 1 })}
                   </span>
                   {items.length > 1 && (
                     <button
                       type="button"
                       onClick={() => removeItem(i)}
-                      className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                      className="p-1.5 text-muted-foreground/60 hover:text-destructive hover:bg-destructive/10 rounded-lg transition-colors"
                       title={t("remove_item")}
                     >
                       <Trash2 size={14} />
@@ -453,8 +453,8 @@ export default function RFQPage() {
 
                 {/* Product search */}
                 <div className="mb-3">
-                  <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                    {t("product_ref")} <span className="text-red-400">*</span>
+                  <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
+                    {t("product_ref")} <span className="text-destructive/70">*</span>
                   </label>
                   <ProductSearchInput
                     value={item.productName}
@@ -469,7 +469,7 @@ export default function RFQPage() {
                 {/* Qty + Price row */}
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
                       {t("quantity")}
                     </label>
                     <input
@@ -477,11 +477,11 @@ export default function RFQPage() {
                       min="1"
                       value={item.quantity}
                       onChange={(e) => updateItem(i, "quantity", parseInt(e.target.value) || 1)}
-                      className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                      className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-muted-foreground mb-1.5">
                       {t("target_price")}
                     </label>
                     <input
@@ -490,7 +490,7 @@ export default function RFQPage() {
                       step="0.01"
                       value={item.targetPrice}
                       onChange={(e) => updateItem(i, "targetPrice", e.target.value)}
-                      className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                      className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       placeholder={t("placeholder_price")}
                     />
                   </div>
@@ -498,7 +498,7 @@ export default function RFQPage() {
 
                 {/* show selected variant SKU if available */}
                 {item.variantSku && item.productId && (
-                  <p className="mt-2 text-xs text-gray-400">
+                  <p className="mt-2 text-xs text-muted-foreground/60">
                     SKU: {item.variantSku}
                   </p>
                 )}
@@ -508,10 +508,10 @@ export default function RFQPage() {
         </section>
 
         {/* ─── Notes Section ─── */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <div className="px-6 py-4 bg-gray-50/60 border-b border-gray-100 flex items-center gap-2">
-            <MessageSquare size={15} className="text-gray-500" />
-            <h2 className="text-sm font-bold text-gray-700 uppercase tracking-wider">
+        <section className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
+          <div className="px-6 py-4 bg-secondary/60 border-b border-border flex items-center gap-2">
+            <MessageSquare size={15} className="text-muted-foreground" />
+            <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
               {t("notes_section")}
             </h2>
           </div>
@@ -520,7 +520,7 @@ export default function RFQPage() {
               rows={4}
               value={form.message}
               onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent resize-none"
+              className="w-full border border-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
               placeholder={t("message_placeholder")}
             />
           </div>
@@ -530,14 +530,14 @@ export default function RFQPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-black text-sm uppercase tracking-wider rounded-xl transition-all disabled:opacity-50 shadow-sm hover:shadow-md"
+          className="w-full flex items-center justify-center gap-2 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-black text-sm uppercase tracking-wider rounded-xl transition-all disabled:opacity-50 shadow-sm hover:shadow-md"
         >
           {loading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
           {loading ? t("submitting") : t("submit")}
         </button>
 
         {/* Response time note */}
-        <p className="text-center text-xs text-gray-400">{t("response_note")}</p>
+        <p className="text-center text-xs text-muted-foreground/60">{t("response_note")}</p>
       </form>
     </div>
   );

@@ -58,7 +58,7 @@ function LocaleFields({
           type="button"
           variant="ghost"
           size="sm"
-          className="h-6 px-1.5 gap-1 text-[10px] text-yellow-600 hover:text-yellow-700 hover:bg-yellow-50 shrink-0"
+          className="h-6 px-1.5 gap-1 text-[10px] text-accent hover:text-accent hover:bg-accent/10 shrink-0"
           disabled={translating}
           title={t("auto_translate")}
           onClick={onTranslate}
@@ -74,7 +74,7 @@ function LocaleFields({
           type="button"
           variant="ghost"
           size="sm"
-          className="h-6 px-1.5 gap-1 text-[10px] text-slate-400 hover:text-slate-600 shrink-0"
+          className="h-6 px-1.5 gap-1 text-[10px] text-muted-foreground hover:text-foreground shrink-0"
           onClick={() => setOpen(!open)}
         >
           {open ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
@@ -86,10 +86,10 @@ function LocaleFields({
 
       {/* Collapsible other locales */}
       {open && (
-        <div className="grid grid-cols-4 gap-2 pl-0 pt-1 pb-1 border-l-2 border-slate-200 ml-1 pl-3">
+        <div className="grid grid-cols-4 gap-2 pl-0 pt-1 pb-1 border-l-2 border-border ml-1 pl-3">
           {OTHER_LOCALES.map((loc) => (
             <div key={loc}>
-              <Label className="text-[10px] text-slate-400 uppercase">{loc}</Label>
+              <Label className="text-[10px] text-muted-foreground uppercase">{loc}</Label>
               <Input
                 value={values[loc] || ""}
                 onChange={(e) => onChange(loc, e.target.value)}
@@ -273,14 +273,14 @@ export function MegaMenuForm({ configKey, initialData, menuType }: MegaMenuFormP
         <Card key={colIdx} className="hover:shadow-md transition-all duration-200">
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="border-l-4 border-yellow-500 pl-3 text-sm">
+              <CardTitle className="border-l-4 border-accent pl-3 text-sm">
                 {t("column")} {colIdx + 1}
               </CardTitle>
               <Button
                 type="button"
                 variant="ghost"
                 size="sm"
-                className="text-red-500 hover:text-red-700"
+                className="text-destructive hover:text-destructive"
                 onClick={() => removeColumn(colIdx)}
               >
                 <Trash2 className="h-4 w-4" />
@@ -312,7 +312,7 @@ export function MegaMenuForm({ configKey, initialData, menuType }: MegaMenuFormP
                 </Button>
               </div>
               {col.items.map((item, itemIdx) => (
-                <div key={itemIdx} className="flex gap-2 items-start p-2 bg-slate-50 rounded border">
+                <div key={itemIdx} className="flex gap-2 items-start p-2 bg-secondary rounded border">
                   <div className="flex-1 space-y-2">
                     {/* Item label */}
                     <LocaleFields
@@ -392,7 +392,7 @@ export function MegaMenuForm({ configKey, initialData, menuType }: MegaMenuFormP
                     type="button"
                     variant="ghost"
                     size="icon"
-                    className="h-7 w-7 mt-1 text-red-400 hover:text-red-600"
+                    className="h-7 w-7 mt-1 text-destructive/70 hover:text-destructive"
                     onClick={() => removeItem(colIdx, itemIdx)}
                   >
                     <Trash2 className="h-3 w-3" />
@@ -411,7 +411,7 @@ export function MegaMenuForm({ configKey, initialData, menuType }: MegaMenuFormP
       {/* Promo Card */}
       <Card className="hover:shadow-md transition-all duration-200">
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3 text-sm">{t("promo_card")}</CardTitle>
+          <CardTitle className="border-l-4 border-accent pl-3 text-sm">{t("promo_card")}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <LocaleFields
@@ -463,7 +463,7 @@ export function MegaMenuForm({ configKey, initialData, menuType }: MegaMenuFormP
         <Button
           onClick={handleSave}
           disabled={loading}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           {loading && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
           {t("save_config")}

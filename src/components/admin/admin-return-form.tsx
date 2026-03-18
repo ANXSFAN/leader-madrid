@@ -179,7 +179,7 @@ export function AdminReturnForm({ warehouses }: AdminReturnFormProps) {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("search_order")}
           </CardTitle>
         </CardHeader>
@@ -201,7 +201,7 @@ export function AdminReturnForm({ warehouses }: AdminReturnFormProps) {
           </div>
 
           {foundOrder && (
-            <div className="mt-4 p-3 rounded-md bg-slate-50 text-sm">
+            <div className="mt-4 p-3 rounded-md bg-secondary text-sm">
               <span className="font-medium">{t("order")}:</span>{" "}
               <span className="font-mono">{foundOrder.orderNumber}</span>
               <span className="mx-2">|</span>
@@ -216,7 +216,7 @@ export function AdminReturnForm({ warehouses }: AdminReturnFormProps) {
         <>
           <Card>
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">
+              <CardTitle className="border-l-4 border-accent pl-3">
                 {t("select_items")}
               </CardTitle>
             </CardHeader>
@@ -306,7 +306,7 @@ export function AdminReturnForm({ warehouses }: AdminReturnFormProps) {
 
           <Card>
             <CardHeader>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">
+              <CardTitle className="border-l-4 border-accent pl-3">
                 {t("return_details")}
               </CardTitle>
             </CardHeader>
@@ -368,7 +368,7 @@ export function AdminReturnForm({ warehouses }: AdminReturnFormProps) {
                   <Button
                     onClick={onSubmit}
                     disabled={loading}
-                    className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
                   >
                     {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     {t("submit")}

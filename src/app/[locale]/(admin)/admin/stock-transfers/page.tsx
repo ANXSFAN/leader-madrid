@@ -44,7 +44,7 @@ export default async function StockTransfersPage(
         title={t("title")}
         description={t("subtitle")}
         actions={
-          <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             <Link href="/admin/stock-transfers/new">
               <Plus className="mr-2 h-4 w-4" /> {t("actions.new")}
             </Link>
@@ -59,7 +59,7 @@ export default async function StockTransfersPage(
               <ArrowLeftRight className="h-10 w-10 text-muted-foreground" />
             </div>
             <p className="text-muted-foreground text-sm mb-3">{t("empty")}</p>
-            <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Link href="/admin/stock-transfers/new">
                 <Plus className="mr-2 h-4 w-4" />
                 {t("actions.new")}
@@ -85,7 +85,7 @@ export default async function StockTransfersPage(
               {transfers.map((tr) => (
                 <TableRow key={tr.id} className="hover:bg-muted/30 transition-colors">
                   <TableCell>
-                    <code className="text-xs bg-slate-100 px-2 py-0.5 rounded font-medium">
+                    <code className="text-xs bg-muted px-2 py-0.5 rounded font-medium">
                       {tr.transferNumber}
                     </code>
                   </TableCell>

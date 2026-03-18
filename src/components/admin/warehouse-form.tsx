@@ -97,7 +97,7 @@ export function WarehouseForm({ warehouse }: WarehouseFormProps) {
     <form onSubmit={form.handleSubmit(onSubmit)}>
       <Card className="hover:shadow-md transition-shadow">
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {isNew ? t("form.title_new") : t("form.title_edit")}
           </CardTitle>
         </CardHeader>
@@ -185,7 +185,7 @@ export function WarehouseForm({ warehouse }: WarehouseFormProps) {
             <Button
               type="submit"
               disabled={loading}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
             >
               {loading ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

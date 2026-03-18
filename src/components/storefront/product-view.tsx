@@ -240,7 +240,7 @@ export function ProductView({
                 >
                   <div
                     className={cn(
-                      "bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2 text-base font-medium text-foreground/80 transition-opacity",
+                      "bg-card/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2 text-base font-medium text-foreground/80 transition-opacity",
                       isHovering || stock <= 0 ? "opacity-0" : "opacity-100"
                     )}
                   >
@@ -258,14 +258,14 @@ export function ProductView({
             {/* Floating Badges */}
             <div className="absolute top-6 left-6 flex flex-col gap-2">
               {specs?.power && (
-                <Badge className="bg-primary text-white hover:bg-primary/90 text-lg px-3 py-1">
+                <Badge className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-3 py-1">
                   {specs.power}
                 </Badge>
               )}
               {product.category && (
                 <Badge
                   variant="secondary"
-                  className="bg-white/90 backdrop-blur text-foreground/80 border border-border"
+                  className="bg-card/90 backdrop-blur text-foreground/80 border border-border"
                 >
                   {getLocalized(product.category.content, locale).name}
                 </Badge>
@@ -276,7 +276,7 @@ export function ProductView({
             {images.length > 1 && (
               <>
                 <button
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-card/90 hover:bg-card shadow-lg rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-10"
                   onClick={(e) => {
                     e.stopPropagation();
                     prevImage();
@@ -285,7 +285,7 @@ export function ProductView({
                   <ChevronLeft size={20} />
                 </button>
                 <button
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-card/90 hover:bg-card shadow-lg rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-10"
                   onClick={(e) => {
                     e.stopPropagation();
                     nextImage();
@@ -298,8 +298,8 @@ export function ProductView({
 
             {/* Out of Stock Overlay */}
             {stock <= 0 && (
-              <div className="absolute inset-0 bg-white/60 flex items-center justify-center">
-                <Badge className="bg-red-500 text-white text-xl px-6 py-2">
+              <div className="absolute inset-0 bg-card/60 flex items-center justify-center">
+                <Badge className="bg-destructive text-destructive-foreground text-xl px-6 py-2">
                   {t("out_of_stock")}
                 </Badge>
               </div>

@@ -112,7 +112,7 @@ export function LotForm({ warehouses, variants, binLocations = [] }: Props) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="border-l-4 border-yellow-500 pl-3">
+        <CardTitle className="border-l-4 border-accent pl-3">
           {t("form.title")}
         </CardTitle>
       </CardHeader>
@@ -234,7 +234,7 @@ export function LotForm({ warehouses, variants, binLocations = [] }: Props) {
           <Button
             onClick={handleSubmit}
             disabled={isPending}
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
           >
             {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {t("form.create")}

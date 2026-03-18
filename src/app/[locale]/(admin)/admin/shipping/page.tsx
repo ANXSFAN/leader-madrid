@@ -29,7 +29,7 @@ export default async function ShippingPage() {
       <PageHeader
         title={t("title")}
         actions={
-          <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
             <Link href="/admin/shipping/new">
               <Plus className="mr-2 h-4 w-4" /> {t("actions.new")}
             </Link>
@@ -44,7 +44,7 @@ export default async function ShippingPage() {
               <Package className="h-10 w-10 text-muted-foreground" />
             </div>
             <p className="text-muted-foreground text-sm mb-3">{t("empty_icon_text")}</p>
-            <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Link href="/admin/shipping/new">
                 <Plus className="mr-2 h-4 w-4" />
                 {t("empty_action")}
@@ -70,7 +70,7 @@ export default async function ShippingPage() {
                 <TableRow key={method.id} className="hover:bg-muted/30 transition-colors">
                   <TableCell className="font-medium">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-yellow-50 text-yellow-600">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
                         <Truck className="h-4 w-4" />
                       </div>
                       <div>

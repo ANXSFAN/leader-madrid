@@ -209,7 +209,7 @@ export function ProductDetailTabs({
                       {certDocs.map((cert) => (
                         <div
                           key={cert.id}
-                          className="relative h-14 w-14 rounded-lg border border-border bg-white p-0.5"
+                          className="relative h-14 w-14 rounded-lg border border-border bg-card p-0.5"
                           title={cert.name}
                         >
                           <Image

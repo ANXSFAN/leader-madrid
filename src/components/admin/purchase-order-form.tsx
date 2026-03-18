@@ -161,8 +161,8 @@ export function PurchaseOrderForm({ suppliers, products, warehouses, locale, cur
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <Card className="hover:shadow-md transition-shadow duration-200">
           <CardHeader className="pb-4">
-            <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-yellow-500 pl-3">
-              <ShoppingCart className="h-5 w-5 text-yellow-600" />
+            <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-accent pl-3">
+              <ShoppingCart className="h-5 w-5 text-accent" />
               {t("form.title_create")}
             </CardTitle>
           </CardHeader>
@@ -419,7 +419,7 @@ export function PurchaseOrderForm({ suppliers, products, warehouses, locale, cur
               <div className="text-lg font-semibold">
                 {t("form.total_label")}: <span className="font-mono">{formatMoney(totalAmount, { locale, currency })}</span>
               </div>
-              <Button type="submit" disabled={loading || fields.length === 0} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black min-w-[160px]">
+              <Button type="submit" disabled={loading || fields.length === 0} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black min-w-[160px]">
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

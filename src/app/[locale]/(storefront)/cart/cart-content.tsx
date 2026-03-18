@@ -92,11 +92,11 @@ export function CartContent({ currency, locale, exchangeRate = 1 }: CartContentP
   if (items.length === 0) {
     return (
       <div className="container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
-        <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mb-6">
-          <ShoppingCart className="w-10 h-10 text-slate-400" />
+        <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mb-6">
+          <ShoppingCart className="w-10 h-10 text-muted-foreground" />
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">{t("empty")}</h1>
-        <p className="text-slate-500 mb-8 max-w-md">{t("empty_desc")}</p>
+        <h1 className="text-2xl font-bold text-foreground mb-2">{t("empty")}</h1>
+        <p className="text-muted-foreground mb-8 max-w-md">{t("empty_desc")}</p>
         <Button asChild size="lg">
           <Link href="/">{t("continue_shopping")}</Link>
         </Button>
@@ -106,7 +106,7 @@ export function CartContent({ currency, locale, exchangeRate = 1 }: CartContentP
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+      <h1 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">
         <ShoppingCart className="w-8 h-8" /> {t("title")}
       </h1>
 
@@ -126,7 +126,7 @@ export function CartContent({ currency, locale, exchangeRate = 1 }: CartContentP
                 <Button
                   variant="outline"
                   size="sm"
-                  className="text-red-500 hover:text-red-600 border-red-200 hover:bg-red-50"
+                  className="text-destructive hover:text-destructive border-destructive/30 hover:bg-destructive/10"
                 >
                   <Trash2 className="mr-2 h-4 w-4" /> {t("clear_cart")}
                 </Button>
@@ -160,11 +160,11 @@ export function CartContent({ currency, locale, exchangeRate = 1 }: CartContentP
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between text-sm">
-                <span className="text-slate-500">{t("subtotal")}</span>
+                <span className="text-muted-foreground">{t("subtotal")}</span>
                 <span className="font-medium">{fm(totalPrice)}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-slate-500">
+                <span className="text-muted-foreground">
                   {t("tax")} ({TAX_NAME} {(estimatedTaxRate * 100).toFixed(0)}%)
                 </span>
                 <span className="font-medium">{fm(totalPrice * estimatedTaxRate)}</span>
@@ -179,7 +179,7 @@ export function CartContent({ currency, locale, exchangeRate = 1 }: CartContentP
                   {t("checkout")} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <p className="text-xs text-slate-400 text-center mt-2">
+              <p className="text-xs text-muted-foreground text-center mt-2">
                 {t("shipping_calculated")}
               </p>
             </CardContent>

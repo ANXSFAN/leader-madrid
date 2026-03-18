@@ -112,7 +112,7 @@ export function StockTakeCountForm({ stockTakeId, items }: Props) {
         </div>
       )}
 
-      <div className="rounded-md border bg-white">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             <TableRow>
@@ -168,7 +168,7 @@ export function StockTakeCountForm({ stockTakeId, items }: Props) {
         <Button
           onClick={handleSave}
           disabled={isPending}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           {isPending ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

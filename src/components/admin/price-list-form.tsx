@@ -95,7 +95,7 @@ export function PriceListForm({ initialData }: PriceListFormProps) {
   return (
     <Card className="hover:shadow-md transition-all duration-200">
       <CardHeader>
-        <CardTitle className="border-l-4 border-yellow-500 pl-3">
+        <CardTitle className="border-l-4 border-accent pl-3">
           {initialData ? t("title_edit") : t("title_create")}
         </CardTitle>
       </CardHeader>
@@ -190,7 +190,7 @@ export function PriceListForm({ initialData }: PriceListFormProps) {
                 )}
               />
             </div>
-            <Button disabled={loading} type="submit" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button disabled={loading} type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               {initialData ? t("actions.save") : t("actions.create")}
             </Button>
           </form>

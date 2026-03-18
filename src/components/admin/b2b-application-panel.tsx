@@ -293,18 +293,18 @@ export function B2BApplicationPanel({ user }: B2BApplicationPanelProps) {
           <h4 className="text-sm font-semibold mb-3">{t("vat_verification")}</h4>
 
           {localUser.vatVerified ? (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 space-y-1">
-              <p className="text-sm font-medium text-green-800 flex items-center gap-1">
+            <div className="bg-success/10 border border-success/20 rounded-lg p-4 space-y-1">
+              <p className="text-sm font-medium text-success flex items-center gap-1">
                 <CheckCircle2 className="h-4 w-4" />
                 {t("verified_on")} {formatDate(localUser.vatVerifiedAt)}
               </p>
               {localUser.vatVerifiedName && (
-                <p className="text-sm text-green-700">
+                <p className="text-sm text-success">
                   {t("company_label")}: {localUser.vatVerifiedName}
                 </p>
               )}
               {localUser.vatVerifiedAddress && (
-                <p className="text-sm text-green-700">
+                <p className="text-sm text-success">
                   {t("address_label")}: {localUser.vatVerifiedAddress}
                 </p>
               )}
@@ -315,13 +315,13 @@ export function B2BApplicationPanel({ user }: B2BApplicationPanelProps) {
 
           {/* Verify result display */}
           {verifyResult && !verifyResult.isValid && verifyResult.message && (
-            <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-600">{verifyResult.message}</p>
+            <div className="mt-3 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+              <p className="text-sm text-destructive">{verifyResult.message}</p>
             </div>
           )}
           {verifyResult && verifyResult.error && (
-            <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-600">{verifyResult.error}</p>
+            <div className="mt-3 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+              <p className="text-sm text-destructive">{verifyResult.error}</p>
             </div>
           )}
 
@@ -342,7 +342,7 @@ export function B2BApplicationPanel({ user }: B2BApplicationPanelProps) {
 
             {localUser.b2bStatus !== "APPROVED" && (
               <Button
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className="bg-success hover:bg-success/90 text-primary-foreground"
                 onClick={handleApprove}
                 disabled={isApproving}
               >
@@ -395,8 +395,8 @@ export function B2BApplicationPanel({ user }: B2BApplicationPanelProps) {
 
           {/* Show rejection reason if already rejected */}
           {localUser.b2bStatus === "REJECTED" && localUser.b2bRejectionReason && (
-            <div className="mt-3 p-3 bg-red-50 rounded-lg">
-              <p className="text-sm text-red-600">
+            <div className="mt-3 p-3 bg-destructive/10 rounded-lg">
+              <p className="text-sm text-destructive">
                 {t("rejection_reason")}: {localUser.b2bRejectionReason}
               </p>
             </div>

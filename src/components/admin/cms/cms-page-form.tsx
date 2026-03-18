@@ -219,7 +219,7 @@ export function CmsPageForm({ initialData }: CmsPageFormProps) {
       {/* Basic Settings */}
       <Card className="hover:shadow-md transition-all duration-200">
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("basic_settings")}
           </CardTitle>
         </CardHeader>
@@ -289,7 +289,7 @@ export function CmsPageForm({ initialData }: CmsPageFormProps) {
       {/* Cover Image */}
       <Card className="hover:shadow-md transition-all duration-200">
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("media_title")}
           </CardTitle>
           <CardDescription>{t("cover_image_description")}</CardDescription>
@@ -307,7 +307,7 @@ export function CmsPageForm({ initialData }: CmsPageFormProps) {
         <CardHeader>
           <div className="flex items-start justify-between gap-4">
             <div>
-              <CardTitle className="border-l-4 border-yellow-500 pl-3">
+              <CardTitle className="border-l-4 border-accent pl-3">
                 {t("content_title")}
               </CardTitle>
               <CardDescription className="mt-1.5">
@@ -320,7 +320,7 @@ export function CmsPageForm({ initialData }: CmsPageFormProps) {
               size="sm"
               onClick={runAiTranslate}
               disabled={aiTranslating}
-              className="shrink-0 border-yellow-400 text-yellow-700 hover:bg-yellow-50"
+              className="shrink-0 border-accent text-accent hover:bg-accent/10"
             >
               {aiTranslating ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -394,7 +394,7 @@ export function CmsPageForm({ initialData }: CmsPageFormProps) {
       </Card>
 
       {/* Footer Actions */}
-      <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+      <div className="flex items-center justify-between pt-4 border-t border-border">
         <Link href="/admin/cms/pages">
           <Button type="button" variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" /> {t("back")}
@@ -403,7 +403,7 @@ export function CmsPageForm({ initialData }: CmsPageFormProps) {
         <Button
           type="submit"
           disabled={loading}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isEditing ? t("update_page") : t("create_page")}

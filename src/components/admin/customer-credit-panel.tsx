@@ -73,7 +73,7 @@ export function CustomerCreditPanel({
 
   return (
     <Card>
-      <CardHeader className="border-b border-yellow-400">
+      <CardHeader className="border-b border-accent">
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
             <CreditCard className="h-5 w-5" />
@@ -133,7 +133,7 @@ export function CustomerCreditPanel({
               <Button
                 onClick={handleSave}
                 disabled={saving}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground"
               >
                 {saving ? t("saving") : t("save")}
               </Button>

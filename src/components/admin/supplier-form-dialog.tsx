@@ -87,7 +87,7 @@ export function SupplierFormDialog({ children, supplier }: SupplierFormDialogPro
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="border-l-4 border-yellow-500 pl-3">
+          <DialogTitle className="border-l-4 border-accent pl-3">
             {supplier ? t("title_edit") : t("title_create")}
           </DialogTitle>
           <DialogDescription>
@@ -164,7 +164,7 @@ export function SupplierFormDialog({ children, supplier }: SupplierFormDialogPro
               )}
             />
             <DialogFooter>
-              <Button type="submit" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">{t("actions.save")}</Button>
+              <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">{t("actions.save")}</Button>
             </DialogFooter>
           </form>
         </Form>

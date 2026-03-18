@@ -26,7 +26,7 @@ export function MonthlyTarget({
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Target className="h-5 w-5 text-yellow-600" />
+          <Target className="h-5 w-5 text-accent" />
           <span className="text-sm font-semibold text-slate-700">{label}</span>
         </div>
         <div className="text-right">

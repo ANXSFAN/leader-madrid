@@ -27,11 +27,11 @@ export default async function RFQDetailPage({
     <div className="p-6 max-w-4xl space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <Link href="/admin/rfq" className="text-xs text-gray-500 hover:underline mb-1 block">
+          <Link href="/admin/rfq" className="text-xs text-muted-foreground hover:underline mb-1 block">
             {t("detail.back_to_list")}
           </Link>
-          <h1 className="text-2xl font-bold text-gray-900">{t("detail.title", { id: rfq.id.slice(0, 8) })}</h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <h1 className="text-2xl font-bold text-foreground">{t("detail.title", { id: rfq.id.slice(0, 8) })}</h1>
+          <p className="text-sm text-muted-foreground mt-1">
             {t("detail.received", { date: new Date(rfq.createdAt).toLocaleString(locale) })}
           </p>
         </div>
@@ -39,8 +39,8 @@ export default async function RFQDetailPage({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-          <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">
+        <div className="bg-card rounded-xl border border-border shadow-sm p-6">
+          <h2 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">
             {t("detail.contact_details")}
           </h2>
           <dl className="space-y-2">
@@ -54,21 +54,21 @@ export default async function RFQDetailPage({
             ].map(([label, value]) =>
               value ? (
                 <div key={String(label)} className="flex gap-3">
-                  <dt className="w-28 text-xs font-semibold text-gray-500 shrink-0">{label}</dt>
-                  <dd className="text-sm text-gray-900">{value}</dd>
+                  <dt className="w-28 text-xs font-semibold text-muted-foreground shrink-0">{label}</dt>
+                  <dd className="text-sm text-foreground">{value}</dd>
                 </div>
               ) : null
             )}
           </dl>
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-          <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">
+        <div className="bg-card rounded-xl border border-border shadow-sm p-6">
+          <h2 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">
             {t("detail.status_and_quote")}
           </h2>
           <dl className="space-y-2">
             <div className="flex gap-3">
-              <dt className="w-28 text-xs font-semibold text-gray-500">{t("table.status")}</dt>
+              <dt className="w-28 text-xs font-semibold text-muted-foreground">{t("table.status")}</dt>
               <dd>
                 <span className={cn("px-2.5 py-1 rounded-full text-xs font-medium", getStatusClass(rfq.status))}>
                   {t(`status.${rfq.status}`)}
@@ -77,42 +77,42 @@ export default async function RFQDetailPage({
             </div>
             {rfq.quotedTotal && (
               <div className="flex gap-3">
-                <dt className="w-28 text-xs font-semibold text-gray-500">{t("detail.quoted_total")}</dt>
-                <dd className="text-sm font-bold text-gray-900">
+                <dt className="w-28 text-xs font-semibold text-muted-foreground">{t("detail.quoted_total")}</dt>
+                <dd className="text-sm font-bold text-foreground">
                   {new Intl.NumberFormat(locale, { style: "currency", currency }).format(Number(rfq.quotedTotal))}
                 </dd>
               </div>
             )}
             {rfq.adminNote && (
               <div className="flex gap-3">
-                <dt className="w-28 text-xs font-semibold text-gray-500">{t("detail.admin_note")}</dt>
-                <dd className="text-sm text-gray-700">{rfq.adminNote}</dd>
+                <dt className="w-28 text-xs font-semibold text-muted-foreground">{t("detail.admin_note")}</dt>
+                <dd className="text-sm text-muted-foreground">{rfq.adminNote}</dd>
               </div>
             )}
           </dl>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+      <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
         <div className="px-6 py-4 border-b">
-          <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">
+          <h2 className="text-sm font-bold text-foreground uppercase tracking-wider">
             {t("detail.requested_products", { count: rfq.items.length })}
           </h2>
         </div>
         <table className="w-full">
           <thead>
-            <tr className="border-b bg-gray-50">
-              <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t("detail.col_product")}</th>
-              <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t("detail.col_sku")}</th>
-              <th className="text-right px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t("detail.col_qty")}</th>
-              <th className="text-right px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t("detail.col_target_price")}</th>
+            <tr className="border-b bg-secondary">
+              <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("detail.col_product")}</th>
+              <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("detail.col_sku")}</th>
+              <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("detail.col_qty")}</th>
+              <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("detail.col_target_price")}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-50">
+          <tbody className="divide-y divide-secondary">
             {rfq.items.map((item) => (
               <tr key={item.id}>
-                <td className="px-4 py-3 text-sm font-medium text-gray-900">{item.productName}</td>
-                <td className="px-4 py-3 text-xs font-mono text-gray-500">{item.variantSku || "—"}</td>
+                <td className="px-4 py-3 text-sm font-medium text-foreground">{item.productName}</td>
+                <td className="px-4 py-3 text-xs font-mono text-muted-foreground">{item.variantSku || "—"}</td>
                 <td className="px-4 py-3 text-sm text-right font-bold">{item.quantity}</td>
                 <td className="px-4 py-3 text-sm text-right">
                   {item.targetPrice
@@ -126,9 +126,9 @@ export default async function RFQDetailPage({
       </div>
 
       {rfq.message && (
-        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-          <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">{t("detail.message")}</h2>
-          <p className="text-sm text-gray-700 whitespace-pre-wrap">{rfq.message}</p>
+        <div className="bg-card rounded-xl border border-border shadow-sm p-6">
+          <h2 className="text-sm font-bold text-foreground uppercase tracking-wider mb-3">{t("detail.message")}</h2>
+          <p className="text-sm text-muted-foreground whitespace-pre-wrap">{rfq.message}</p>
         </div>
       )}
     </div>
@@ -142,7 +142,7 @@ function getStatusClass(status: RFQStatus) {
     QUOTED: "bg-purple-100 text-purple-800",
     ACCEPTED: "bg-green-100 text-green-800",
     REJECTED: "bg-red-100 text-red-800",
-    EXPIRED: "bg-gray-100 text-gray-600",
+    EXPIRED: "bg-muted text-muted-foreground",
   };
-  return map[status] || "bg-gray-100 text-gray-600";
+  return map[status] || "bg-muted text-muted-foreground";
 }

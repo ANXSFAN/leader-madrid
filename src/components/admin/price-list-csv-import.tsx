@@ -71,7 +71,7 @@ export function PriceListCsvImport({ priceListId }: PriceListCsvImportProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 border-l-4 border-yellow-500 pl-3">
+        <CardTitle className="flex items-center gap-2 border-l-4 border-accent pl-3">
           <Upload className="h-5 w-5" />
           {t("import_title")}
         </CardTitle>
@@ -102,7 +102,7 @@ export function PriceListCsvImport({ priceListId }: PriceListCsvImportProps) {
         <Button
           onClick={handleImport}
           disabled={!file || importing}
-          className="bg-yellow-500 hover:bg-yellow-600 text-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground"
         >
           {importing ? (
             <>

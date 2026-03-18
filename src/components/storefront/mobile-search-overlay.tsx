@@ -190,7 +190,7 @@ export function MobileSearchOverlay({ open, onClose }: MobileSearchOverlayProps)
                   </div>
                   <button
                     onClick={clearHistory}
-                    className="text-xs text-muted-foreground hover:text-red-500 transition-colors"
+                    className="text-xs text-muted-foreground hover:text-destructive transition-colors"
                   >
                     {t("clear_history")}
                   </button>
@@ -209,7 +209,7 @@ export function MobileSearchOverlay({ open, onClose }: MobileSearchOverlayProps)
                           e.stopPropagation();
                           removeFromHistory(term);
                         }}
-                        className="ml-0.5 text-muted-foreground/40 hover:text-red-400"
+                        className="ml-0.5 text-muted-foreground/40 hover:text-destructive"
                       >
                         <X size={12} />
                       </button>

@@ -110,7 +110,7 @@ export function FederationNodeForm({ suppliers }: FederationNodeFormProps) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("keys_generated")}
           </CardTitle>
         </CardHeader>
@@ -143,7 +143,7 @@ export function FederationNodeForm({ suppliers }: FederationNodeFormProps) {
 
           <div className="pt-4">
             <Button
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
               onClick={() => router.push("/admin/federation")}
             >
               {t("back_to_list")}
@@ -160,7 +160,7 @@ export function FederationNodeForm({ suppliers }: FederationNodeFormProps) {
         {/* Basic Information */}
         <Card className="hover:shadow-md transition-shadow">
           <CardHeader>
-            <CardTitle className="border-l-4 border-yellow-500 pl-3">
+            <CardTitle className="border-l-4 border-accent pl-3">
               {t("form.basic_info")}
             </CardTitle>
           </CardHeader>
@@ -234,7 +234,7 @@ export function FederationNodeForm({ suppliers }: FederationNodeFormProps) {
         {/* Business Terms */}
         <Card className="hover:shadow-md transition-shadow">
           <CardHeader>
-            <CardTitle className="border-l-4 border-yellow-500 pl-3">
+            <CardTitle className="border-l-4 border-accent pl-3">
               {t("form.business_terms")}
             </CardTitle>
           </CardHeader>
@@ -313,7 +313,7 @@ export function FederationNodeForm({ suppliers }: FederationNodeFormProps) {
         <Button
           type="submit"
           disabled={isPending}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           {isPending ? t("form.creating") : t("form.create")}
         </Button>

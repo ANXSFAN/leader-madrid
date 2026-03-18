@@ -50,8 +50,8 @@ export default function CmsPagesListPage() {
     switch (type) {
       case "SOLUTION": return "bg-blue-100 text-blue-700";
       case "RESOURCE": return "bg-purple-100 text-purple-700";
-      case "LEGAL": return "bg-gray-100 text-gray-700";
-      default: return "bg-slate-100 text-slate-700";
+      case "LEGAL": return "bg-muted text-muted-foreground";
+      default: return "bg-muted text-muted-foreground";
     }
   };
 
@@ -66,7 +66,7 @@ export default function CmsPagesListPage() {
         ]}
         actions={
           <Link href="/admin/cms/pages/new">
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Plus className="h-4 w-4 mr-2" /> {t("add_page")}
             </Button>
           </Link>
@@ -97,13 +97,13 @@ export default function CmsPagesListPage() {
           <TableBody>
             {loading ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-slate-400">
+                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground/60">
                   {t("loading")}
                 </TableCell>
               </TableRow>
             ) : pages.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-slate-400">
+                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground/60">
                   {t("empty")}
                 </TableCell>
               </TableRow>
@@ -112,17 +112,17 @@ export default function CmsPagesListPage() {
                 const content = page.content as Record<string, any>;
                 const title = content?.en?.title || page.slug;
                 return (
-                  <TableRow key={page.id} className="hover:bg-yellow-50/50">
+                  <TableRow key={page.id} className="hover:bg-accent/5">
                     <TableCell>
                       <div>
                         <p className="font-medium">{title}</p>
-                        <p className="text-xs text-slate-400">/{page.slug}</p>
+                        <p className="text-xs text-muted-foreground/60">/{page.slug}</p>
                       </div>
                     </TableCell>
                     <TableCell>
                       <Badge className={typeColor(page.type)}>{page.type}</Badge>
                     </TableCell>
-                    <TableCell className="text-sm text-slate-500">{page.menuGroup || "—"}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{page.menuGroup || "—"}</TableCell>
                     <TableCell className="text-sm">{page.order}</TableCell>
                     <TableCell>
                       <Badge className={page.isActive ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}>

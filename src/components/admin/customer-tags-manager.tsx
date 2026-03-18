@@ -144,7 +144,7 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
       <div className="flex justify-end">
         <Dialog open={createOpen} onOpenChange={setCreateOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Plus className="mr-2 h-4 w-4" />
               {t("create")}
             </Button>
@@ -211,7 +211,7 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
               <Button
                 onClick={handleCreate}
                 disabled={isPending || !createName.trim()}
-                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground"
               >
                 {t("create")}
               </Button>
@@ -229,16 +229,16 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-500">
+                <TableHead className="text-[11px] font-black uppercase tracking-widest text-muted-foreground">
                   {t("color")}
                 </TableHead>
-                <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-500">
+                <TableHead className="text-[11px] font-black uppercase tracking-widest text-muted-foreground">
                   {t("name")}
                 </TableHead>
-                <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-500">
+                <TableHead className="text-[11px] font-black uppercase tracking-widest text-muted-foreground">
                   {t("user_count")}
                 </TableHead>
-                <TableHead className="text-right text-[11px] font-black uppercase tracking-widest text-slate-500">
+                <TableHead className="text-right text-[11px] font-black uppercase tracking-widest text-muted-foreground">
                   {t("actions")}
                 </TableHead>
               </TableRow>
@@ -257,7 +257,7 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
                 tags.map((tag) => (
                   <TableRow
                     key={tag.id}
-                    className="hover:bg-yellow-50/40 transition-colors"
+                    className="hover:bg-accent/5 transition-colors"
                   >
                     <TableCell>
                       <span
@@ -288,7 +288,7 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
                               size="icon"
                               disabled={isPending}
                             >
-                              <Trash2 className="h-4 w-4 text-red-500" />
+                              <Trash2 className="h-4 w-4 text-destructive" />
                             </Button>
                           </AlertDialogTrigger>
                           <AlertDialogContent>
@@ -307,7 +307,7 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
                               <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
                               <AlertDialogAction
                                 onClick={() => handleDelete(tag.id)}
-                                className="bg-red-500 hover:bg-red-600"
+                                className="bg-destructive hover:bg-destructive/90 text-destructive-foreground"
                               >
                                 {t("delete")}
                               </AlertDialogAction>
@@ -387,7 +387,7 @@ export function CustomerTagsManager({ tags }: CustomerTagsManagerProps) {
             <Button
               onClick={handleUpdate}
               disabled={isPending || !editName.trim()}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground"
             >
               {t("save")}
             </Button>

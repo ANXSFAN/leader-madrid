@@ -83,7 +83,7 @@ export function QuickProductDialog({ onCreated }: QuickProductDialogProps) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="border-l-4 border-yellow-500 pl-3">
+          <DialogTitle className="border-l-4 border-accent pl-3">
             {t("title")}
           </DialogTitle>
           <DialogDescription>{t("description")}</DialogDescription>
@@ -133,7 +133,7 @@ export function QuickProductDialog({ onCreated }: QuickProductDialogProps) {
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
               >
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {t("button")}

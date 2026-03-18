@@ -254,7 +254,7 @@ export default async function ProductsPage(
           <>
             <ImportProductsDialog />
             <ExportProductsButton />
-            <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-black">
               <Link href="/admin/products/new">
                 <Plus className="mr-2 h-4 w-4" /> {t("actions.add")}
               </Link>

@@ -59,7 +59,7 @@ export function NewsletterForm() {
           {loading ? <Loader2 size={16} className="animate-spin" /> : <ArrowRight size={16} />}
         </button>
       </div>
-      {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
+      {error && <p className="text-sm text-destructive mt-1">{error}</p>}
     </form>
   );
 }

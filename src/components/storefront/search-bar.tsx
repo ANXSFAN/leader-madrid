@@ -144,7 +144,7 @@ export function SearchBar({ className }: { className?: string }) {
 
           <Button
             size="sm"
-            className="h-9 w-9 bg-accent hover:opacity-90 text-white p-0 rounded-md"
+            className="h-9 w-9 bg-accent hover:opacity-90 text-accent-foreground p-0 rounded-md"
             onClick={() => handleSearch()}
             aria-label={t("search_button")}
           >
@@ -166,7 +166,7 @@ export function SearchBar({ className }: { className?: string }) {
                 </span>
                 <button
                   onClick={clearHistory}
-                  className="text-sm text-muted-foreground hover:text-red-500 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-destructive transition-colors"
                 >
                   {t("clear_history")}
                 </button>
@@ -190,7 +190,7 @@ export function SearchBar({ className }: { className?: string }) {
                         removeFromHistory(term);
                         if (history.length <= 1) setIsOpen(false);
                       }}
-                      className="pr-3 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground/60 hover:text-red-400"
+                      className="pr-3 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground/60 hover:text-destructive"
                       aria-label="Remove from history"
                     >
                       <X size={13} />

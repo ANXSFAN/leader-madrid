@@ -160,13 +160,13 @@ export default function ReturnRequestPage(
   if (success) {
     return (
       <div className="container mx-auto px-4 py-10 max-w-2xl">
-        <Card className="border-green-200 bg-green-50">
+        <Card className="border-success/30 bg-success/10">
           <CardContent className="pt-6 text-center">
-            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-green-800 mb-2">
+            <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-success mb-2">
               {t("success_title")}
             </h2>
-            <p className="text-green-700 mb-6">{t("success_desc")}</p>
+            <p className="text-success/80 mb-6">{t("success_desc")}</p>
             <div className="flex gap-4 justify-center">
               <Button asChild>
                 <Link href="/profile">{t("view_my_orders")}</Link>
@@ -225,14 +225,14 @@ export default function ReturnRequestPage(
             {orderData.items.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center gap-4 p-3 border rounded-lg hover:bg-slate-50 transition-colors"
+                className="flex items-center gap-4 p-3 border rounded-lg hover:bg-secondary transition-colors"
               >
                 <Checkbox
                   id={item.id}
                   checked={!!selectedItems[item.id]}
                   onCheckedChange={() => toggleItem(item.id)}
                 />
-                <div className="relative h-16 w-16 rounded-md overflow-hidden border bg-white shrink-0">
+                <div className="relative h-16 w-16 rounded-md overflow-hidden border bg-card shrink-0">
                   <Image
                     src={item.imageUrl || "/placeholder-image.jpg"}
                     alt={item.name}
@@ -330,7 +330,7 @@ export default function ReturnRequestPage(
         </Card>
 
         {error && (
-          <div className="flex items-center gap-2 p-3 mb-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg">
+          <div className="flex items-center gap-2 p-3 mb-4 text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-lg">
             <AlertCircle className="h-4 w-4" />
             {error}
           </div>

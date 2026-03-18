@@ -148,7 +148,7 @@ export function StockTransferForm({ warehouses }: StockTransferFormProps) {
       {/* Warehouse selection */}
       <Card className="hover:shadow-md transition-shadow">
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("form.warehouses")}
           </CardTitle>
         </CardHeader>
@@ -208,7 +208,7 @@ export function StockTransferForm({ warehouses }: StockTransferFormProps) {
       {/* Items */}
       <Card className="hover:shadow-md transition-shadow">
         <CardHeader>
-          <CardTitle className="border-l-4 border-yellow-500 pl-3">
+          <CardTitle className="border-l-4 border-accent pl-3">
             {t("form.items")}
           </CardTitle>
         </CardHeader>
@@ -326,7 +326,7 @@ export function StockTransferForm({ warehouses }: StockTransferFormProps) {
         <Button
           onClick={onSubmit}
           disabled={loading || items.length === 0}
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-black"
         >
           {loading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

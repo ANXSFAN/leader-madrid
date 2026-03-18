@@ -115,7 +115,7 @@ export function MobileMenu({ categories }: MobileMenuProps) {
           onClick={closeMenu}
         >
           <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-            <Shield className="w-5 h-5 text-white" />
+            <Shield className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="font-bold text-accent">{t("request_b2b")}</span>
         </Link>

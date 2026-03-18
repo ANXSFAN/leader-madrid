@@ -181,8 +181,8 @@ export function SalesOrderForm({ customers, products, warehouses, locale, curren
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <Card className="hover:shadow-md transition-shadow duration-200">
           <CardHeader className="pb-4">
-            <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-yellow-500 pl-3">
-              <FileText className="h-5 w-5 text-yellow-600" />
+            <CardTitle className="flex items-center gap-2 text-lg border-l-4 border-accent pl-3">
+              <FileText className="h-5 w-5 text-accent" />
               {t("title_create")}
             </CardTitle>
           </CardHeader>
@@ -389,12 +389,12 @@ export function SalesOrderForm({ customers, products, warehouses, locale, curren
             </Card>
 
             {stockWarnings.length > 0 && (
-              <div className="rounded-lg border border-yellow-300 bg-yellow-50 p-4">
+              <div className="rounded-lg border border-accent bg-accent/10 p-4">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 shrink-0" />
+                  <AlertTriangle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-yellow-800">{t("warnings.stock_title")}</p>
-                    <ul className="text-sm text-yellow-700 list-disc pl-4 space-y-0.5">
+                    <p className="text-sm font-medium text-accent">{t("warnings.stock_title")}</p>
+                    <ul className="text-sm text-accent list-disc pl-4 space-y-0.5">
                       {stockWarnings.map((w, i) => (
                         <li key={i}>{w}</li>
                       ))}
@@ -408,7 +408,7 @@ export function SalesOrderForm({ customers, products, warehouses, locale, curren
               <div className="text-lg font-semibold">
                 {t("summary.total_label")}: <span className="font-mono">{formatMoney(totalAmount, { locale, currency })}</span>
               </div>
-              <Button type="submit" disabled={loading || fields.length === 0} className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-black min-w-[160px]">
+              <Button type="submit" disabled={loading || fields.length === 0} className="bg-accent hover:bg-accent/90 text-accent-foreground font-black min-w-[160px]">
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
