@@ -54,7 +54,6 @@ export function ProductCard({
   const { data: session } = useSession();
   const { addItem } = useCartStore();
   const [isAdding, setIsAdding] = useState(false);
-  const [imageFit, setImageFit] = useState<"cover" | "contain">("contain");
   const [imageReady, setImageReady] = useState(false);
 
   // Force showSpecs to false if variant is simple
@@ -164,20 +163,8 @@ export function ProductCard({
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               quality={90}
-              onLoad={(e) => {
-                const img = e.target as HTMLImageElement;
-                if (img.naturalWidth && img.naturalHeight) {
-                  const ratio = img.naturalWidth / img.naturalHeight;
-                  // 比例接近容器(~1.0-1.8)的图片用cover填满，其余用contain完整展示
-                  if (ratio >= 0.8 && ratio <= 1.8) {
-                    setImageFit("cover");
-                  }
-                }
-                setImageReady(true);
-              }}
-              className={`${
-                imageFit === "cover" ? "object-cover" : "object-contain"
-              } group-hover:scale-105 transition-all duration-500 ${
+              onLoad={() => setImageReady(true)}
+              className={`object-contain group-hover:scale-105 transition-all duration-500 ${
                 imageReady ? "opacity-100" : "opacity-0"
               }`}
             />
