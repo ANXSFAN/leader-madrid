@@ -288,6 +288,7 @@ export function ProductDetailView({
                   src={images[selectedImg]}
                   alt={content.name}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                   priority
                 />
@@ -312,6 +313,7 @@ export function ProductDetailView({
                     src={img}
                     alt={`View ${i}`}
                     fill
+                    sizes="(max-width: 1024px) 25vw, 12vw"
                     className="object-cover"
                   />
                 </button>
@@ -489,6 +491,7 @@ export function ProductDetailView({
                         src={cert.imageUrl!}
                         alt={cert.name}
                         fill
+                        sizes="64px"
                         className="object-contain p-1"
                       />
                     </div>
@@ -635,6 +638,7 @@ export function ProductDetailView({
               fill
               className="object-contain"
               sizes="90vw"
+              quality={100}
             />
           </div>
 

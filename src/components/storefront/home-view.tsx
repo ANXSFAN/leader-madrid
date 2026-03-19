@@ -9,6 +9,7 @@ import { useSession, signIn } from "next-auth/react";
 import { useState } from "react";
 import { HeroCarousel } from "./hero-carousel";
 import { getLocalized } from "@/lib/content";
+import Image from "next/image";
 
 interface HomeViewProps {
   featuredProducts: (Product & {
@@ -105,10 +106,12 @@ export function HomeView({
                   className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-secondary hover:shadow-lg transition-all"
                 >
                   {imageUrl ? (
-                    <img
+                    <Image
                       src={imageUrl}
                       alt={catContent.name}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10" />
