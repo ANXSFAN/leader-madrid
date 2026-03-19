@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   ShoppingCart,
   CheckCircle2,
@@ -70,10 +70,28 @@ export function ProductDetailView({
     formatMoney(amount, { locale, currency });
 
   const [selectedImg, setSelectedImg] = useState(0);
+  const [containerHeight, setContainerHeight] = useState<number | undefined>(undefined);
+  const slideRef = useRef<HTMLDivElement>(null);
+  const imgHeights = useRef<Map<number, number>>(new Map());
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("specs");
   const [isAdding, setIsAdding] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const handleImageLoad = useCallback((idx: number, e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    imgHeights.current.set(idx, img.clientHeight);
+    if (idx === selectedImg) {
+      setContainerHeight(img.clientHeight);
+    }
+  }, [selectedImg]);
+
+  const handleImageSwitch = (idx: number) => {
+    if (idx === selectedImg) return;
+    const h = imgHeights.current.get(idx);
+    if (h) setContainerHeight(h);
+    setSelectedImg(idx);
+  };
 
   // Parse product data
   const content = getLocalized(product.content, locale);
@@ -280,26 +298,43 @@ export function ProductDetailView({
           {/* --- Left: Image Gallery --- */}
           <div className="lg:w-1/2 space-y-4">
             <div
-              className="relative aspect-square bg-secondary rounded-2xl overflow-hidden border border-border group cursor-zoom-in"
+              className="relative bg-white rounded-2xl overflow-hidden border border-border group cursor-zoom-in"
               onClick={() => images.length > 0 && setLightboxOpen(true)}
             >
-              {images[selectedImg] ? (
-                <Image
-                  src={images[selectedImg]}
-                  alt={content.name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={90}
-                  className="object-contain"
-                  priority
-                />
+              {images.length > 0 ? (
+                <div
+                  ref={slideRef}
+                  className="overflow-hidden transition-[height] duration-500 ease-in-out"
+                  style={{ height: containerHeight ? `${containerHeight}px` : "auto" }}
+                >
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${selectedImg * 100}%)` }}
+                  >
+                    {images.map((img: string, i: number) => (
+                      <div key={i} className="w-full flex-shrink-0">
+                        <Image
+                          src={img}
+                          alt={content.name}
+                          width={800}
+                          height={800}
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          quality={90}
+                          className="w-full h-auto"
+                          priority={i === 0}
+                          onLoad={(e) => handleImageLoad(i, e)}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/60 font-mono text-sm">
+                <div className="aspect-square flex items-center justify-center text-muted-foreground/60 font-mono text-sm">
                   {t("no_image")}
                 </div>
               )}
 
-              <button className="absolute bottom-6 right-6 p-3 bg-card/80 backdrop-blur rounded-full text-muted-foreground hover:text-accent transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100">
+              <button className="absolute bottom-6 right-6 p-3 bg-card/80 backdrop-blur rounded-full text-muted-foreground hover:text-accent transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 z-20">
                 <ZoomIn size={20} />
               </button>
             </div>
@@ -307,7 +342,7 @@ export function ProductDetailView({
               {images.map((img: string, i: number) => (
                 <button
                   key={i}
-                  onClick={() => setSelectedImg(i)}
+                  onClick={() => handleImageSwitch(i)}
                   className={`aspect-square rounded-xl border-2 transition-all relative overflow-hidden ${selectedImg === i ? "border-accent bg-card" : "border-transparent bg-card border border-border hover:bg-secondary"}`}
                 >
                   <Image

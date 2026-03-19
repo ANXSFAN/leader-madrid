@@ -153,7 +153,7 @@ export function ProductCard({
       <div
         className={`relative ${
           viewMode === "list" ? "w-1/3" : "h-64"
-        } bg-secondary flex items-center justify-center overflow-hidden`}
+        } bg-white flex items-center justify-center overflow-hidden`}
       >
         <Link href={`/product/${product.slug}`} className="absolute inset-0">
           {imageUrl ? (
@@ -164,7 +164,7 @@ export function ProductCard({
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               quality={90}
               onLoad={() => setImageReady(true)}
-              className={`object-contain group-hover:scale-105 transition-all duration-500 ${
+              className={`object-contain p-2 group-hover:scale-105 transition-all duration-500 ${
                 imageReady ? "opacity-100" : "opacity-0"
               }`}
             />
