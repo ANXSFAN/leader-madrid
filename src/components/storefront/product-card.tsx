@@ -54,7 +54,7 @@ export function ProductCard({
   const { data: session } = useSession();
   const { addItem } = useCartStore();
   const [isAdding, setIsAdding] = useState(false);
-  const [imageFit, setImageFit] = useState<"cover" | "contain">("cover");
+  const [imageFit, setImageFit] = useState<"cover" | "contain">("contain");
   const [imageReady, setImageReady] = useState(false);
 
   // Force showSpecs to false if variant is simple
@@ -168,9 +168,9 @@ export function ProductCard({
                 const img = e.target as HTMLImageElement;
                 if (img.naturalWidth && img.naturalHeight) {
                   const ratio = img.naturalWidth / img.naturalHeight;
-                  // 接近容器比例(~1.4)的横图用cover填满，偏差大的用contain完整展示
-                  if (ratio < 0.8 || ratio > 2.2) {
-                    setImageFit("contain");
+                  // 比例接近容器(~1.0-1.8)的图片用cover填满，其余用contain完整展示
+                  if (ratio >= 0.8 && ratio <= 1.8) {
+                    setImageFit("cover");
                   }
                 }
                 setImageReady(true);

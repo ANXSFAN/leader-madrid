@@ -290,7 +290,7 @@ export function ProductDetailView({
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={90}
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
               ) : (
@@ -316,7 +316,7 @@ export function ProductDetailView({
                     fill
                     sizes="(max-width: 1024px) 25vw, 12vw"
                     quality={90}
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </button>
               ))}
