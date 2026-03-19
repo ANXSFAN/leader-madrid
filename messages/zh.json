@@ -79,7 +79,10 @@
     "in_stock": "有货",
     "out_of_stock": "缺货",
     "show_n_results": "显示 {count} 个结果",
-    "price_chip": "{min} – {max}"
+    "price_chip": "{min} – {max}",
+    "color_temperature": "色温",
+    "led_color": "颜色",
+    "appearance": "外观"
   },
   "sort": {
     "label": "排序方式：",

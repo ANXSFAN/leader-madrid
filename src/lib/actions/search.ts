@@ -10,6 +10,7 @@ import {
 import { getCategoryDescendantIds } from "./category";
 import { SerializedProduct } from "@/lib/types/search";
 import { unstable_cache } from "next/cache";
+import { splitCctForIndex, getCctType } from "@/lib/search/utils";
 
 export type SearchParams = {
   query?: string;
@@ -96,6 +97,54 @@ async function dbSearchProducts(params: SearchParams): Promise<SearchResult> {
         }
         return;
       }
+
+      // cct: use string_contains so "3000K" also matches "3000K-4000K-6000K"
+      if (key === "cct") {
+        const vals = Array.isArray(value) ? value : [value];
+        if (vals.length > 0) {
+          specFilters.push({
+            OR: vals.map((v) => ({
+              specs: { path: ["cct"], string_contains: v },
+            })),
+          });
+        }
+        return;
+      }
+
+      // cct_type: reverse-map to actual cct patterns
+      if (key === "cct_type") {
+        const vals = Array.isArray(value) ? value : [value];
+        const cctConditions: Prisma.ProductVariantWhereInput[] = [];
+        for (const type of vals) {
+          if (type === "Cálido") {
+            for (const k of ["2000K", "2200K", "2700K", "3000K"]) {
+              cctConditions.push({ specs: { path: ["cct"], string_contains: k } });
+            }
+          } else if (type === "Neutro") {
+            for (const k of ["3500K", "4000K"]) {
+              cctConditions.push({ specs: { path: ["cct"], string_contains: k } });
+            }
+          } else if (type === "Frío") {
+            for (const k of ["5000K", "6000K", "6500K"]) {
+              cctConditions.push({ specs: { path: ["cct"], string_contains: k } });
+            }
+          } else if (type === "Regulable") {
+            cctConditions.push({ specs: { path: ["cct"], string_contains: "-" } });
+            cctConditions.push({ specs: { path: ["cct"], equals: "CCT" } });
+          } else if (type === "RGB") {
+            cctConditions.push({ specs: { path: ["cct"], string_contains: "RGB" } });
+          } else if (type === "Color") {
+            for (const c of ["Azul", "Rojo", "Rosa", "Morado", "Verde", "Dorado", "Naranja", "Amarillo"]) {
+              cctConditions.push({ specs: { path: ["cct"], equals: c } });
+            }
+          }
+        }
+        if (cctConditions.length > 0) {
+          specFilters.push({ OR: cctConditions });
+        }
+        return;
+      }
+
       if (Array.isArray(value)) {
         if (value.length > 0) {
           specFilters.push({
@@ -202,8 +251,22 @@ async function dbSearchProducts(params: SearchParams): Promise<SearchResult> {
         if (v.specs && typeof v.specs === "object") {
           Object.entries(v.specs).forEach(([key, value]) => {
             if (value && key !== "series" && key !== "origin") {
-              if (!facetMap[key]) facetMap[key] = new Map();
               const valStr = String(value);
+
+              // CCT: split multi-CCT into individual values + derive cct_type
+              if (key === "cct") {
+                if (!facetMap["cct"]) facetMap["cct"] = new Map();
+                const parts = splitCctForIndex(valStr);
+                for (const part of parts) {
+                  facetMap["cct"].set(part, (facetMap["cct"].get(part) || 0) + 1);
+                }
+                if (!facetMap["cct_type"]) facetMap["cct_type"] = new Map();
+                const cctType = getCctType(valStr);
+                facetMap["cct_type"].set(cctType, (facetMap["cct_type"].get(cctType) || 0) + 1);
+                return;
+              }
+
+              if (!facetMap[key]) facetMap[key] = new Map();
               facetMap[key].set(valStr, (facetMap[key].get(valStr) || 0) + 1);
 
               if (key === "color" || key === "finish") {

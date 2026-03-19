@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState, useTransition, useRef } from "react";
+import { useCallback, useEffect, useMemo, useState, useTransition, useRef, type ReactElement } from "react";
 import { Facet } from "@/lib/actions/search";
 import { AttributeWithOptions } from "@/lib/actions/attributes";
 import { useDebounce } from "@/hooks/use-debounce";
@@ -22,6 +22,64 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { CategoryTreeItem } from "@/components/storefront/category-tree";
 import { useTranslations, useLocale } from "next-intl";
 import { Category } from "@prisma/client";
+
+// --- CCT / LED color helpers ---
+const CCT_LED_COLORS = new Set([
+  "Azul", "Rojo", "Rosa", "Morado", "Verde", "Dorado", "Naranja", "Amarillo",
+  "RGB", "RGBIC",
+]);
+const LED_COLOR_HEX: Record<string, string> = {
+  Rojo: "#FF0000",
+  Azul: "#0066FF",
+  Rosa: "#FF69B4",
+  Morado: "#8B00FF",
+  Verde: "#00CC00",
+  Dorado: "#DAA520",
+  Naranja: "#FF6600",
+  Amarillo: "#FFD700",
+  RGB: "linear-gradient(135deg, #FF0000, #00FF00, #0000FF)",
+  RGBIC: "linear-gradient(135deg, #FF0000, #FF8800, #FFFF00, #00FF00, #0000FF, #8800FF)",
+};
+const isCctTempOrType = (v: string): boolean =>
+  /^\d+K$/i.test(v) || v === "CCT";
+
+function sortFacetOptions(
+  key: string,
+  options: { value: string; count: number }[]
+): { value: string; count: number }[] {
+  const sorted = [...options];
+  if (key === "cct") {
+    return sorted.sort((a, b) => {
+      const aNum = parseInt(a.value);
+      const bNum = parseInt(b.value);
+      if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+      if (a.value === "CCT") return 1;
+      return 0;
+    });
+  }
+  if (key === "cri") {
+    return sorted.sort((a, b) => {
+      const aNum = parseInt(a.value.replace(/[>≥]/g, ""));
+      const bNum = parseInt(b.value.replace(/[>≥]/g, ""));
+      return aNum - bNum;
+    });
+  }
+  if (key.includes("ip")) {
+    return sorted.sort((a, b) => {
+      const aNum = parseInt(a.value.replace(/\D/g, ""));
+      const bNum = parseInt(b.value.replace(/\D/g, ""));
+      return aNum - bNum;
+    });
+  }
+  return sorted;
+}
+
+function formatCriLabel(value: string): string {
+  if (value.startsWith("≥")) return value;
+  if (value.startsWith(">")) return `≥${value.slice(1)}`;
+  if (/^\d+$/.test(value)) return `≥${value}`;
+  return value;
+}
 
 interface CategoryWithChildren extends Category {
   children?: CategoryWithChildren[];
@@ -303,6 +361,7 @@ export function ProductFilter({
   const getFacetLabel = (key: string): string => {
     const attr = matchedFacets.get(key);
     if (attr) {
+      if (attr.key === "color") return t("appearance");
       return attr.name[locale] || attr.name["en"] || key;
     }
     if (key === "brand") return t("brand");
@@ -313,12 +372,14 @@ export function ProductFilter({
   // ------------------------------------------------------------------
   // Facet rendering (color swatches / grid / checkbox)
   // ------------------------------------------------------------------
-  const renderFacetOptions = (key: string, facet: Facet) => {
+  const renderFacetOptions = (key: string, rawFacet: Facet) => {
     const attribute = matchedFacets.get(key);
-    // 1. Color Swatches
+    const facet: Facet = { ...rawFacet, options: sortFacetOptions(key, rawFacet.options) };
+    // 1. Color Swatches — only for actual color/finish attributes, not CCT
+    const SWATCH_KEYS = new Set(["color", "finish"]);
     const hasColorOptions = attribute?.options.some((o) => o.color);
 
-    if (hasColorOptions || key === "color" || key === "finish") {
+    if (SWATCH_KEYS.has(key) || (hasColorOptions && !key.startsWith("cct"))) {
       return (
         <div className="flex flex-wrap gap-2">
           {facet.options.map((option) => {
@@ -363,27 +424,44 @@ export function ProductFilter({
       );
     }
 
-    // 2. Grid Layout for Short Values
+    // 2. Grid Layout for Short Values or CCT-type attributes
     const isShortValues = facet.options.every((opt) => opt.value.length < 6);
+    const isCctGrid = key === "cct" || key === "cct_type";
 
-    if (isShortValues) {
+    if (isShortValues || isCctGrid) {
       return (
         <div className="grid grid-cols-3 gap-2">
           {facet.options.map((option) => {
             const isChecked = getFilterValues(key).includes(option.value);
+            const attrOption = attribute?.options.find(
+              (o) => o.value === option.value
+            );
+            const colorCode = attrOption?.color;
             return (
               <button
                 key={option.value}
                 onClick={() => toggleSpec(key, option.value)}
                 className={cn(
-                  "px-2 py-1.5 rounded border text-base text-center transition-colors truncate",
+                  "px-2 py-1.5 rounded border text-sm transition-colors truncate",
+                  colorCode ? "text-left" : "text-center",
                   isChecked
                     ? "bg-primary text-primary-foreground border-primary"
                     : "bg-card text-foreground/80 border-border hover:border-border"
                 )}
                 title={`${option.value} (${option.count})`}
               >
-                {option.value}
+                <span className="flex items-center gap-1.5 justify-center">
+                  {colorCode && (
+                    <span
+                      className={cn(
+                        "w-3 h-3 rounded-full shrink-0 border",
+                        isChecked ? "border-primary-foreground/30" : "border-border"
+                      )}
+                      style={{ backgroundColor: colorCode }}
+                    />
+                  )}
+                  {key === "cri" ? formatCriLabel(option.value) : option.value}
+                </span>
               </button>
             );
           })}
@@ -430,6 +508,15 @@ export function ProductFilter({
 
   const currentAvailability = searchParams.get("availability");
   const showSlider = sliderMax > sliderMin;
+
+  const accordionDefaultValues = useMemo(() => {
+    const keys = [...Object.keys(facets)];
+    const cctKey = attrFacetMap.get("cct");
+    if (cctKey) {
+      keys.push(`${cctKey}-kelvin`, `${cctKey}-ledcolor`);
+    }
+    return keys;
+  }, [facets, attrFacetMap]);
 
   return (
     <div
@@ -542,19 +629,128 @@ export function ProductFilter({
       <Accordion
         type="multiple"
         className="w-full"
-        defaultValue={Object.keys(facets)}
+        defaultValue={accordionDefaultValues}
       >
         {/* 1. Facets with AttributeDefinition (only isFilterable ones) */}
-        {attributes.filter((a) => a.isFilterable).map((attr) => {
-          // Find the actual facet key (could be display name like "InstalacióN")
+        {attributes.filter((a) => a.isFilterable).flatMap((attr) => {
           const facetKey = attrFacetMap.get(attr.key);
-          if (!facetKey) return null;
+          if (!facetKey) return [];
           const facet = facets[facetKey];
-          if (!facet || facet.options.length === 0) return null;
+          if (!facet || facet.options.length === 0) return [];
 
+          // --- CCT split: 色温 (Kelvin/type) + 颜色 (LED light color) ---
+          if (attr.key === "cct") {
+            const kelvinOpts = sortFacetOptions(
+              "cct",
+              facet.options.filter((o) => isCctTempOrType(o.value))
+            );
+            const ledColorOpts = facet.options.filter((o) =>
+              CCT_LED_COLORS.has(o.value)
+            );
+            const sections: ReactElement[] = [];
+
+            if (kelvinOpts.length > 0) {
+              const isActive = kelvinOpts.some((o) =>
+                getFilterValues(facetKey).includes(o.value)
+              );
+              sections.push(
+                <AccordionItem
+                  key={`${facetKey}-kelvin`}
+                  value={`${facetKey}-kelvin`}
+                >
+                  <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline hover:bg-secondary px-2 rounded-md">
+                    <span className="flex items-center gap-2">
+                      {t("color_temperature")}
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      )}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-2 pt-2 pb-4">
+                    {renderFacetOptions(facetKey, {
+                      ...facet,
+                      options: kelvinOpts,
+                    })}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            }
+
+            if (ledColorOpts.length > 0) {
+              const isActive = ledColorOpts.some((o) =>
+                getFilterValues(facetKey).includes(o.value)
+              );
+              sections.push(
+                <AccordionItem
+                  key={`${facetKey}-ledcolor`}
+                  value={`${facetKey}-ledcolor`}
+                >
+                  <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline hover:bg-secondary px-2 rounded-md">
+                    <span className="flex items-center gap-2">
+                      {t("led_color")}
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      )}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-2 pt-2 pb-4">
+                    <div className="flex flex-wrap gap-3">
+                      {ledColorOpts.map((option) => {
+                        const isChecked = getFilterValues(
+                          facetKey
+                        ).includes(option.value);
+                        const hex =
+                          LED_COLOR_HEX[option.value] || "#888";
+                        return (
+                          <button
+                            key={option.value}
+                            onClick={() =>
+                              toggleSpec(facetKey, option.value)
+                            }
+                            className="flex flex-col items-center gap-1 group"
+                            title={`${option.value} (${option.count})`}
+                          >
+                            <span
+                              className={cn(
+                                "w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all",
+                                isChecked
+                                  ? "ring-2 ring-primary ring-offset-2 border-transparent"
+                                  : "border-border/50 group-hover:scale-110"
+                              )}
+                              style={{ background: hex }}
+                            >
+                              {isChecked && (
+                                <Check
+                                  size={14}
+                                  className="text-white stroke-[3]"
+                                />
+                              )}
+                            </span>
+                            <span
+                              className={cn(
+                                "text-xs",
+                                isChecked
+                                  ? "text-foreground font-medium"
+                                  : "text-muted-foreground"
+                              )}
+                            >
+                              {option.value}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            }
+
+            return sections;
+          }
+
+          // --- Normal attribute rendering ---
           const isActive = getFilterValues(facetKey).length > 0;
-
-          return (
+          return [
             <AccordionItem key={facetKey} value={facetKey}>
               <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline hover:bg-secondary px-2 rounded-md capitalize">
                 <span className="flex items-center gap-2">
@@ -567,8 +763,8 @@ export function ProductFilter({
               <AccordionContent className="px-2 pt-2 pb-4">
                 {renderFacetOptions(facetKey, facet)}
               </AccordionContent>
-            </AccordionItem>
-          );
+            </AccordionItem>,
+          ];
         })}
         {/* 2. Remaining non-spec facets (brand, tags only) */}
         {Object.entries(facets).map(([key, facet]) => {

@@ -19,6 +19,41 @@ export function parseNumber(val: string | number | null | undefined): number | u
   return match ? parseFloat(match[0]) : undefined;
 }
 
+// CCT color values (not Kelvin temperatures)
+const CCT_COLOR_VALUES = new Set([
+  "Azul", "Rojo", "Rosa", "Morado", "Verde", "Dorado", "Naranja", "Amarillo",
+]);
+
+/**
+ * Split a CCT value into individual Kelvin values for faceted search.
+ * "3000K-4000K-6000K" → ["3000K", "4000K", "6000K"]
+ * "3000K" → ["3000K"]
+ * "CCT" → ["CCT"]
+ */
+export function splitCctForIndex(cct: string): string[] {
+  if (cct.includes("-")) {
+    const parts = cct.split("-").filter((p) => /^\d+K$/i.test(p));
+    return parts.length > 0 ? parts : [cct];
+  }
+  return [cct];
+}
+
+/**
+ * Classify a CCT value into a light type category for broad filtering.
+ */
+export function getCctType(cct: string): string {
+  if (cct.includes("-") || cct === "CCT") return "Regulable";
+  if (cct === "RGB" || cct === "RGBIC") return "RGB";
+  if (CCT_COLOR_VALUES.has(cct)) return "Color";
+  const k = parseInt(cct);
+  if (!isNaN(k)) {
+    if (k <= 3000) return "Cálido";
+    if (k <= 4500) return "Neutro";
+    return "Frío";
+  }
+  return "Regulable"; // fallback
+}
+
 export function toProductDocument(
   product: ProductWithRelations,
   categoryMap: Map<string, CategoryMapEntry>
@@ -106,6 +141,17 @@ export function toProductDocument(
         return;
       }
       if (typeof value === "object") return;
+
+      // CCT: split multi-CCT into individual values + derive cct_type
+      if (key === "cct" && typeof value === "string") {
+        const parts = splitCctForIndex(value);
+        for (const part of parts) {
+          specsKv.add(`cct=${part}`);
+        }
+        specsKv.add(`cct_type=${getCctType(value)}`);
+        return;
+      }
+
       specsKv.add(`${key}=${String(value)}`);
     });
 
@@ -114,11 +160,15 @@ export function toProductDocument(
     const w = parseNumber((specs as any).wattage || (specs as any).power);
     if (w !== undefined) wattage.add(w);
 
-    // Color Temp / CCT
+    // Color Temp / CCT — split multi-CCT for faceted filtering
     // eslint-disable-next-line @typescript-eslint/no-explicit-any -- specs values are dynamic JSON
     const s = specs as any;
     const cct = s.cct || s.color_temp || s.colorTemp;
-    if (cct) colorTemp.add(cct.toString());
+    if (cct) {
+      for (const part of splitCctForIndex(cct.toString())) {
+        colorTemp.add(part);
+      }
+    }
 
     // IP Rating
     const ip = s.ip || s.ip_rating || s.ipRating;

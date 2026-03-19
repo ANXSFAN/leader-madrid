@@ -76,7 +76,10 @@
     "in_stock": "Op voorraad",
     "out_of_stock": "Niet op voorraad",
     "show_n_results": "{count} resultaten tonen",
-    "price_chip": "{min} – {max}"
+    "price_chip": "{min} – {max}",
+    "color_temperature": "Kleurtemperatuur",
+    "led_color": "LED-kleur",
+    "appearance": "Uiterlijk"
   },
   "sort": {
     "label": "Sorteren op:",

@@ -60,7 +60,10 @@
     "out_of_stock": "Out of Stock",
     "active_filters": "Active Filters",
     "show_n_results": "Show {count} Results",
-    "price_chip": "{min} – {max}"
+    "price_chip": "{min} – {max}",
+    "color_temperature": "Color Temperature",
+    "led_color": "LED Color",
+    "appearance": "Appearance"
   },
   "sort": {
     "label": "Sort by:",

@@ -76,7 +76,10 @@
     "in_stock": "Auf Lager",
     "out_of_stock": "Nicht auf Lager",
     "show_n_results": "{count} Ergebnisse anzeigen",
-    "price_chip": "{min} – {max}"
+    "price_chip": "{min} – {max}",
+    "color_temperature": "Farbtemperatur",
+    "led_color": "LED-Farbe",
+    "appearance": "Aussehen"
   },
   "sort": {
     "label": "Sortieren nach:",
