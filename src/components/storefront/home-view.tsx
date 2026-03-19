@@ -111,6 +111,7 @@ export function HomeView({
                       alt={catContent.name}
                       fill
                       sizes="(max-width: 640px) 50vw, 25vw"
+                      quality={90}
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (

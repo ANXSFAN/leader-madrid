@@ -79,6 +79,7 @@ export function HeroBanner({ banner }: HeroBannerProps) {
           alt={banner.title}
           fill
           sizes="100vw"
+          quality={90}
           className="object-cover"
           priority
           unoptimized={banner.imageUrl.endsWith(".svg")}

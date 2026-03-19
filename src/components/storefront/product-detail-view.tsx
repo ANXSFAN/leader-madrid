@@ -289,6 +289,7 @@ export function ProductDetailView({
                   alt={content.name}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
                   className="object-cover"
                   priority
                 />
@@ -314,6 +315,7 @@ export function ProductDetailView({
                     alt={`View ${i}`}
                     fill
                     sizes="(max-width: 1024px) 25vw, 12vw"
+                    quality={90}
                     className="object-cover"
                   />
                 </button>
@@ -492,6 +494,7 @@ export function ProductDetailView({
                         alt={cert.name}
                         fill
                         sizes="64px"
+                        quality={90}
                         className="object-contain p-1"
                       />
                     </div>

@@ -163,6 +163,7 @@ export function ProductCard({
               alt={content.name}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              quality={90}
               onLoad={(e) => {
                 const img = e.target as HTMLImageElement;
                 if (img.naturalWidth && img.naturalHeight) {
